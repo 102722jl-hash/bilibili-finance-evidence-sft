@@ -1,0 +1,90 @@
+diff --git a/src/evidence_chain/report.py b/src/evidence_chain/report.py
+--- a/src/evidence_chain/report.py
++++ b/src/evidence_chain/report.py
+@@
+ from .models import Claim, Edge
++from .storage import Store
+ from .verification import SourceRecord
+@@
++VIDEO_FIELDS = ["bvid", "title"]
+ CLAIM_FIELDS = [
+@@
+ def render_report(graph: GraphData) -> str:
+@@
+     return "\n".join(lines)
++
++
++def load_graph(db_path: str | Path, video_id: str) -> GraphData:
++    store = Store(db_path)
++    with store._connect() as connection:
++        claim_rows = connection.execute(
++            "SELECT * FROM claims WHERE video_id = ? ORDER BY claim_id", (video_id,)
++        ).fetchall()
++        edge_rows = connection.execute(
++            """
++            SELECT e.* FROM edges e
++            JOIN claims c ON c.claim_id = e.from_claim_id
++            WHERE c.video_id = ? ORDER BY e.edge_id
++            """,
++            (video_id,),
++        ).fetchall()
++        has_sources = connection.execute(
++            "SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'sources'"
++        ).fetchone()
++        source_rows = connection.execute("SELECT * FROM sources ORDER BY source_id").fetchall() if has_sources else []
++    claims = [Claim(**dict(row)) for row in claim_rows]
++    edges = []
++    for row in edge_rows:
++        data = dict(row)
++        import json
++        data["evidence_refs"] = json.loads(data["evidence_refs"])
++        edges.append(Edge(**data))
++    return GraphData(video_id=video_id, title=video_id, claims=claims, edges=edges, sources=[SourceRecord(**dict(row)) for row in source_rows])
+@@
+ def export_csv(graph: GraphData, out_dir: str | Path) -> dict[str, Path]:
+@@
+-    paths = {"claims": directory / "claims.csv", "edges": directory / "edges.csv", "sources": directory / "sources.csv"}
++    paths = {
++        "videos": directory / "videos.csv",
++        "claims": directory / "claims.csv",
++        "edges": directory / "edges.csv",
++        "sources": directory / "sources.csv",
++    }
++    _write_csv(paths["videos"], VIDEO_FIELDS, [{"bvid": graph.video_id, "title": graph.title}])
+     _write_csv(paths["claims"], CLAIM_FIELDS, claim_rows)
+diff --git a/src/evidence_chain/cli.py b/src/evidence_chain/cli.py
+--- a/src/evidence_chain/cli.py
++++ b/src/evidence_chain/cli.py
+@@
+ import argparse
+ import json
+ from dataclasses import asdict
++from pathlib import Path
+ 
++from .report import export_csv, load_graph, render_report
+ from .sources.bilibili import fetch_public_video
+@@
+-    subparsers.add_parser("report", help="render an evidence-chain report")
++    report_parser = subparsers.add_parser("report", help="render an evidence-chain report")
++    report_parser.add_argument("--video-id", required=True)
++    report_parser.add_argument("--db", required=True)
++    report_parser.add_argument("--out", required=True)
+@@
+     if args.command == "collect":
+         record = fetch_public_video(args.video_url, args.out)
+         print(json.dumps(asdict(record), ensure_ascii=False))
++    elif args.command == "report":
++        graph = load_graph(args.db, args.video_id)
++        out_path = Path(args.out)
++        out_path.parent.mkdir(parents=True, exist_ok=True)
++        out_path.write_text(render_report(graph), encoding="utf8")
++        export_csv(graph, out_path.parent)
+     return 0
+diff --git a/tests/test_report.py b/tests/test_report.py
+--- a/tests/test_report.py
++++ b/tests/test_report.py
+@@
+ def test_csv_exports_have_stable_headers(tmp_path):
+     paths = export_csv(sample_graph(), tmp_path)
++    assert paths["videos"].read_text(encoding="utf8").splitlines()[0] == "bvid,title"
+     assert paths["claims"].read_text(encoding="utf8").splitlines()[0] == (

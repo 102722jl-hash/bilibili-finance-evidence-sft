@@ -1,0 +1,11 @@
+bvid,title,video_url,author_mid,article_url,discovery_source,text_source,selection_status,selection_rationale
+BVTEST0,案例 0,https://www.bilibili.com/video/BVTEST0/,472747194,https://new.qq.com/rain/a/TEST,https://weixin.sogou.com/weixin?type=2&query=test,official_article,selected,有明确事件和可核验命题
+BVTEST1,案例 1,https://www.bilibili.com/video/BVTEST1/,472747194,,https://weixin.sogou.com/weixin?type=2&query=test,article_not_yet_confirmed,selected,有明确事件和可核验命题
+BVTEST2,案例 2,https://www.bilibili.com/video/BVTEST2/,472747194,,https://weixin.sogou.com/weixin?type=2&query=test,article_not_yet_confirmed,selected,有明确事件和可核验命题
+BVTEST3,案例 3,https://www.bilibili.com/video/BVTEST3/,472747194,,https://weixin.sogou.com/weixin?type=2&query=test,article_not_yet_confirmed,selected,有明确事件和可核验命题
+BVTEST4,案例 4,https://www.bilibili.com/video/BVTEST4/,472747194,,https://weixin.sogou.com/weixin?type=2&query=test,article_not_yet_confirmed,selected,有明确事件和可核验命题
+BVTEST5,案例 5,https://www.bilibili.com/video/BVTEST5/,472747194,,https://weixin.sogou.com/weixin?type=2&query=test,article_not_yet_confirmed,selected,有明确事件和可核验命题
+BVTEST6,案例 6,https://www.bilibili.com/video/BVTEST6/,472747194,,https://weixin.sogou.com/weixin?type=2&query=test,article_not_yet_confirmed,selected,有明确事件和可核验命题
+BVTEST7,案例 7,https://www.bilibili.com/video/BVTEST7/,472747194,,https://weixin.sogou.com/weixin?type=2&query=test,article_not_yet_confirmed,selected,有明确事件和可核验命题
+BVTEST8,案例 8,https://www.bilibili.com/video/BVTEST8/,472747194,,https://weixin.sogou.com/weixin?type=2&query=test,article_not_yet_confirmed,selected,有明确事件和可核验命题
+BVTEST9,案例 9,https://www.bilibili.com/video/BVTEST9/,472747194,,https://weixin.sogou.com/weixin?type=2&query=test,article_not_yet_confirmed,selected,有明确事件和可核验命题

@@ -1,0 +1,20 @@
+{
+  "dataset_version": "4.1.0",
+  "files": {
+    "DATASET_CARD.md": "ee5423498efe93158da82800618871383aa30b1681b6fd4269a4448baf0f8ecf",
+    "config.json": "dacb35a0ac5b1e4a8c6df5a6d6978cf276a65c0e4215d1a6e7ed27689e0928a0",
+    "qa_records.jsonl": "67c547b8fd27ea8e8807b800280a2545ff414e39a40d22f50fb6cfd59efe0e45"
+  },
+  "metrics": {
+    "cases": 3,
+    "path_signatures": 27,
+    "records": 27,
+    "splits": {
+      "train": 18,
+      "validation": 9
+    }
+  },
+  "seed": 20260813,
+  "source_graph_manifest_sha256": "c1f986415033ba8fdf4303baa42aa288a41313bc3be89a9638e0f93a0c8f5d4e",
+  "training_dataset_version": "4.1.0"
+}

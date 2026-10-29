@@ -1,0 +1,10 @@
+diff --git a/tests/test_report.py b/tests/test_report.py
+--- a/tests/test_report.py
++++ b/tests/test_report.py
+@@ -31,7 +31,7 @@ def test_csv_exports_have_stable_headers(tmp_path):
+     paths = export_csv(sample_graph(), tmp_path)
+     assert paths["claims"].read_text(encoding="utf8").splitlines()[0] == (
+-        "claim_id,video_id,node_type,subject,predicate,object,event_time_start,event_time_end,quote," 
++        "claim_id,video_id,node_type,subject,predicate,object,event_time_start,event_time_end,quote,"
+         "timestamp_start,timestamp_end,source_ref,source_grade,verification_status,notes"
+     )

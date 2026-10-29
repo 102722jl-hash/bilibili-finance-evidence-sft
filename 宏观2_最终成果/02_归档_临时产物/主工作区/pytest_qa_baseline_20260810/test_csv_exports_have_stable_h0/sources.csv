@@ -1,0 +1,2 @@
+source_id,url,publisher,published_at,retrieved_at,source_grade,title,quoted_support,raw_sha256,http_status,access_failure
+SRC1,https://example.com,交易所,,,S5,公告,证金买入,abc,200,

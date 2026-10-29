@@ -1,0 +1,41 @@
+{
+  "consumed_benchmark_splits": [
+    "dev"
+  ],
+  "counts": {
+    "answerability": {
+      "answerable": 14,
+      "partially_answerable": 4,
+      "unanswerable": 5
+    },
+    "event_clusters": {
+      "financial_fraud": 23
+    },
+    "question_types": {
+      "author_conclusion_support": 2,
+      "author_fact": 3,
+      "author_multihop": 2,
+      "author_relation": 3,
+      "world_confirmed": 3,
+      "world_partial": 2,
+      "world_source_scope": 3,
+      "world_unanswerable": 5
+    },
+    "records": 23,
+    "truth_scopes": {
+      "author_trace": 10,
+      "world_evidence": 13
+    }
+  },
+  "files": {
+    "TRAINING_CARD.md": "4ce463936c9fb620641c8cbaf80e2f766e4251312c181a7f44214f3dbbbf0d4b",
+    "config.json": "ec9a3665628f8f50b756634a9ecaa5715f45d1799b0f1a0dfd3a531132acb5e2",
+    "train_messages.jsonl": "a1251125675bb910dffabd484c4f5fd6eb8163180ef030403483d143119a23dd"
+  },
+  "seed": 20260810,
+  "source_dataset_path": "..\\..\\source\\qa\\v1",
+  "source_dataset_version": "1.0.0",
+  "source_manifest_sha256": "c38c94148f308f44af3b6ada30046fcd5affce8ac533063fa1c8c302d7edee6e",
+  "system_prompt_version": "evidence-multitask-v1",
+  "training_dataset_version": "1.0.0"
+}

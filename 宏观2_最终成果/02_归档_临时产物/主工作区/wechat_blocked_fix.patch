@@ -1,0 +1,15 @@
+diff --git a/src/evidence_chain/sources/wechat.py b/src/evidence_chain/sources/wechat.py
+--- a/src/evidence_chain/sources/wechat.py
++++ b/src/evidence_chain/sources/wechat.py
+@@ -29,1 +29,10 @@
+-_BLOCK_MARKERS = ("验证码", "VerifyCode", "访问验证", "安全验证", "请完成验证")
++_BLOCK_MARKERS = (
++    "验证码",
++    "VerifyCode",
++    "访问验证",
++    "安全验证",
++    "请完成验证",
++    "secitptpage/verify",
++    'id="js_verify"',
++    "TCaptcha.js",
++)

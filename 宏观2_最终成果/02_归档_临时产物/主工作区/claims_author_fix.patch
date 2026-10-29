@@ -1,0 +1,9 @@
+diff --git a/src/evidence_chain/claims.py b/src/evidence_chain/claims.py
+--- a/src/evidence_chain/claims.py
++++ b/src/evidence_chain/claims.py
+@@ -51,1 +51,5 @@
+ def _node_type(segment: str, cue: str | None) -> str:
++    if segment.startswith(("\u4f5c\u8005\u8ba4\u4e3a", "\u4f5c\u8005\u6307\u51fa", "\u4f5c\u8005\u5c06", "\u4f5c\u8005\u628a")):
++        return "C"
++    if segment.startswith(("\u4f5c\u8005\u58f0\u79f0", "\u4f5c\u8005\u63cf\u8ff0", "\u4f5c\u8005\u63a8\u6d4b")):
++        return "I"

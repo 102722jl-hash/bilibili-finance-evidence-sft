@@ -1,0 +1,40 @@
+{
+  "answerability": {
+    "answerable": 7,
+    "partially_answerable": 2,
+    "unanswerable": 1
+  },
+  "counts": {
+    "qa_gold": 10,
+    "qa_items": 10
+  },
+  "dataset_version": "2.0.0",
+  "files": {
+    "config.json": "6ba0d3eb3924a69692a8c1f5ccacc30471cd362516d193fe97d0592d5b7bdce1",
+    "qa_gold.jsonl": "cb0223970a708469bac0bb00e8c048ce4b9b8b1b75fa5e3eae2659f67a6a0c3a",
+    "qa_items.jsonl": "252c284a84a20e286438df82c21c2247cb9b2973a5a9d3fa53d53492d6c637c0"
+  },
+  "per_case": {
+    "CASE-ONE": 10
+  },
+  "question_types": {
+    "alternative_explanation": 1,
+    "causality_vs_chronology": 1,
+    "conclusion_strength": 1,
+    "evidence_boundary": 1,
+    "full_chain_synthesis": 1,
+    "insufficient_evidence": 1,
+    "mechanism_explanation": 1,
+    "multihop_reconstruction": 2,
+    "premise_sufficiency": 1
+  },
+  "seed": 20260811,
+  "source_case_manifest_sha256": "57eff4aae7e2613f42d4be1df25eea3bc001588d72346833439a3fcc56374621",
+  "splits": {
+    "train": 10
+  },
+  "truth_scopes": {
+    "author_trace": 7,
+    "world_evidence": 3
+  }
+}

@@ -1,0 +1,867 @@
+{
+  "answer": {
+    "answerability": "partially_answerable",
+    "causal_conclusion": "ABSTAIN",
+    "citation_refs": [
+      "EV-VANKE-01",
+      "EV-VANKE-02",
+      "EV-VANKE-03",
+      "EV-VANKE-04",
+      "EV-VANKE-05",
+      "EV-VANKE-06"
+    ],
+    "citations": [
+      {
+        "content_sha256": "14ad48bd76a62fc04395eff00aedc6da8dc9c7e312ff6f8bd3c413c3c27a43f1",
+        "context_id": "CTX-V6R2-LEGACY-EV-VANKE-01",
+        "evidence_id": "EV-VANKE-01",
+        "evidence_link_id": "EL-V6R2-LEGACY-EV-VANKE-01",
+        "locator": "2016年度报告摘要，第6页，5.2.2",
+        "publisher": "万科企业股份有限公司 / 巨潮资讯",
+        "snapshot_sha256": "79ea8e8a9a138ff61c11bb64a794303577658886c42b2655e789388e4994397c",
+        "source_id": "SRC-VANKE-2016-ANNUAL",
+        "source_tier": "T2",
+        "source_url": "http://static.cninfo.com.cn/finalpage/2017-03-27/1203197028.PDF",
+        "temporal_role": "POST_EVENT_VALIDATION"
+      },
+      {
+        "content_sha256": "cff03c318efbdc46dbfeafed799b84d0e3519b443424e9fbe2d9b5f7ac2beec8",
+        "context_id": "CTX-V6R2-LEGACY-EV-VANKE-02",
+        "evidence_id": "EV-VANKE-02",
+        "evidence_link_id": "EL-V6R2-LEGACY-EV-VANKE-02",
+        "locator": "2016年度报告摘要，第7页",
+        "publisher": "万科企业股份有限公司 / 巨潮资讯",
+        "snapshot_sha256": "79ea8e8a9a138ff61c11bb64a794303577658886c42b2655e789388e4994397c",
+        "source_id": "SRC-VANKE-2016-ANNUAL",
+        "source_tier": "T2",
+        "source_url": "http://static.cninfo.com.cn/finalpage/2017-03-27/1203197028.PDF",
+        "temporal_role": "POST_EVENT_VALIDATION"
+      },
+      {
+        "content_sha256": "461fe5b803c118a8b154dc54295831176c7548f527a207d45e0a578490f01193",
+        "context_id": "CTX-V6R2-LEGACY-EV-VANKE-03",
+        "evidence_id": "EV-VANKE-03",
+        "evidence_link_id": "EL-V6R2-LEGACY-EV-VANKE-03",
+        "locator": "2016年度报告摘要，第10页",
+        "publisher": "万科企业股份有限公司 / 巨潮资讯",
+        "snapshot_sha256": "79ea8e8a9a138ff61c11bb64a794303577658886c42b2655e789388e4994397c",
+        "source_id": "SRC-VANKE-2016-ANNUAL",
+        "source_tier": "T2",
+        "source_url": "http://static.cninfo.com.cn/finalpage/2017-03-27/1203197028.PDF",
+        "temporal_role": "POST_EVENT_VALIDATION"
+      },
+      {
+        "content_sha256": "98e091b0c1457775e01608f1c25ffeab45b4866107f762e375845a811e7d35bb",
+        "context_id": "CTX-V6R2-LEGACY-EV-VANKE-04",
+        "evidence_id": "EV-VANKE-04",
+        "evidence_link_id": "EL-V6R2-LEGACY-EV-VANKE-04",
+        "locator": "2016年度报告摘要，第11页",
+        "publisher": "万科企业股份有限公司 / 巨潮资讯",
+        "snapshot_sha256": "79ea8e8a9a138ff61c11bb64a794303577658886c42b2655e789388e4994397c",
+        "source_id": "SRC-VANKE-2016-ANNUAL",
+        "source_tier": "T2",
+        "source_url": "http://static.cninfo.com.cn/finalpage/2017-03-27/1203197028.PDF",
+        "temporal_role": "POST_EVENT_VALIDATION"
+      },
+      {
+        "content_sha256": "150c658834a5b9ed9c2c495068e5fde3089e6b0df55c8fbaa59a2375d1eac948",
+        "context_id": "CTX-V6R2-LEGACY-EV-VANKE-05",
+        "evidence_id": "EV-VANKE-05",
+        "evidence_link_id": "EL-V6R2-LEGACY-EV-VANKE-05",
+        "locator": "2016年度报告摘要，第18页",
+        "publisher": "万科企业股份有限公司 / 巨潮资讯",
+        "snapshot_sha256": "79ea8e8a9a138ff61c11bb64a794303577658886c42b2655e789388e4994397c",
+        "source_id": "SRC-VANKE-2016-ANNUAL",
+        "source_tier": "T2",
+        "source_url": "http://static.cninfo.com.cn/finalpage/2017-03-27/1203197028.PDF",
+        "temporal_role": "POST_EVENT_VALIDATION"
+      },
+      {
+        "content_sha256": "0cf40c41b25c53389a49bf99cb49420227c6e8f98042f1b9263d209a5e606aca",
+        "context_id": "CTX-V6R2-LEGACY-EV-VANKE-06",
+        "evidence_id": "EV-VANKE-06",
+        "evidence_link_id": "EL-V6R2-LEGACY-EV-VANKE-06",
+        "locator": "海外监管公告，第3页，问题1回复",
+        "publisher": "万科企业股份有限公司 / HKEXnews",
+        "snapshot_sha256": "9a12ebbbc97435d4d7150bc93a012cc9e6322893f7646f1fac8361093904988b",
+        "source_id": "SRC-VANKE-HKEX-20160712",
+        "source_tier": "T2",
+        "source_url": "https://www.hkexnews.hk/listedco/listconews/sehk/2016/0712/LTN20160712834_C.pdf",
+        "temporal_role": "POST_EVENT_VALIDATION"
+      }
+    ],
+    "direct_answer": "作者结论应限定为：现实可确认公开控制权事件序列和治理机制；动机、合谋与结构性因果仍需限定。",
+    "missing_evidence": [
+      "各方同期正式陈述、监管调查或可核验谈判记录",
+      "经营结果面板、可比公司、事件窗口和稳健性检验"
+    ],
+    "uncertainty_note": "公司披露记录动作和声明，不覆盖参与方未公开动机或全部谈判。；缺少对照组、反事实和行业混杂控制。",
+    "verification": "现实可确认公开控制权事件序列和治理机制；动机、合谋与结构性因果仍需限定。"
+  },
+  "audit": {
+    "case_completeness": {
+      "alternative_explanation_coverage": {
+        "gap_refs": [
+          "EV-VANKE-09"
+        ],
+        "status": "partial"
+      },
+      "causal_identification": {
+        "gap_refs": [
+          "EV-VANKE-08"
+        ],
+        "status": "blocked"
+      },
+      "cross_chain_alignment": {
+        "gap_refs": [],
+        "status": "complete"
+      },
+      "event_coverage": {
+        "gap_refs": [],
+        "status": "complete"
+      },
+      "evidence_coverage": {
+        "gap_refs": [
+          "EV-VANKE-07",
+          "EV-VANKE-08"
+        ],
+        "status": "partial"
+      },
+      "mechanism_coverage": {
+        "gap_refs": [],
+        "status": "complete"
+      },
+      "provenance_completeness": {
+        "gap_refs": [
+          "CTX-VANKE-A1",
+          "CTX-VANKE-A2"
+        ],
+        "status": "partial"
+      },
+      "temporal_consistency": {
+        "gap_refs": [],
+        "status": "complete"
+      }
+    },
+    "causal_assessment": {
+      "boundary_zh": "现有材料可描述时序和机制可能性，未通过比较组、混杂控制与稳健性门禁。",
+      "causal_attribution_allowed": false,
+      "causal_conclusion": "ABSTAIN",
+      "confounders": [
+        "行业景气与公司基本面",
+        "融资期限与流动性",
+        "监管约束与股东自身安排"
+      ],
+      "counterevidence": [],
+      "gate_results": {},
+      "method": null,
+      "status": "NOT_IDENTIFIED",
+      "unmet_conditions": [
+        "各方同期正式陈述、监管调查或可核验谈判记录",
+        "经营结果面板、可比公司、事件窗口和稳健性检验"
+      ]
+    },
+    "closure_status": {
+      "argument_chain_connected": true,
+      "argument_world_support": "complete",
+      "causal_identification": "blocked",
+      "cross_chain_alignment": "complete",
+      "event_chain_coverage": "complete",
+      "formal_ready": false,
+      "local_path_closed": true,
+      "review_status": "NEEDS_HUMAN_REVIEW",
+      "source_traceable": "partial",
+      "world_evidence_closed": "partial"
+    },
+    "evidence_registry": [
+      {
+        "acceptance_reason": "GATES_PASSED",
+        "acceptance_status": "ACCEPTED",
+        "content_sha256": "14ad48bd76a62fc04395eff00aedc6da8dc9c7e312ff6f8bd3c413c3c27a43f1",
+        "evidence_id": "EV-VANKE-01",
+        "gap_description": "",
+        "locator": "2016年度报告摘要，第6页，5.2.2",
+        "original_quote": "截止2016年12月31日，深圳市钜盛华股份有限公司及其一致行动人合计持有公司A股股份2,803,897,216股，占公司股份总数的25.40%，为公司的第一大股东。",
+        "published_at": "2017-03-27T00:00:00+08:00",
+        "publisher": "万科企业股份有限公司 / 巨潮资讯",
+        "required_evidence": "",
+        "retrieved_at": "2026-08-13T05:37:23.418115+00:00",
+        "snapshot_path": ".worktrees/evidence-chain/data/curation/v4.1/source_snapshots/79ea8e8a9a138ff61c11bb64a794303577658886c42b2655e789388e4994397c.pdf",
+        "snapshot_sha256": "79ea8e8a9a138ff61c11bb64a794303577658886c42b2655e789388e4994397c",
+        "source_id": "SRC-VANKE-2016-ANNUAL",
+        "source_tier": "T2",
+        "source_url": "http://static.cninfo.com.cn/finalpage/2017-03-27/1203197028.PDF",
+        "supports_node_ids": [
+          "NODE-VANKE-W1"
+        ],
+        "temporal_role": "POST_EVENT_VALIDATION"
+      },
+      {
+        "acceptance_reason": "GATES_PASSED",
+        "acceptance_status": "ACCEPTED",
+        "content_sha256": "cff03c318efbdc46dbfeafed799b84d0e3519b443424e9fbe2d9b5f7ac2beec8",
+        "evidence_id": "EV-VANKE-02",
+        "gap_description": "",
+        "locator": "2016年度报告摘要，第7页",
+        "original_quote": "如公司召开股东大会，资产管理计划管理人应按照委托人对表决事项的意见行使表决权。",
+        "published_at": "2017-03-27T00:00:00+08:00",
+        "publisher": "万科企业股份有限公司 / 巨潮资讯",
+        "required_evidence": "",
+        "retrieved_at": "2026-08-13T05:37:23.418115+00:00",
+        "snapshot_path": ".worktrees/evidence-chain/data/curation/v4.1/source_snapshots/79ea8e8a9a138ff61c11bb64a794303577658886c42b2655e789388e4994397c.pdf",
+        "snapshot_sha256": "79ea8e8a9a138ff61c11bb64a794303577658886c42b2655e789388e4994397c",
+        "source_id": "SRC-VANKE-2016-ANNUAL",
+        "source_tier": "T2",
+        "source_url": "http://static.cninfo.com.cn/finalpage/2017-03-27/1203197028.PDF",
+        "supports_node_ids": [
+          "NODE-VANKE-W2"
+        ],
+        "temporal_role": "POST_EVENT_VALIDATION"
+      },
+      {
+        "acceptance_reason": "GATES_PASSED",
+        "acceptance_status": "ACCEPTED",
+        "content_sha256": "461fe5b803c118a8b154dc54295831176c7548f527a207d45e0a578490f01193",
+        "evidence_id": "EV-VANKE-03",
+        "gap_description": "",
+        "locator": "2016年度报告摘要，第10页",
+        "original_quote": "钜盛华和前海人寿提议召集2016年第二次临时股东大会审议罢免全部现有董事和股东代表监事。",
+        "published_at": "2017-03-27T00:00:00+08:00",
+        "publisher": "万科企业股份有限公司 / 巨潮资讯",
+        "required_evidence": "",
+        "retrieved_at": "2026-08-13T05:37:23.418115+00:00",
+        "snapshot_path": ".worktrees/evidence-chain/data/curation/v4.1/source_snapshots/79ea8e8a9a138ff61c11bb64a794303577658886c42b2655e789388e4994397c.pdf",
+        "snapshot_sha256": "79ea8e8a9a138ff61c11bb64a794303577658886c42b2655e789388e4994397c",
+        "source_id": "SRC-VANKE-2016-ANNUAL",
+        "source_tier": "T2",
+        "source_url": "http://static.cninfo.com.cn/finalpage/2017-03-27/1203197028.PDF",
+        "supports_node_ids": [
+          "NODE-VANKE-W3"
+        ],
+        "temporal_role": "POST_EVENT_VALIDATION"
+      },
+      {
+        "acceptance_reason": "GATES_PASSED",
+        "acceptance_status": "ACCEPTED",
+        "content_sha256": "98e091b0c1457775e01608f1c25ffeab45b4866107f762e375845a811e7d35bb",
+        "evidence_id": "EV-VANKE-04",
+        "gap_description": "",
+        "locator": "2016年度报告摘要，第11页",
+        "original_quote": "公司发行股份购买资产预案虽因股东层面未能形成共识而宣告终止。",
+        "published_at": "2017-03-27T00:00:00+08:00",
+        "publisher": "万科企业股份有限公司 / 巨潮资讯",
+        "required_evidence": "",
+        "retrieved_at": "2026-08-13T05:37:23.418115+00:00",
+        "snapshot_path": ".worktrees/evidence-chain/data/curation/v4.1/source_snapshots/79ea8e8a9a138ff61c11bb64a794303577658886c42b2655e789388e4994397c.pdf",
+        "snapshot_sha256": "79ea8e8a9a138ff61c11bb64a794303577658886c42b2655e789388e4994397c",
+        "source_id": "SRC-VANKE-2016-ANNUAL",
+        "source_tier": "T2",
+        "source_url": "http://static.cninfo.com.cn/finalpage/2017-03-27/1203197028.PDF",
+        "supports_node_ids": [
+          "NODE-VANKE-W3"
+        ],
+        "temporal_role": "POST_EVENT_VALIDATION"
+      },
+      {
+        "acceptance_reason": "GATES_PASSED",
+        "acceptance_status": "ACCEPTED",
+        "content_sha256": "150c658834a5b9ed9c2c495068e5fde3089e6b0df55c8fbaa59a2375d1eac948",
+        "evidence_id": "EV-VANKE-05",
+        "gap_description": "",
+        "locator": "2016年度报告摘要，第18页",
+        "original_quote": "2017年1月，地铁集团以协议转让方式受让公司15.31%的股份，成为公司的重要股东。",
+        "published_at": "2017-03-27T00:00:00+08:00",
+        "publisher": "万科企业股份有限公司 / 巨潮资讯",
+        "required_evidence": "",
+        "retrieved_at": "2026-08-13T05:37:23.418115+00:00",
+        "snapshot_path": ".worktrees/evidence-chain/data/curation/v4.1/source_snapshots/79ea8e8a9a138ff61c11bb64a794303577658886c42b2655e789388e4994397c.pdf",
+        "snapshot_sha256": "79ea8e8a9a138ff61c11bb64a794303577658886c42b2655e789388e4994397c",
+        "source_id": "SRC-VANKE-2016-ANNUAL",
+        "source_tier": "T2",
+        "source_url": "http://static.cninfo.com.cn/finalpage/2017-03-27/1203197028.PDF",
+        "supports_node_ids": [
+          "NODE-VANKE-W3"
+        ],
+        "temporal_role": "POST_EVENT_VALIDATION"
+      },
+      {
+        "acceptance_reason": "GATES_PASSED",
+        "acceptance_status": "ACCEPTED",
+        "content_sha256": "0cf40c41b25c53389a49bf99cb49420227c6e8f98042f1b9263d209a5e606aca",
+        "evidence_id": "EV-VANKE-06",
+        "gap_description": "",
+        "locator": "海外监管公告，第3页，问题1回复",
+        "original_quote": "综合以上相关方的回复，有关媒体传闻内容不属实。",
+        "published_at": "2016-07-12T00:00:00+08:00",
+        "publisher": "万科企业股份有限公司 / HKEXnews",
+        "required_evidence": "",
+        "retrieved_at": "2026-08-13T05:37:26.103425+00:00",
+        "snapshot_path": ".worktrees/evidence-chain/data/curation/v4.1/source_snapshots/9a12ebbbc97435d4d7150bc93a012cc9e6322893f7646f1fac8361093904988b.pdf",
+        "snapshot_sha256": "9a12ebbbc97435d4d7150bc93a012cc9e6322893f7646f1fac8361093904988b",
+        "source_id": "SRC-VANKE-HKEX-20160712",
+        "source_tier": "T2",
+        "source_url": "https://www.hkexnews.hk/listedco/listconews/sehk/2016/0712/LTN20160712834_C.pdf",
+        "supports_node_ids": [
+          "NODE-VANKE-W4"
+        ],
+        "temporal_role": "POST_EVENT_VALIDATION"
+      },
+      {
+        "acceptance_reason": "EVIDENCE_NOT_LOCATED",
+        "acceptance_status": "GAP",
+        "content_sha256": "",
+        "evidence_id": "EV-VANKE-07",
+        "gap_description": "公司披露记录动作和声明，不覆盖参与方未公开动机或全部谈判。",
+        "locator": "",
+        "original_quote": "",
+        "published_at": null,
+        "publisher": null,
+        "required_evidence": "各方同期正式陈述、监管调查或可核验谈判记录",
+        "retrieved_at": null,
+        "snapshot_path": null,
+        "snapshot_sha256": "",
+        "source_id": "GAP-VANKE-MOTIVE",
+        "source_tier": "T4",
+        "source_url": "",
+        "supports_node_ids": [
+          "NODE-VANKE-W5"
+        ],
+        "temporal_role": "POST_EVENT_VALIDATION"
+      },
+      {
+        "acceptance_reason": "EVIDENCE_NOT_LOCATED",
+        "acceptance_status": "GAP",
+        "content_sha256": "",
+        "evidence_id": "EV-VANKE-08",
+        "gap_description": "缺少对照组、反事实和行业混杂控制。",
+        "locator": "",
+        "original_quote": "",
+        "published_at": null,
+        "publisher": null,
+        "required_evidence": "经营结果面板、可比公司、事件窗口和稳健性检验",
+        "retrieved_at": null,
+        "snapshot_path": null,
+        "snapshot_sha256": "",
+        "source_id": "GAP-VANKE-CAUSAL",
+        "source_tier": "T4",
+        "source_url": "",
+        "supports_node_ids": [
+          "NODE-VANKE-W6"
+        ],
+        "temporal_role": "POST_EVENT_VALIDATION"
+      },
+      {
+        "acceptance_reason": "CONTEXT_ONLY_NOT_SOURCE_FACT",
+        "acceptance_status": "CONTEXT_ONLY",
+        "content_sha256": "",
+        "evidence_id": "EV-VANKE-09",
+        "gap_description": "替代解释尚未系统检验。",
+        "locator": "",
+        "original_quote": "",
+        "published_at": null,
+        "publisher": null,
+        "required_evidence": "行业周期、融资期限、流动性、监管与公司基本面数据",
+        "retrieved_at": null,
+        "snapshot_path": null,
+        "snapshot_sha256": "",
+        "source_id": "LEAD-VANKE-ALTERNATIVES",
+        "source_tier": "T3",
+        "source_url": "",
+        "supports_node_ids": [
+          "NODE-VANKE-W7"
+        ],
+        "temporal_role": "POST_EVENT_VALIDATION"
+      }
+    ],
+    "lineage_corrections": [],
+    "source_trace": {
+      "extraction_status": "PARTIAL",
+      "gaps": [
+        "VIDEO_TIMESTAMP_NOT_AVAILABLE",
+        "VISUAL_EVIDENCE_NOT_EXTRACTED"
+      ],
+      "primary_author_source_type": "official_author_article",
+      "segments": [
+        {
+          "limitations": [],
+          "locator": "2016年度报告摘要，第6页，5.2.2",
+          "logic_role": "source_context",
+          "release_status": null,
+          "segment_id": "CTX-V6R2-LEGACY-EV-VANKE-01",
+          "source_id": "SRC-VANKE-2016-ANNUAL",
+          "time_range": {
+            "end": null,
+            "start": null
+          },
+          "transcript_or_paraphrase": "截止2016年12月31日，深圳市钜盛华股份有限公司及其一致行动人合计持有公司A股股份2,803,897,216股，占公司股份总数的25.40%，为公司的第一大股东。",
+          "visual_evidence": []
+        },
+        {
+          "limitations": [],
+          "locator": "2016年度报告摘要，第7页",
+          "logic_role": "source_context",
+          "release_status": null,
+          "segment_id": "CTX-V6R2-LEGACY-EV-VANKE-02",
+          "source_id": "SRC-VANKE-2016-ANNUAL",
+          "time_range": {
+            "end": null,
+            "start": null
+          },
+          "transcript_or_paraphrase": "如公司召开股东大会，资产管理计划管理人应按照委托人对表决事项的意见行使表决权。",
+          "visual_evidence": []
+        },
+        {
+          "limitations": [],
+          "locator": "2016年度报告摘要，第10页",
+          "logic_role": "source_context",
+          "release_status": null,
+          "segment_id": "CTX-V6R2-LEGACY-EV-VANKE-03",
+          "source_id": "SRC-VANKE-2016-ANNUAL",
+          "time_range": {
+            "end": null,
+            "start": null
+          },
+          "transcript_or_paraphrase": "钜盛华和前海人寿提议召集2016年第二次临时股东大会审议罢免全部现有董事和股东代表监事。",
+          "visual_evidence": []
+        },
+        {
+          "limitations": [],
+          "locator": "2016年度报告摘要，第11页",
+          "logic_role": "source_context",
+          "release_status": null,
+          "segment_id": "CTX-V6R2-LEGACY-EV-VANKE-04",
+          "source_id": "SRC-VANKE-2016-ANNUAL",
+          "time_range": {
+            "end": null,
+            "start": null
+          },
+          "transcript_or_paraphrase": "公司发行股份购买资产预案虽因股东层面未能形成共识而宣告终止。",
+          "visual_evidence": []
+        },
+        {
+          "limitations": [],
+          "locator": "2016年度报告摘要，第18页",
+          "logic_role": "source_context",
+          "release_status": null,
+          "segment_id": "CTX-V6R2-LEGACY-EV-VANKE-05",
+          "source_id": "SRC-VANKE-2016-ANNUAL",
+          "time_range": {
+            "end": null,
+            "start": null
+          },
+          "transcript_or_paraphrase": "2017年1月，地铁集团以协议转让方式受让公司15.31%的股份，成为公司的重要股东。",
+          "visual_evidence": []
+        },
+        {
+          "limitations": [],
+          "locator": "海外监管公告，第3页，问题1回复",
+          "logic_role": "source_context",
+          "release_status": null,
+          "segment_id": "CTX-V6R2-LEGACY-EV-VANKE-06",
+          "source_id": "SRC-VANKE-HKEX-20160712",
+          "time_range": {
+            "end": null,
+            "start": null
+          },
+          "transcript_or_paraphrase": "综合以上相关方的回复，有关媒体传闻内容不属实。",
+          "visual_evidence": []
+        }
+      ],
+      "video_id": "BV12hBKY8EtA"
+    }
+  },
+  "dataset_version": "7.1.0-layered-cross-chain",
+  "metadata": {
+    "analysis_as_of": "2026-08-17",
+    "case_id": "CASE-VANKE",
+    "event_cluster_id": "vanke_control_battle",
+    "parent_version": "6.1.0-reasoning-complete",
+    "projection_scope": "role_aware_cross_chain_projection",
+    "sample_id": "V7-QA-V41-0309"
+  },
+  "qa": {
+    "derived_from_qa_id": "QA-V41-0309",
+    "qa_id": "QA-V41-0309",
+    "question": "综合事实、作者论证与外证，万科控制权争夺战的结论应如何限定？",
+    "question_role": "cross_chain_synthesis",
+    "reasoning_status": "reasoning_approved",
+    "split": "validation",
+    "truth_scope": "world_evidence",
+    "user_intent": "understand"
+  },
+  "reasoning": {
+    "case_chain_anchors": {
+      "author_reasoning": {
+        "end_ref": "NODE-VANKE-A7",
+        "end_statement": "作者将万科之争提升为杠杆资本与公司治理冲突的结构性案例。",
+        "start_ref": "CTX-VANKE-A1",
+        "start_statement": "作者将万科争夺写成宝能增持、管理层防御、战略股东介入和监管博弈连续推进的控制权事件。",
+        "step_count": 7
+      },
+      "fact_transmission": {
+        "end_ref": "NODE-VANKE-F9",
+        "end_statement": "公开文件可重建持股、治理动作、重组终止和股权变化；不能仅据时序确认各方动机、合谋或单一因果。",
+        "start_ref": "CTX-VANKE-A1",
+        "start_statement": "作者将万科争夺写成宝能增持、管理层防御、战略股东介入和监管博弈连续推进的控制权事件。",
+        "step_count": 9
+      },
+      "world_verification": {
+        "end_ref": "NODE-VANKE-W8",
+        "end_statement": "现实可确认公开控制权事件序列和治理机制；动机、合谋与结构性因果仍需限定。",
+        "start_ref": "EV-VANKE-01",
+        "start_statement": "截止2016年12月31日，深圳市钜盛华股份有限公司及其一致行动人合计持有公司A股股份2,803,897,216股，占公司股份总数的25.40%，为公司的第一大股东。",
+        "step_count": 8
+      }
+    },
+    "chain_participation": {
+      "author_reasoning": "used",
+      "fact_transmission": "used",
+      "world_verification": "used"
+    },
+    "cross_chain_alignments": [
+      {
+        "alignment_id": "ALIGN-VANKE-01",
+        "alignment_type": "fact_to_author_premise",
+        "explanation": "公开事件进入作者叙事。",
+        "from_ref": "NODE-VANKE-F1",
+        "to_ref": "NODE-VANKE-A1"
+      },
+      {
+        "alignment_id": "ALIGN-VANKE-02",
+        "alignment_type": "evidence_to_claim",
+        "explanation": "年报对应持股状态。",
+        "from_ref": "EV-VANKE-01",
+        "to_ref": "NODE-VANKE-F2"
+      },
+      {
+        "alignment_id": "ALIGN-VANKE-03",
+        "alignment_type": "evidence_to_claim",
+        "explanation": "年报对应董事罢免提议。",
+        "from_ref": "EV-VANKE-03",
+        "to_ref": "NODE-VANKE-F5"
+      },
+      {
+        "alignment_id": "ALIGN-VANKE-04",
+        "alignment_type": "evidence_to_claim",
+        "explanation": "年报对应深铁受让。",
+        "from_ref": "EV-VANKE-05",
+        "to_ref": "NODE-VANKE-F7"
+      },
+      {
+        "alignment_id": "ALIGN-VANKE-05",
+        "alignment_type": "gap_blocks_inference",
+        "explanation": "缺动机和沟通证据。",
+        "from_ref": "EV-VANKE-07",
+        "to_ref": "NODE-VANKE-A5"
+      },
+      {
+        "alignment_id": "ALIGN-VANKE-06",
+        "alignment_type": "author_to_bounded_world",
+        "explanation": "结构性结论收窄到公开治理机制。",
+        "from_ref": "NODE-VANKE-A7",
+        "to_ref": "NODE-VANKE-W8"
+      }
+    ],
+    "final_reasoning": {
+      "conclusion": "作者结论应限定为：现实可确认公开控制权事件序列和治理机制；动机、合谋与结构性因果仍需限定。",
+      "premise_refs": [
+        "NODE-VANKE-W7",
+        "EV-VANKE-01",
+        "EV-VANKE-02",
+        "EV-VANKE-03",
+        "EV-VANKE-04",
+        "EV-VANKE-05",
+        "EV-VANKE-06"
+      ],
+      "premises": [
+        {
+          "ref": "NODE-VANKE-W7",
+          "ref_kind": "node",
+          "statement": "行业景气、公司基本面、融资期限、监管约束和股东流动性均可能影响结果。"
+        },
+        {
+          "ref": "EV-VANKE-01",
+          "ref_kind": "evidence",
+          "statement": "截止2016年12月31日，深圳市钜盛华股份有限公司及其一致行动人合计持有公司A股股份2,803,897,216股，占公司股份总数的25.40%，为公司的第一大股东。"
+        },
+        {
+          "ref": "EV-VANKE-02",
+          "ref_kind": "evidence",
+          "statement": "如公司召开股东大会，资产管理计划管理人应按照委托人对表决事项的意见行使表决权。"
+        },
+        {
+          "ref": "EV-VANKE-03",
+          "ref_kind": "evidence",
+          "statement": "钜盛华和前海人寿提议召集2016年第二次临时股东大会审议罢免全部现有董事和股东代表监事。"
+        },
+        {
+          "ref": "EV-VANKE-04",
+          "ref_kind": "evidence",
+          "statement": "公司发行股份购买资产预案虽因股东层面未能形成共识而宣告终止。"
+        },
+        {
+          "ref": "EV-VANKE-05",
+          "ref_kind": "evidence",
+          "statement": "2017年1月，地铁集团以协议转让方式受让公司15.31%的股份，成为公司的重要股东。"
+        },
+        {
+          "ref": "EV-VANKE-06",
+          "ref_kind": "evidence",
+          "statement": "综合以上相关方的回复，有关媒体传闻内容不属实。"
+        }
+      ],
+      "relation": "qa_terminal_projection",
+      "verification": "现实可确认公开控制权事件序列和治理机制；动机、合谋与结构性因果仍需限定。"
+    },
+    "local_anchor_registry": [
+      {
+        "origin": "mother_graph_start",
+        "ref": "EV-VANKE-01",
+        "ref_kind": "evidence",
+        "statement": "截止2016年12月31日，深圳市钜盛华股份有限公司及其一致行动人合计持有公司A股股份2,803,897,216股，占公司股份总数的25.40%，为公司的第一大股东。"
+      },
+      {
+        "origin": "mother_graph_node",
+        "ref": "NODE-VANKE-A6",
+        "ref_kind": "node",
+        "statement": "作者把个案解释为资本、管理层、国资与监管共同塑造治理结果。"
+      },
+      {
+        "origin": "mother_graph_node",
+        "ref": "NODE-VANKE-F8",
+        "ref_kind": "node",
+        "statement": "公司披露股权事件造成经营管理不确定性，但2016年销售和利润仍增长。"
+      },
+      {
+        "origin": "mother_graph_node",
+        "ref": "NODE-VANKE-W6",
+        "ref_kind": "node",
+        "statement": "经营不确定性与经营结果同期出现，不能据此识别股权事件对经营的净因果效应。"
+      }
+    ],
+    "local_chain_refs": [
+      "author_reasoning",
+      "fact_transmission",
+      "world_verification"
+    ],
+    "local_path": [
+      {
+        "chain_membership": "fact_transmission",
+        "conclusion": "公开文件可重建持股、治理动作、重组终止和股权变化；不能仅据时序确认各方动机、合谋或单一因果。",
+        "evidence_refs": [
+          "EV-VANKE-07",
+          "EV-VANKE-08"
+        ],
+        "evidence_status": {
+          "EV-VANKE-07": "GAP",
+          "EV-VANKE-08": "GAP"
+        },
+        "explanation": "事件序列与强因果分开。",
+        "node_id": "NODE-VANKE-F9",
+        "node_kind": "bounded_result",
+        "premise_refs": [
+          "NODE-VANKE-F8",
+          "EV-VANKE-07",
+          "EV-VANKE-08"
+        ],
+        "premises": [
+          {
+            "ref": "NODE-VANKE-F8",
+            "ref_kind": "node",
+            "statement": "公司披露股权事件造成经营管理不确定性，但2016年销售和利润仍增长。"
+          },
+          {
+            "ref": "EV-VANKE-07",
+            "ref_kind": "evidence",
+            "statement": "公司披露记录动作和声明，不覆盖参与方未公开动机或全部谈判。"
+          },
+          {
+            "ref": "EV-VANKE-08",
+            "ref_kind": "evidence",
+            "statement": "缺少对照组、反事实和行业混杂控制。"
+          }
+        ],
+        "relation": "bounds_event_chain",
+        "source_refs": [],
+        "step_no": 1,
+        "support_status": {
+          "author_fidelity": "not_applicable",
+          "world_validity": "partially_supported"
+        }
+      },
+      {
+        "chain_membership": "author_reasoning",
+        "conclusion": "作者将万科之争提升为杠杆资本与公司治理冲突的结构性案例。",
+        "evidence_refs": [],
+        "evidence_status": {},
+        "explanation": "保留结构性作者结论。",
+        "node_id": "NODE-VANKE-A7",
+        "node_kind": "conclusion",
+        "premise_refs": [
+          "NODE-VANKE-F9",
+          "NODE-VANKE-A6"
+        ],
+        "premises": [
+          {
+            "ref": "NODE-VANKE-F9",
+            "ref_kind": "node",
+            "statement": "公开文件可重建持股、治理动作、重组终止和股权变化；不能仅据时序确认各方动机、合谋或单一因果。"
+          },
+          {
+            "ref": "NODE-VANKE-A6",
+            "ref_kind": "node",
+            "statement": "作者把个案解释为资本、管理层、国资与监管共同塑造治理结果。"
+          }
+        ],
+        "relation": "cross_chain_compare_then_concludes",
+        "source_refs": [],
+        "step_no": 2,
+        "support_status": {
+          "author_fidelity": "explicit",
+          "world_validity": "not_reviewed"
+        }
+      },
+      {
+        "chain_membership": "world_verification",
+        "conclusion": "行业景气、公司基本面、融资期限、监管约束和股东流动性均可能影响结果。",
+        "evidence_refs": [
+          "EV-VANKE-09"
+        ],
+        "evidence_status": {
+          "EV-VANKE-09": "CONTEXT_ONLY"
+        },
+        "explanation": "列出竞争解释。",
+        "node_id": "NODE-VANKE-W7",
+        "node_kind": "alternative",
+        "premise_refs": [
+          "NODE-VANKE-A7",
+          "NODE-VANKE-W6",
+          "EV-VANKE-09"
+        ],
+        "premises": [
+          {
+            "ref": "NODE-VANKE-A7",
+            "ref_kind": "node",
+            "statement": "作者将万科之争提升为杠杆资本与公司治理冲突的结构性案例。"
+          },
+          {
+            "ref": "NODE-VANKE-W6",
+            "ref_kind": "node",
+            "statement": "经营不确定性与经营结果同期出现，不能据此识别股权事件对经营的净因果效应。"
+          },
+          {
+            "ref": "EV-VANKE-09",
+            "ref_kind": "evidence",
+            "statement": "替代解释尚未系统检验。"
+          }
+        ],
+        "relation": "cross_chain_compare_then_requires_alternatives",
+        "source_refs": [],
+        "step_no": 3,
+        "support_status": {
+          "author_fidelity": "not_applicable",
+          "world_validity": "not_reviewed"
+        }
+      },
+      {
+        "chain_membership": "world_verification",
+        "conclusion": "现实可确认公开控制权事件序列和治理机制；动机、合谋与结构性因果仍需限定。",
+        "evidence_refs": [
+          "EV-VANKE-01",
+          "EV-VANKE-02",
+          "EV-VANKE-03",
+          "EV-VANKE-04",
+          "EV-VANKE-05",
+          "EV-VANKE-06"
+        ],
+        "evidence_status": {
+          "EV-VANKE-01": "ACCEPTED",
+          "EV-VANKE-02": "ACCEPTED",
+          "EV-VANKE-03": "ACCEPTED",
+          "EV-VANKE-04": "ACCEPTED",
+          "EV-VANKE-05": "ACCEPTED",
+          "EV-VANKE-06": "ACCEPTED"
+        },
+        "explanation": "确认事件序列，限定动机因果。",
+        "node_id": "NODE-VANKE-W8",
+        "node_kind": "conclusion",
+        "premise_refs": [
+          "NODE-VANKE-W7",
+          "EV-VANKE-01",
+          "EV-VANKE-02",
+          "EV-VANKE-03",
+          "EV-VANKE-04",
+          "EV-VANKE-05",
+          "EV-VANKE-06"
+        ],
+        "premises": [
+          {
+            "ref": "NODE-VANKE-W7",
+            "ref_kind": "node",
+            "statement": "行业景气、公司基本面、融资期限、监管约束和股东流动性均可能影响结果。"
+          },
+          {
+            "ref": "EV-VANKE-01",
+            "ref_kind": "evidence",
+            "statement": "截止2016年12月31日，深圳市钜盛华股份有限公司及其一致行动人合计持有公司A股股份2,803,897,216股，占公司股份总数的25.40%，为公司的第一大股东。"
+          },
+          {
+            "ref": "EV-VANKE-02",
+            "ref_kind": "evidence",
+            "statement": "如公司召开股东大会，资产管理计划管理人应按照委托人对表决事项的意见行使表决权。"
+          },
+          {
+            "ref": "EV-VANKE-03",
+            "ref_kind": "evidence",
+            "statement": "钜盛华和前海人寿提议召集2016年第二次临时股东大会审议罢免全部现有董事和股东代表监事。"
+          },
+          {
+            "ref": "EV-VANKE-04",
+            "ref_kind": "evidence",
+            "statement": "公司发行股份购买资产预案虽因股东层面未能形成共识而宣告终止。"
+          },
+          {
+            "ref": "EV-VANKE-05",
+            "ref_kind": "evidence",
+            "statement": "2017年1月，地铁集团以协议转让方式受让公司15.31%的股份，成为公司的重要股东。"
+          },
+          {
+            "ref": "EV-VANKE-06",
+            "ref_kind": "evidence",
+            "statement": "综合以上相关方的回复，有关媒体传闻内容不属实。"
+          }
+        ],
+        "relation": "bounds_world_conclusion",
+        "source_refs": [],
+        "step_no": 4,
+        "support_status": {
+          "author_fidelity": "not_applicable",
+          "world_validity": "partially_supported"
+        }
+      }
+    ]
+  },
+  "schema_version": "auditable-video-reasoning/7.1-layered",
+  "training_projection": {
+    "eligibility_reasons": [
+      "NEEDS_HUMAN_REVIEW",
+      "VIDEO_TIMESTAMP_NOT_AVAILABLE",
+      "VISUAL_EVIDENCE_NOT_EXTRACTED"
+    ],
+    "messages": [
+      {
+        "content": "区分作者表述与现实证据，只输出可审计的有限结论；因果未识别时必须拒绝归因。",
+        "role": "system"
+      },
+      {
+        "content": "综合事实、作者论证与外证，万科控制权争夺战的结论应如何限定？",
+        "role": "user"
+      },
+      {
+        "content": "{\"answerability\": \"partially_answerable\", \"causal_conclusion\": \"ABSTAIN\", \"citation_refs\": [\"EV-VANKE-01\", \"EV-VANKE-02\", \"EV-VANKE-03\", \"EV-VANKE-04\", \"EV-VANKE-05\", \"EV-VANKE-06\"], \"direct_answer\": \"作者结论应限定为：现实可确认公开控制权事件序列和治理机制；动机、合谋与结构性因果仍需限定。\", \"uncertainty_note\": \"公司披露记录动作和声明，不覆盖参与方未公开动机或全部谈判。；缺少对照组、反事实和行业混杂控制。\"}",
+        "role": "assistant"
+      }
+    ],
+    "status": "PREVIEW_ONLY_EXCLUDED"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "dataset_version": "1.0.0",
+  "dev_video_ids": [
+    "BV1c8mZYxEBU",
+    "BV1yP411J7Gd"
+  ],
+  "event_clusters": {
+    "BV1BXXCBnEHN": "yuehua_supplier_relationship",
+    "BV1Htgh6DErU": "xu_xiang",
+    "BV1LiypBAEAQ": "zhao_wei_longwei",
+    "BV1ZBgk6kEzo": "star_market_innovation",
+    "BV1bp421D7Lv": "yuehua_market_event",
+    "BV1c8mZYxEBU": "financial_fraud",
+    "BV1cCDTYsEKJ": "china_luxury_auto_market",
+    "BV1rhpRzFEHx": "hunt_silver",
+    "BV1yP411J7Gd": "financial_fraud",
+    "BV1zx4y1x7bG": "xiaomi_capital"
+  },
+  "quotas": {
+    "author_conclusion_support": 10,
+    "author_fact": 15,
+    "author_multihop": 20,
+    "author_relation": 15,
+    "world_confirmed": 13,
+    "world_partial": 12,
+    "world_source_scope": 10,
+    "world_unanswerable": 25
+  },
+  "sampled_asr_video_ids": [
+    "BV1c8mZYxEBU"
+  ],
+  "seed": 20260810
+}

@@ -1,0 +1,52 @@
+{
+  "dataset_version": "4.1.0",
+  "files": {
+    "DATASET_CARD.md": "ee5423498efe93158da82800618871383aa30b1681b6fd4269a4448baf0f8ecf",
+    "case_graphs.jsonl": "9597d53705f329b0b00124f5b66a8df6104081d420cd912bdca88349b38711fd",
+    "config.json": "dacb35a0ac5b1e4a8c6df5a6d6978cf276a65c0e4215d1a6e7ed27689e0928a0",
+    "evidence_records.jsonl": "21af52501eea03998ad5239fe5c6beb745eaaaab346e505f2d0841f6cd68c6fe",
+    "source_audit.jsonl": "01059af29ab97f47e16cdae49d2b4b540b01be7c4369907b213bb19b807834a3"
+  },
+  "metrics": [
+    {
+      "alignments": 6,
+      "case_id": "CASE-GRAIN",
+      "chain_steps": {
+        "author_reasoning": 7,
+        "fact_transmission": 8,
+        "world_verification": 8
+      },
+      "evidence_records": 8,
+      "nodes": 23
+    },
+    {
+      "alignments": 6,
+      "case_id": "CASE-HOUSING",
+      "chain_steps": {
+        "author_reasoning": 7,
+        "fact_transmission": 8,
+        "world_verification": 8
+      },
+      "evidence_records": 8,
+      "nodes": 23
+    },
+    {
+      "alignments": 6,
+      "case_id": "CASE-VANKE",
+      "chain_steps": {
+        "author_reasoning": 7,
+        "fact_transmission": 9,
+        "world_verification": 8
+      },
+      "evidence_records": 10,
+      "nodes": 24
+    }
+  ],
+  "seed": 20260813,
+  "source_dataset_version": "4.0.0",
+  "v4_baseline_hashes": {
+    "data/cases/v4/case_packs.jsonl": "e9883021dfa7e4dc61423d93aad8b31d3cdb3b087f347773db28d1fb1524b062",
+    "data/cases/v4/manifest.json": "6f6adbc21ac865699b98fac43d405243ef4f64eb3ad74e1deb021e274864edd4",
+    "data/train/v4/qa_records.jsonl": "3751b4d8464e3b9e5fd2ffb4ef346255fac2c78d25c8f2607ec98d1e1d66ddc4"
+  }
+}

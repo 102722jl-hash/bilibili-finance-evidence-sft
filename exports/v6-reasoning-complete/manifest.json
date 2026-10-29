@@ -1,0 +1,126 @@
+{
+  "analysis_as_of": "2026-08-14",
+  "build_contract": "offline deterministic projection from frozen V6 second-round files",
+  "counts": {
+    "accepted_evidence": 34,
+    "cases": 20,
+    "closed_from_pending_templates": 32,
+    "master_records": 180,
+    "original_answer_train_reconstructed": 83,
+    "pending_terminal_kind": {
+      "abstain": 9,
+      "boundary": 48
+    },
+    "reasoning_approved_abstention": 20,
+    "reasoning_approved_answer": 60,
+    "reasoning_approved_bounded": 43,
+    "reasoning_review_pending": 57,
+    "reasoning_status": {
+      "logic_reviewed": 57,
+      "reasoning_approved": 123
+    },
+    "terminal_kind": {
+      "abstain": 29,
+      "answer": 60,
+      "boundary": 58,
+      "bounded_answer": 33
+    },
+    "train_messages": 99,
+    "validation_messages": 24
+  },
+  "dataset_version": "6.1.0-reasoning-complete",
+  "derived_from": {
+    "input_sha256": {
+      "DATASET_CARD.md": "6d169af54c98637696cbfc22a88692b04f66481a314e4b850f811b4cd989ea83",
+      "abstention_sft.jsonl": "ad63f544d881e64e9ad7c53187e6b80baeb5aa9d065d227cf08342f6757797e5",
+      "accepted_evidence.jsonl": "0b820569c5872d8ff20ad2962f7ae83df1b7a7d896e9c0d8fecc16cf87035109",
+      "answer_sft.jsonl": "c169480d6ce15644c378f01943cf281f0bcaee7174a0c824b8bee9a928a07f7b",
+      "case_audit_contexts.jsonl": "02f2bdac2e54f64c9f69057163e19a5f4dff1bbed5d49238358e8dc8b0e11e5e",
+      "closed_from_pending.jsonl": "0ed05de5716112cea49a19083e43864fb773a805ae9a98820295643f163105fb",
+      "contexts.jsonl": "ff7cd4548526b78eba937cff73610eefb1738a02438de34786bccd85de21eaf7",
+      "evidence_links.jsonl": "1ba2daa35669ec57cc71c20924ee9ac0a49decb89510cc3b23d6d0baa2ce72f5",
+      "evidence_pending.jsonl": "2753978c0ab5329601eabb7c91a58dd9bc2c79af386983d77a4a090fddded3cb",
+      "manifest.json": "030a6d605a48c42e553f5627aa2be6c2e50dad9d794376d8a1e43dbf956cef7b",
+      "qa_records.jsonl": "32befe31f855c9a9184b4b4fd5efcaf526198cb19be443196f33f6169b893fdc",
+      "search_audit.jsonl": "4566a99b484b653a4a9e29da3220c01d70cdb5376928693031392b5aca818670",
+      "sources.jsonl": "1dcad943897f746d35e9e873c5a6686342118933fc3c32b258bdfda2e47cc368",
+      "validation_report.json": "2064a7542273ca4b63c4d9761ed711b8476904e5d1a561122a26b1f845ccf6f0"
+    },
+    "path": "exports/v6-second-round/release"
+  },
+  "files": {
+    "DATASET_CARD.md": {
+      "bytes": 1343,
+      "sha256": "e58e3743a75b2d122fd783576237bbe13bc4acf63e16f4b835df80c48202c804"
+    },
+    "accepted_evidence.jsonl": {
+      "bytes": 47214,
+      "sha256": "0b820569c5872d8ff20ad2962f7ae83df1b7a7d896e9c0d8fecc16cf87035109"
+    },
+    "case_audit_contexts.jsonl": {
+      "bytes": 759854,
+      "sha256": "02f2bdac2e54f64c9f69057163e19a5f4dff1bbed5d49238358e8dc8b0e11e5e"
+    },
+    "contexts.jsonl": {
+      "bytes": 25207,
+      "sha256": "ff7cd4548526b78eba937cff73610eefb1738a02438de34786bccd85de21eaf7"
+    },
+    "evidence_links.jsonl": {
+      "bytes": 10058,
+      "sha256": "1ba2daa35669ec57cc71c20924ee9ac0a49decb89510cc3b23d6d0baa2ce72f5"
+    },
+    "reasoning_approved_abstention.jsonl": {
+      "bytes": 76370,
+      "sha256": "4f4a80c40c593e5e0bc9e9fd22d7a6c96630e15d79143e2617e9b269368bdb4f"
+    },
+    "reasoning_approved_answer.jsonl": {
+      "bytes": 152547,
+      "sha256": "8f0e4947682d448bd7b993529c2ae14a37a89723eea727e15d0ac3e87521be0a"
+    },
+    "reasoning_approved_bounded.jsonl": {
+      "bytes": 208073,
+      "sha256": "40001ebda385b366b3a230179dbc6e4abf0f89b6a04646fbf7b1e71da54af4c0"
+    },
+    "reasoning_master_180.jsonl": {
+      "bytes": 635404,
+      "sha256": "c91063747c7631af88b731eec87574131455b3243e73728ba3d0ac638bfda71f"
+    },
+    "reasoning_review_log.jsonl": {
+      "bytes": 117711,
+      "sha256": "0890ed0c5d68c1be89734d394d0a59c9ff494efafd07f0908c84f95c585d5601"
+    },
+    "reasoning_review_pending.jsonl": {
+      "bytes": 198414,
+      "sha256": "e9154ff71641c2f74f95a9688fcb93f1ffc7497c3ba6071a869b905dba7183bb"
+    },
+    "search_audit.jsonl": {
+      "bytes": 21784,
+      "sha256": "4566a99b484b653a4a9e29da3220c01d70cdb5376928693031392b5aca818670"
+    },
+    "sources.jsonl": {
+      "bytes": 8566,
+      "sha256": "1dcad943897f746d35e9e873c5a6686342118933fc3c32b258bdfda2e47cc368"
+    },
+    "train_messages.jsonl": {
+      "bytes": 427687,
+      "sha256": "5458837ab06aae7a413833a3d0664839368a1f776bd269dde36a0a2b48abc855"
+    },
+    "validation_messages.jsonl": {
+      "bytes": 128569,
+      "sha256": "a2232bdae6441e3dc029db878b7452e60c04767872c5670cd58fb211a89ada18"
+    },
+    "validation_report.json": {
+      "bytes": 4258,
+      "sha256": "a33ae2112fc4f543ff7fbbe6fa6eff39381739e89bb9117372ae9a4081604b17"
+    }
+  },
+  "formal_ready": false,
+  "review_status": "NEEDS_HUMAN_REVIEW",
+  "schema_version": "auditable-reasoning/6.1",
+  "stable_gap_codes": {
+    "ALTERNATIVE_EXPLANATIONS_NOT_EVIDENCE_BACKED": 18,
+    "NO_REVIEWABLE_T1_T2_PRIMARY_TEXT": 10,
+    "WORLD_EVIDENCE_NO_TRACEABLE_CITATION": 29
+  },
+  "training_contract": "trainers may read messages only; audit context and complete mother graphs are excluded"
+}

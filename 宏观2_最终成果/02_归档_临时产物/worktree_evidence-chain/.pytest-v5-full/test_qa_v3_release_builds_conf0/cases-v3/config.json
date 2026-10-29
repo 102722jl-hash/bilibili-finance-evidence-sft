@@ -1,0 +1,10 @@
+{
+  "allow_unknown_sponsorship_case_ids": [
+    "CASE-HEALTH"
+  ],
+  "dataset_version": "3.0.0",
+  "enforce_release_counts": false,
+  "maximum_fallback_cases": 10,
+  "minimum_official_full_text_cases": 0,
+  "seed": 20260812
+}

@@ -1,0 +1,31 @@
+{
+  "counts": {
+    "cases": 1,
+    "contexts": 6,
+    "evidence_links": 1,
+    "reviews": 1,
+    "sources": 2
+  },
+  "dataset_version": "3.0.0",
+  "files": {
+    "DATASET_CARD.md": "f6dd8d651c34fb9551ca70f805c4401bd10974d271831f8227fc0ea3c0f5ea11",
+    "case_packs.jsonl": "7fc5434ab0993d1ac913b1e59104617ff08e43c96a104ac8eebaa33cfce41a59",
+    "config.json": "221f621cca704c8dfb1393dcca36a056b4b4b4179dc357f6e7449390546a18fa",
+    "contexts.jsonl": "dfa16161f23fc8ea98fab4825f4b8b4e0f6a7cb620dfc5a18357aed668d9c68b",
+    "evidence_links.jsonl": "02dec91110ec15423c85996594721c950cb974e640aea90862ed1c00ed1cda75",
+    "reviews.jsonl": "2c953095ff9fa001e65bf1c3731109fca173143437c6929fb46cba49d83584e0",
+    "sources.jsonl": "4d0243c64f11e2949a678a7ff08724ce058707af3e75e9b1b12ffc692483d2c8"
+  },
+  "seed": 1,
+  "source_db": {
+    "name": "missing.db",
+    "sha256": ""
+  },
+  "source_kinds": {
+    "external_primary": 1,
+    "official_author_article": 1
+  },
+  "splits": {
+    "train": 1
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "counts": {
+    "cases": 2,
+    "contexts": 12,
+    "evidence_links": 2,
+    "reviews": 2,
+    "sources": 4
+  },
+  "dataset_version": "2.0.0",
+  "files": {
+    "DATASET_CARD.md": "a94d910f310bc499e5399672c73736d74d01187cf08f1f251ca8978668e98b0d",
+    "case_packs.jsonl": "134e00c91a105595a5da5130848013353db86cd45cd7f0e08a7e546f9222af86",
+    "config.json": "b15e5accbb0744c911e1308131984b2f2be38b60c26a3b4f65651b2c074314fd",
+    "contexts.jsonl": "9a951f1d697f60ef618e85dd0abe608e53e39d579be77f121df706f127993658",
+    "evidence_links.jsonl": "e2bd4d6cf2ac850ae145506b43577747dbd3c73750aa9240fd19db08275f9816",
+    "reviews.jsonl": "810b0132cee853e1cd1a7098d61ea0a01aa70d084ada39cd461964e6f3c35c4f",
+    "sources.jsonl": "ce856db9da79edb1f9f60f46dad8b0ee1ff586a55bb77e67ca736c0e29702faf"
+  },
+  "seed": 20260811,
+  "source_db": {
+    "name": "research_v2.db",
+    "sha256": ""
+  },
+  "source_kinds": {
+    "external_primary": 2,
+    "official_author_article": 2
+  },
+  "splits": {
+    "train": 1,
+    "validation": 1
+  }
+}

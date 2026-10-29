@@ -1,0 +1,7 @@
+{
+  "dataset_version": "2.0.0",
+  "enforce_release_counts": false,
+  "maximum_fallback_cases": 2,
+  "minimum_official_full_text_cases": 8,
+  "seed": 20260811
+}

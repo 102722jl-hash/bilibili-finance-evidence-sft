@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宏观2 · 巫师财经公开视频证据链与可审计宏观推理数据集</title>
+<style>
+  :root{
+    --bg:#0b1020; --bg2:#121a33; --card:#16203c; --line:#25325c;
+    --txt:#e8ecf8; --dim:#9aa8c7; --acc:#4f8cff; --acc2:#22d3a8;
+    --warn:#ffb020; --bad:#ff6b6b; --ok:#22d3a8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:radial-gradient(1200px 600px at 15% -10%,#1b2957 0%,transparent 60%),
+               radial-gradient(900px 500px at 90% 0%,#123b3a 0%,transparent 55%),
+               var(--bg);
+    color:var(--txt);
+    font-family:"Segoe UI","PingFang SC","Microsoft YaHei",-apple-system,sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px 80px}
+  header{padding:72px 0 40px;border-bottom:1px solid var(--line)}
+  .kicker{color:var(--acc2);letter-spacing:.22em;font-size:12px;font-weight:700;text-transform:uppercase}
+  h1{font-size:42px;line-height:1.2;margin:14px 0 10px;font-weight:800;letter-spacing:-.5px}
+  h1 span{background:linear-gradient(90deg,#4f8cff,#22d3a8);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{color:var(--dim);font-size:17px;max-width:840px}
+  .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+  .chip{background:#16203c;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--dim)}
+  h2{font-size:26px;margin:64px 0 6px;font-weight:750;letter-spacing:-.2px}
+  h2 .n{color:var(--acc);font-weight:800;margin-right:10px;font-variant-numeric:tabular-nums}
+  .sub{color:var(--dim);font-size:15px;margin-bottom:26px}
+  .grid{display:grid;gap:16px}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:900px){.g4,.g3,.g2{grid-template-columns:1fr 1fr}}
+  @media(max-width:620px){.g4,.g3,.g2{grid-template-columns:1fr}h1{font-size:30px}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .stat{text-align:left}
+  .stat .v{font-size:33px;font-weight:800;letter-spacing:-1px;font-variant-numeric:tabular-nums}
+  .stat .l{color:var(--dim);font-size:13px;margin-top:4px}
+  .stat .v.a{color:var(--acc)} .stat .v.b{color:var(--acc2)}
+  .stat .v.c{color:var(--warn)} .stat .v.d{color:#c99cff}
+
+  .tl{position:relative;margin:10px 0 0;padding-left:26px}
+  .tl:before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--bad),var(--warn),var(--acc),var(--acc2))}
+  .ti{position:relative;padding:0 0 26px 20px}
+  .ti:before{content:"";position:absolute;left:-25px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--dim)}
+  .ti.bad:before{border-color:var(--bad)} .ti.warn:before{border-color:var(--warn)}
+  .ti.acc:before{border-color:var(--acc)} .ti.ok:before{border-color:var(--acc2)}
+  .ti h3{font-size:17px;font-weight:700}
+  .ti .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;border-radius:6px;padding:2px 8px;margin-left:8px;vertical-align:2px}
+  .tag.bad{background:#3a1c22;color:#ff8f8f;border:1px solid #62202c}
+  .tag.warn{background:#3a2f14;color:#ffcd6b;border:1px solid #664d15}
+  .tag.acc{background:#16264d;color:#8ab4ff;border:1px solid #27407a}
+  .tag.ok{background:#0f3229;color:#5ff0c4;border:1px solid #1c5c4a}
+  .ti p{color:var(--dim);font-size:14px;margin-top:4px}
+  .ti .why{color:#cbd6f2;font-size:13.5px;margin-top:6px;border-left:2px solid var(--line);padding-left:10px}
+  .ti .why b{color:var(--warn)}
+
+  table{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--dim);font-weight:600;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase}
+  tr:last-child td{border-bottom:none}
+  code{font-family:"Cascadia Code",Consolas,monospace;background:#0e1730;border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:12.5px;color:#a9c7ff}
+  pre{background:#0a1226;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-family:"Cascadia Code",Consolas,monospace;font-size:12.5px;color:#cfe0ff;line-height:1.65}
+  .pill{display:inline-block;font-size:11.5px;font-weight:700;border-radius:6px;padding:2px 9px}
+  .pill.ok{background:#0f3229;color:#5ff0c4} .pill.no{background:#3a1c22;color:#ff8f8f}
+  .pill.mid{background:#3a2f14;color:#ffcd6b} .pill.acc{background:#16264d;color:#8ab4ff}
+  .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px;margin-top:14px}
+  .fl{flex:1 1 170px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .fl .t{color:var(--acc2);font-size:12px;font-weight:700;letter-spacing:.06em}
+  .fl .h{font-size:15.5px;font-weight:700;margin:6px 0 4px}
+  .fl .d{color:var(--dim);font-size:13px}
+  .arrow{align-self:center;color:var(--acc);font-size:20px;font-weight:800}
+  .callout{border-left:3px solid var(--acc);background:#101a33;border-radius:0 12px 12px 0;padding:16px 20px;color:var(--dim);font-size:14.5px;margin-top:16px}
+  .callout b{color:var(--txt)}
+  .callout.warn{border-left-color:var(--warn)}
+  .callout.ok{border-left-color:var(--acc2)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:760px){.two{grid-template-columns:1fr}}
+  .boxok{border:1px solid #1c5c4a;background:#0f2620;border-radius:14px;padding:20px}
+  .boxno{border:1px solid #5c2b2b;background:#2a1618;border-radius:14px;padding:20px}
+  .boxok h3{color:#5ff0c4;font-size:16px} .boxno h3{color:#ff9b9b;font-size:16px}
+  ul{margin:10px 0 0 18px;color:var(--dim);font-size:14px} li{margin:5px 0}
+  footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);color:#6b7ba0;font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Project Showcase · 最终成果梳理</div>
+  <h1>宏观2 · <span>巫师财经公开视频证据链与可审计宏观推理数据集</span></h1>
+  <p class="lede">
+    从一个 UP 主的公开视频与官方图文稿出发，把"作者如何讲述一个事件、如何从事实推导结论"拆成
+    <strong>原子命题</strong>，再分别重建<strong>事实传导链</strong>与<strong>作者推理链</strong>，
+    经外部一手资料交叉核验后，沉淀为带证据边界的对话式 SFT 数据集。
+    本页说明每一步<strong>靠哪些内容实现</strong>，以及<strong>为什么这样做、而不采用别的做法</strong>。
+  </p>
+  <div class="meta">
+    <span class="chip">主线：公开视频/图文稿 → 原子命题 → 事实链 + 作者推理链 → 外部核验 → SFT</span>
+    <span class="chip">来源：仅公开材料，不绕过登录/验证码/付费墙/反爬</span>
+    <span class="chip">UP 主：巫师财经（author_mid 472747194）</span>
+  </div>
+</header>
+
+<h2><span class="n">01</span>最终成果一览</h2>
+<p class="sub">以下指标来自本目录内的实际产物，可复核。</p>
+<div class="grid g4">
+  <div class="card stat"><div class="v a">10</div><div class="l">首轮案例（事件/公司/资本市场）</div></div>
+  <div class="card stat"><div class="v b">23</div><div class="l">每案例节点数（V4.1 深化图）</div></div>
+  <div class="card stat"><div class="v d">9 / 5</div><div class="l">每案例 问题数 / 对话路径数</div></div>
+  <div class="card stat"><div class="v c">8 / 7 / 8</div><div class="l">三泳道步数</div></div>
+</div>
+<div class="grid g4" style="margin-top:16px">
+  <div class="card stat"><div class="v a">52</div><div class="l">源码模块 src/*.py</div></div>
+  <div class="card stat"><div class="v b">64</div><div class="l">测试文件 tests/*.py</div></div>
+  <div class="card stat"><div class="v d">97</div><div class="l">SFT 数据集导出文件（exports/）</div></div>
+  <div class="card stat"><div class="v c">489</div><div class="l">证据链源码工程文件（worktree）</div></div>
+</div>
+<div class="callout">
+  <b>验收要点：</b>10 个案例在桌面端与移动端渲染均无横向溢出（<code>horizontalOverflow=false</code>），
+  每个案例都带 <code>hasAbstain=true</code>（存在证据边界并允许弃权），来源卡片 10–15 张。
+</div>
+
+<h2><span class="n">02</span>数据流水线：从视频到可审计数据集</h2>
+<p class="sub">每个阶段都产出显式、可追溯的中间物，阶段之间只通过产物传递。</p>
+<div class="flow">
+  <div class="fl"><div class="t">STAGE 1</div><div class="h">公开材料归档</div><div class="d">URL / BVID / 标题 / 日期 / 抓取时间 / 内容哈希</div></div>
+  <div class="arrow">→</div>
+  <div class="fl"><div class="t">STAGE 2</div><div class="h">文本对齐</div><div class="d">图文段落 · 字幕句段 · 视频时间戳</div></div>
+  <div class="arrow">→</div>
+  <div class="fl"><div class="t">STAGE 3</div><div class="h">原子命题抽取</div><div class="d">F 事实 / M 机制 / I 推断 / C 结论 / U 存疑</div></div>
+  <div class="arrow">→</div>
+  <div class="fl"><div class="t">STAGE 4</div><div class="h">双链重建</div><div class="d">事实传导链 + 作者推理链（分开保存）</div></div>
+  <div class="arrow">→</div>
+  <div class="fl"><div class="t">STAGE 5</div><div class="h">外部核验</div><div class="d">一手资料交叉核验 → 核验链 / 争议表</div></div>
+</div>
+<div class="callout">
+  <b>文本来源优先级：</b>官方图文稿 &gt; 官方字幕 &gt; 可访问的转载图文稿（仅作线索）&gt; 本地 ASR。
+  使用 ASR 时只保存研究所需的音频片段与时间戳，<b>不保存完整视频文件</b>。
+</div>
+
+<h2><span class="n">03</span>路线演进：从采集底座到跨链推理数据集</h2>
+<p class="sub">设计文档（docs/superpowers）与导出集（exports/）共同记录了这条演进线。</p>
+<div class="tl">
+  <div class="ti acc">
+    <h3>08-07 证据链采集与抽取底座<span class="tag acc">起点</span></h3>
+    <p>确立"原子命题为最小单位"，落地公开 B 站页面采集、官方图文稿摄入、命题切分与关系构建、SQLite 存储、Markdown/Mermaid/CSV 报告。</p>
+    <div class="why"><b>为什么先做底座：</b>没有稳定的原文快照与哈希，后面的核验和结论都没有可回溯的锚点。</div>
+  </div>
+  <div class="ti warn">
+    <h3>08-10 多任务训练数据集<span class="tag warn">扩展</span></h3>
+    <p>在证据链之上增加多任务监督数据的构建管线（training/），把研究结构投影成可训练样本。</p>
+    <div class="why"><b>为什么加这一层：</b>证据链本身是"研究产物"，必须再经过一次确定性投影才能变成"训练信号"。</div>
+  </div>
+  <div class="ti warn">
+    <h3>08-11 事件案例包 v2<span class="tag warn">结构化</span></h3>
+    <p>把单条视频整理成"事件案例包"：案例模型、生成、导出、校验，形成可复用的案例单元。</p>
+    <div class="why"><b>为什么要案例化：</b>散落的命题无法直接用于问答与展示，案例包提供了统一的容器与门禁。</div>
+  </div>
+  <div class="ti acc">
+    <h3>08-12 对话式 QA v3 + v3 SFT 数据集 + 十案例复原<span class="tag acc">收敛</span></h3>
+    <p>引入对话式问答（<code>qa/v3_*</code>）与发布/校验环节，并把十个案例统一复原到同一规格。</p>
+    <div class="why"><b>为什么做对话式：</b>证据边界天然是多轮追问的对象——"这个结论从哪条证据来""有没有替代解释"——对话结构比单轮更贴近真实审计。</div>
+  </div>
+  <div class="ti ok">
+    <h3>v6 → v7 跨链推理导出<span class="tag ok">当前成果</span></h3>
+    <p><code>exports/</code> 依次沉淀 v6 首轮 / 二轮 / 推理完整，以及 <code>v7-cross-chain-reasoning</code> 跨链推理与预览版，并保留 90 条 V4.1/V2.3 兼容集与 UI 审计文件。</p>
+    <div class="why"><b>为什么保留多版本：</b>数据集版本本身就是成果的一部分；兼容集与审计文件让"历史结论如何演进"可被复核。</div>
+  </div>
+</div>
+
+<h2><span class="n">04</span>节点与关系模型</h2>
+<p class="sub">证据链的最小单位是"原子命题"，不是整条视频。</p>
+<div class="two">
+  <div class="card">
+    <h3 style="font-size:16px;margin-bottom:8px">节点类型（五类）</h3>
+    <table>
+      <tr><td><span class="pill acc">F</span></td><td>可核验事实：公告发布、交易发生、判决结果、持股变化</td></tr>
+      <tr><td><span class="pill acc">M</span></td><td>传导机制：强平压力、流动性冲击、控制权稀释、信息不对称</td></tr>
+      <tr><td><span class="pill mid">I</span></td><td>作者推断：如"可能提前布局"</td></tr>
+      <tr><td><span class="pill mid">C</span></td><td>作者结论：如"绞杀国家队""市值管理全链条"</td></tr>
+      <tr><td><span class="pill no">U</span></td><td>传闻、缺证或无法判定的陈述</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h3 style="font-size:16px;margin-bottom:8px">关系类型（八类）</h3>
+    <ul>
+      <li><code>precedes</code> 先于 · <code>causes</code> 导致 · <code>triggers</code> 触发 · <code>amplifies</code> 放大</li>
+      <li><code>enables</code> 使得成为可能 · <code>supports</code> 支持 · <code>contradicts</code> 反驳 · <code>author_implies</code> 作者暗示</li>
+      <li>边的来源 <code>origin</code>：explicit_author / implicit_author / externally_supported / narrative_only</li>
+      <li>每条边记录机制说明、证据引用、置信度与替代解释</li>
+    </ul>
+  </div>
+</div>
+<div class="two" style="margin-top:16px">
+  <div class="card">
+    <h3 style="font-size:16px;margin-bottom:8px">来源强度 S1–S5</h3>
+    <table>
+      <tr><td><span class="pill ok">S5</span></td><td>判决书、行政处罚、法律法规、交易所公告、公司正式披露</td></tr>
+      <tr><td><span class="pill ok">S4</span></td><td>政府统计、交易所行情、审计报告、正式研究报告</td></tr>
+      <tr><td><span class="pill mid">S3</span></td><td>具名采访或有明确来源链的专业媒体报道</td></tr>
+      <tr><td><span class="pill mid">S2</span></td><td>普通媒体、书籍、二次整理</td></tr>
+      <tr><td><span class="pill no">S1</span></td><td>视频口播、匿名爆料、自媒体转载、无法追溯的传闻</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h3 style="font-size:16px;margin-bottom:8px">核验状态</h3>
+    <ul>
+      <li><code>confirmed</code> 已确认 · <code>partially_confirmed</code> 部分确认</li>
+      <li><code>unsupported</code> 暂无支撑 · <code>contradicted</code> 被驳斥</li>
+      <li><code>disputed</code> 存在争议 · <code>unverifiable</code> 无法核验</li>
+      <li>核验原则：来源等级描述<b>证据强度</b>，不直接等同于命题真假；一份官方材料可能只证明交易发生，不能证明动机。</li>
+    </ul>
+  </div>
+</div>
+
+<h2><span class="n">05</span>关键设计决策：为什么这样做，而不是别的做法</h2>
+<p class="sub">下表是项目中最关键的取舍，每项对应一个被明确放弃的替代方案。</p>
+<table>
+  <thead><tr><th style="width:130px">决策点</th><th style="width:200px">采用方案</th><th style="width:190px">放弃的替代方案</th><th>为什么这样做</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>证据粒度</td>
+      <td>以"原子命题"为最小单位（一命题一主语一动作一对象）</td>
+      <td><span class="pill no">以整条视频/整段为单元</span></td>
+      <td>整段无法独立核验，也无法定位到原文位置；拆成原子命题后，每条事实才具备"原文 + 定位 + 时间戳"三要素。</td>
+    </tr>
+    <tr>
+      <td>链的划分</td>
+      <td>事实传导链与作者推理链<b>分开保存</b></td>
+      <td><span class="pill no">合并成一条"因果链"</span></td>
+      <td>作者说了什么（推理链）与客观发生了什么（事实链）必须解耦，否则会把作者推断误当成已发生的事实。</td>
+    </tr>
+    <tr>
+      <td>时间与因果</td>
+      <td>时间先后不自动等于因果；仅有先后时生成 <code>precedes</code></td>
+      <td><span class="pill no">相邻即判因果</span></td>
+      <td>"随后发生"是最常见的伪因果来源；用 <code>precedes</code> 与 <code>causes</code> 区分，才能避免把叙事顺序当成因果证据。</td>
+    </tr>
+    <tr>
+      <td>隐含关系</td>
+      <td>模型还原的关系标为 <code>implicit_author</code>，置信度 <code>low</code>，待人工复核</td>
+      <td><span class="pill no">直接标为作者原话</span></td>
+      <td>任何模型生成的隐含关系都不得伪装成作者明确表述，否则审计链会被污染。</td>
+    </tr>
+    <tr>
+      <td>缺证处理</td>
+      <td>找不到材料记 <code>unverifiable</code>（未验证）</td>
+      <td><span class="pill no">写成"虚假" / 直接下结论</span></td>
+      <td>"未找到证据"与"证据表明为假"是两回事；把前者写成后者是对涉外个案的不实指控。</td>
+    </tr>
+    <tr>
+      <td>来源范围</td>
+      <td>仅使用公开材料；不绕过登录/验证码/付费墙/反爬</td>
+      <td><span class="pill no">绕过限制抓取非公开内容</span></td>
+      <td>合规边界先于数据规模；遇到拦截就记录并停止，而不是硬闯。</td>
+    </tr>
+    <tr>
+      <td>媒体处理</td>
+      <td>ASR 仅作最后回退，只保存研究所需音频片段</td>
+      <td><span class="pill no">优先转写、保存完整视频</span></td>
+      <td>官方图文稿信息最完整且可引用；保存完整视频既无必要也带来版权与体积负担。</td>
+    </tr>
+    <tr>
+      <td>结论纪律</td>
+      <td>每个结论必须能回溯到至少一个前提；关键因果边人工复核并列出断裂链与替代解释</td>
+      <td><span class="pill no">只给最终结论</span></td>
+      <td>结论谱系（conclusion lineage）是可审计的核心：说不清"从哪条证据来"的结论一律不进入数据集。</td>
+    </tr>
+    <tr>
+      <td>旧产物处理</td>
+      <td>全部归档，绝不删除</td>
+      <td><span class="pill no">直接删除 / 原地覆盖</span></td>
+      <td>路线纠偏过程本身是成果的一部分；保留归档让任何结论都能回溯到当时的中间态。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2><span class="n">06</span>实现方式：靠哪些内容与机制落地</h2>
+<p class="sub">每项能力都对应具体的模块、脚本或产物，而不是停留在设计描述里。</p>
+<table>
+  <thead><tr><th style="width:150px">能力</th><th style="width:330px">实现载体</th><th>关键机制</th></tr></thead>
+  <tbody>
+    <tr><td>公开视频采集</td><td><code>src/evidence_chain/sources/bilibili.py</code></td><td>固定 UA、单 URL 单次请求；遇验证码/登录/403/412 抛 <code>SourceBlocked</code> 而非激进重试；响应体与 SHA-256 存入 <code>data/raw/bilibili/&lt;bvid&gt;/</code>。</td></tr>
+    <tr><td>官方图文稿摄入</td><td><code>src/evidence_chain/sources/wechat.py</code> · <code>src/evidence_chain/text.py</code></td><td>接受人工确认的公众号 URL；<code>normalize_text</code> 去导航/页脚、保留段落边界，并维护归一化段落 → 原始偏移的映射。</td></tr>
+    <tr><td>命题切分</td><td><code>src/evidence_chain/claims.py</code></td><td>按句读与因果线索词（因此/所以/意味着/说明/背后是/这就是）切分；抽取日期、百分比、金额、证券代码、实体为结构化字段。</td></tr>
+    <tr><td>关系构建</td><td><code>src/evidence_chain/edges.py</code></td><td>线索词/显式动词 → <code>explicit_author</code> 边；仅同段可解析主语 + 因果动词时才生成 <code>implicit_author</code> 边且 <code>confidence=low</code>。</td></tr>
+    <tr><td>持久化存储</td><td><code>src/evidence_chain/storage.py</code></td><td>SQLite 主键表 + JSON 编码证据引用列表；原始快照不可变，按内容哈希命名。</td></tr>
+    <tr><td>来源与核验</td><td><code>src/evidence_chain/verification.py</code></td><td>记录 URL/发布者/发布时间/获取时间/等级/引文/哈希/HTTP 状态；<code>classify_claim</code> 区分"无证据/支持/反驳/来源冲突"。</td></tr>
+    <tr><td>报告与图导出</td><td><code>src/evidence_chain/report.py</code></td><td>按设计顺序渲染「事件概览 / 事实传导链 / 作者推理链 / 外部核验 / 断裂与争议边 / 来源表 / Mermaid」，并导出 <code>videos/claims/edges/sources</code> CSV。</td></tr>
+    <tr><td>统一 CLI</td><td><code>src/evidence_chain/cli.py</code></td><td><code>evidence-chain collect / extract / report</code>，阶段间只传显式产物。</td></tr>
+    <tr><td>批次与核验脚本</td><td><code>scripts/import_batch_evidence.py</code> · <code>check_batch_integrity.py</code> · <code>transcribe_asr.py</code></td><td>批量导入证据、批次完整性校验、ASR 回退转写。</td></tr>
+    <tr><td>QA 与数据集生成</td><td><code>src/evidence_chain/qa/v2…v5_*.py</code> · <code>src/evidence_chain/training/v2,v3_*.py</code> · <code>scripts/build_v41_samples.py</code> · <code>build_v5_migration.py</code></td><td>对话式问答生成、评分、策展与发布校验；把证据结构投影为训练消息。</td></tr>
+    <tr><td>SFT 导出</td><td><code>scripts/export_sft_v6_*.py</code> · <code>export_sft_v7_cross_chain_full.py</code> · <code>export_v41_v23_compatible.py</code></td><td>产出 v6 首轮/二轮/推理完整与 v7 跨链推理数据集，以及兼容集与 UI 审计文件。</td></tr>
+    <tr><td>可视化与工作台</td><td>根目录 <code>sft-chain-visualizer.html</code> · <code>sft-cases-workbench.js</code> · <code>sft-case-ui-demo.html</code></td><td>事实链/推理链可视化与案例工作台前端。</td></tr>
+    <tr><td>渲染验收</td><td><code>reports/v4.1-ui/verification.json</code> + <code>desktop.png</code> / <code>mobile.png</code></td><td>对每个案例记录节点数、问题数、对话路径、泳道步数、来源卡片数，并检查横向溢出。</td></tr>
+    <tr><td>契约与策略</td><td><code>docs/superpowers/specs/*.md</code>（5 篇设计）· <code>docs/superpowers/plans/*.md</code>（7 篇计划）</td><td>把节点/关系字段契约、来源分级、核验原则与验收标准写成可复核文档。</td></tr>
+  </tbody>
+</table>
+
+<h2><span class="n">07</span>验收证据（可复核）</h2>
+<p class="sub">以下为渲染验收脚本对 10 个案例的实测结论。</p>
+<pre>viewport: desktop 1440x1000  /  mobile 390x844
+
+每个案例（共 10 个）:
+  nodeCount        = 23      （万科控制权争夺为 24）
+  laneStepCounts   = [8, 7, 8]
+  qaCount          = 9
+  hasVersion       = true
+  hasAbstain       = true
+  horizontalOverflow = false
+  sourceCards      = 10 ~ 15
+
+errors: []
+→ 桌面端与移动端两套视口均无错误、无横向溢出</pre>
+<div class="callout ok">
+  <b>为什么把"存在证据边界（hasAbstain）"作为验收项之一？</b>
+  因为一个只会给确定答案的系统，恰恰无法表达"这里证据不足"。把弃权能力做成每个案例都必须具备的字段，
+  才能保证数据集在训练后仍然保留"承认不确定"的行为。
+</div>
+
+<h2><span class="n">08</span>目录整理结果：哪些必要、哪些非必要</h2>
+<p class="sub">本次整理只做「移动」，未删除任何文件；归档内容随时可取回。</p>
+<div class="two">
+  <div class="boxok">
+    <h3>✔ 必要 · 最终成果（保留原位）</h3>
+    <ul>
+      <li>根目录 3 份汇报文档（.docx）与 2 张 UI 验收截图</li>
+      <li>SFT 工作台与推理链可视化：<code>sft-*.js</code>（4 个）· <code>sft-*.html</code>（2 个）</li>
+      <li><code>docs/</code> 设计规格与实施计划 2 篇（git 跟踪）</li>
+      <li><code>exports/</code> SFT 数据集导出 97 个文件（v6 / v7 / 兼容集 / UI 审计）</li>
+      <li><code>reports/</code> v4.1 UI 验证 3 个文件</li>
+      <li><code>scripts/</code> 构建与核验脚本 16 个</li>
+      <li><code>.worktrees/evidence-chain/</code> 证据链源码工程 489 个文件（src / tests / docs / reports / scripts / data）</li>
+    </ul>
+  </div>
+  <div class="boxno">
+    <h3>✘ 非必要 · 已归档（02 / 03）</h3>
+    <ul>
+      <li><code>02_归档_临时产物/主工作区/</code>：41 项
+        <ul><li>21 个 pytest/tmp 目录 + 20 个补丁/临时脚本/日志</li></ul>
+      </li>
+      <li><code>02_归档_临时产物/worktree_evidence-chain/</code>：24 项
+        <ul><li>23 个 <code>.pytest-*</code> / <code>.tmp-*</code> 运行目录 + <code>.pytest_cache</code></li></ul>
+      </li>
+      <li><code>03_归档_可重下素材/worktree_data_raw/</code>：766 MB
+        <ul><li>faster-whisper 模型 463.7 MB · audio 299.1 MB · bilibili 快照 2.4 MB · asr · wechat</li>
+        <li>均可重新下载，故移出源码工程以精简体量</li></ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="callout">
+  <b>安全边界：</b>整理前先用 <code>git ls-files</code> 与 <code>git check-ignore</code> 确认跟踪状态，
+  仅移动 <b>untracked / ignored</b> 项；所有被 git 跟踪的源码与文档一律原位保留，仓库未做任何提交或改写。
+</div>
+
+<h2><span class="n">09</span>如何查看这个项目</h2>
+<table>
+  <tr><th style="width:250px">想看什么</th><th>从哪里开始</th></tr>
+  <tr><td>设计思路与验收标准</td><td><code>docs/superpowers/specs/2026-08-07-bilibili-evidence-chain-design.md</code></td></tr>
+  <tr><td>实施计划（分阶段任务）</td><td><code>docs/superpowers/plans/2026-08-07-bilibili-evidence-chain.md</code></td></tr>
+  <tr><td>数据流水线源码</td><td><code>.worktrees/evidence-chain/src/evidence_chain/</code>（sources / claims / edges / storage / verification / report / cli）</td></tr>
+  <tr><td>测试与门禁</td><td><code>.worktrees/evidence-chain/tests/</code>（64 个）</td></tr>
+  <tr><td>某条视频的证据链报告</td><td><code>.worktrees/evidence-chain/reports/batch/*.md</code>（含事实链、作者推理链、来源表、Mermaid）</td></tr>
+  <tr><td>最终 SFT 数据集</td><td><code>exports/v6-reasoning-complete/</code> · <code>exports/v7-cross-chain-reasoning/</code></td></tr>
+  <tr><td>可视化与工作台</td><td><code>sft-chain-visualizer.html</code> · <code>sft-case-ui-demo.html</code></td></tr>
+  <tr><td>渲染验收结果</td><td><code>reports/v4.1-ui/verification.json</code></td></tr>
+  <tr><td>必要/非必要文件明细</td><td><code>00_总览/宏观2_文件清单.csv</code></td></tr>
+  <tr><td>归档内容（临时产物 / 可重下素材）</td><td><code>02_归档_临时产物/</code> · <code>03_归档_可重下素材/</code></td></tr>
+</table>
+
+<footer>
+  宏观2 · 巫师财经公开视频证据链与可审计宏观推理数据集 · 最终成果梳理页<br>
+  git：main <code>b05bd95</code> · worktree <code>.worktrees/evidence-chain</code>（feature/evidence-chain <code>c320b85</code>）· detached <code>b05bd95</code><br>
+  整理方式：仅移动未跟踪项，不删除、不提交；被跟踪的源码与文档保持原位。
+</footer>
+
+</div>
+</body>
+</html>

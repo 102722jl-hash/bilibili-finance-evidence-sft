@@ -1,0 +1,987 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SFT 证据链查看器</title>
+  <style>
+    :root {
+      --bg: #f3f5f7;
+      --surface: #ffffff;
+      --surface-soft: #f8fafb;
+      --line: #d9dee5;
+      --text: #16202a;
+      --muted: #65717e;
+      --green: #147d64;
+      --green-soft: #e6f4ef;
+      --amber: #a8620a;
+      --amber-soft: #fff2d9;
+      --red: #aa3c3c;
+      --red-soft: #fce9e9;
+      --blue: #2867a8;
+      --blue-soft: #e8f1fa;
+      --violet: #6550a5;
+      --violet-soft: #f0edfa;
+      --shadow: 0 8px 24px rgba(27, 39, 51, 0.07);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    button, input, textarea { font: inherit; }
+    button { cursor: pointer; }
+
+    .topbar {
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 0 22px;
+      background: #18232d;
+      color: #fff;
+      border-bottom: 1px solid #0e161d;
+    }
+
+    .brand { display: flex; align-items: center; gap: 11px; min-width: 0; }
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #6d8699;
+      background: #22333f;
+      color: #9fd8c7;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .brand-title { font-size: 15px; font-weight: 700; white-space: nowrap; }
+    .brand-sub { color: #aebbc5; font-size: 12px; white-space: nowrap; }
+
+    .top-actions { display: flex; align-items: center; gap: 8px; }
+    .button {
+      min-height: 34px;
+      border: 1px solid #556978;
+      background: #243541;
+      color: #fff;
+      padding: 7px 12px;
+      border-radius: 5px;
+    }
+    .button:hover { background: #304653; }
+    .button.primary { border-color: #3c8c76; background: #176d59; }
+    .button.primary:hover { background: #1b8068; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 212px 310px minmax(0, 1fr);
+      min-height: calc(100vh - 58px);
+    }
+
+    .sidebar {
+      background: #e9edf1;
+      border-right: 1px solid var(--line);
+      padding: 18px 12px;
+    }
+    .sidebar-label {
+      margin: 0 9px 9px;
+      color: #77838e;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .nav-button {
+      width: 100%;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 0;
+      border-left: 3px solid transparent;
+      background: transparent;
+      color: #41505e;
+      padding: 8px 10px;
+      text-align: left;
+      border-radius: 3px;
+      margin-bottom: 4px;
+    }
+    .nav-button:hover { background: #dde4e9; }
+    .nav-button.active {
+      background: #fff;
+      border-left-color: var(--green);
+      color: #15252f;
+      box-shadow: 0 1px 4px rgba(30, 45, 57, 0.08);
+      font-weight: 700;
+    }
+    .nav-index {
+      width: 22px;
+      height: 22px;
+      display: grid;
+      place-items: center;
+      background: #d6dde3;
+      color: #42515e;
+      font-size: 11px;
+      border-radius: 3px;
+      flex: 0 0 auto;
+    }
+    .nav-button.active .nav-index { background: var(--green-soft); color: var(--green); }
+
+    .sidebar-note {
+      margin: 22px 8px 0;
+      padding-top: 14px;
+      border-top: 1px solid #ccd4da;
+      color: #687681;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .browser-panel {
+      min-width: 0;
+      background: #f8fafb;
+      border-right: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 58px);
+      position: sticky;
+      top: 0;
+    }
+    .browser-head { padding: 14px; border-bottom: 1px solid var(--line); background: #fff; }
+    .browser-title { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+    .browser-title strong { font-size: 14px; }
+    .record-count { color: var(--green); font-size: 12px; font-weight: 700; }
+    .search-input, .filter-select {
+      width: 100%;
+      height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #fff;
+      color: var(--text);
+      padding: 6px 9px;
+    }
+    .filter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 7px; }
+    .record-list { flex: 1; min-height: 0; overflow-y: auto; padding: 8px; }
+    .record-item {
+      width: 100%;
+      border: 1px solid transparent;
+      background: transparent;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 5px;
+      text-align: left;
+      color: var(--text);
+    }
+    .record-item:hover { background: #edf2f5; border-color: #dce3e8; }
+    .record-item.active { background: #fff; border-color: #9cccbc; box-shadow: 0 3px 10px rgba(25, 52, 44, 0.08); }
+    .record-id { display: flex; justify-content: space-between; gap: 8px; color: var(--green); font-size: 11px; font-weight: 700; margin-bottom: 5px; }
+    .record-question { font-size: 12px; line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .record-meta { margin-top: 7px; color: var(--muted); font-size: 10px; }
+    .browser-footer { display: flex; gap: 7px; padding: 9px; border-top: 1px solid var(--line); background: #fff; }
+    .pager-button { flex: 1; height: 32px; border: 1px solid var(--line); border-radius: 4px; background: #fff; color: #40515e; }
+    .pager-button:hover:not(:disabled) { background: #eef3f5; }
+    .pager-button:disabled { opacity: .4; cursor: default; }
+
+    main { min-width: 0; padding: 22px; }
+    .view { display: none; }
+    .view.active { display: block; }
+
+    .case-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 18px;
+    }
+    .eyebrow { color: var(--green); font-size: 12px; font-weight: 700; margin-bottom: 5px; }
+    h1 { margin: 0; font-size: 24px; line-height: 1.35; }
+    .question { margin: 7px 0 0; color: #495867; line-height: 1.7; max-width: 900px; }
+    .badges { display: flex; gap: 7px; flex-wrap: wrap; justify-content: flex-end; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 27px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: #4b5966;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .badge.ok { color: var(--green); background: var(--green-soft); border-color: #b9ded2; }
+    .badge.warn { color: var(--amber); background: var(--amber-soft); border-color: #ead09e; }
+    .badge.no { color: var(--red); background: var(--red-soft); border-color: #ecc1c1; }
+    .badge.info { color: var(--blue); background: var(--blue-soft); border-color: #c2d8ed; }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .metric {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 13px 15px;
+    }
+    .metric-value { font-size: 22px; font-weight: 700; margin-bottom: 3px; }
+    .metric-label { color: var(--muted); font-size: 12px; }
+
+    .grid-2 { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(290px, 0.75fr); gap: 14px; }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel + .panel { margin-top: 14px; }
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 45px;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface-soft);
+    }
+    .panel-title { margin: 0; font-size: 14px; font-weight: 700; }
+    .panel-body { padding: 15px; }
+
+    .answer {
+      font-size: 15px;
+      line-height: 1.85;
+      border-left: 3px solid var(--green);
+      padding-left: 13px;
+    }
+    .narrative {
+      padding: 13px;
+      background: #f1f5f3;
+      border: 1px solid #d3e3dd;
+      border-radius: 5px;
+      line-height: 1.75;
+    }
+    .subclaim-list { margin: 12px 0 0; padding-left: 22px; color: #455360; line-height: 1.75; }
+    .detail-list { display: grid; gap: 11px; }
+    .detail-row { display: grid; grid-template-columns: 96px 1fr; gap: 10px; font-size: 13px; line-height: 1.65; }
+    .detail-key { color: var(--muted); }
+    .detail-value { overflow-wrap: anywhere; }
+
+    .chain-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .segmented { display: flex; border: 1px solid var(--line); border-radius: 5px; overflow: hidden; background: #fff; }
+    .segment {
+      border: 0;
+      border-right: 1px solid var(--line);
+      background: #fff;
+      color: #55636f;
+      padding: 8px 12px;
+    }
+    .segment:last-child { border-right: 0; }
+    .segment.active { background: #20313d; color: #fff; }
+
+    .chain-summary {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin: 0 0 13px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .chain-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(180px, 1fr));
+      gap: 22px;
+      overflow-x: auto;
+      padding: 2px 2px 12px;
+    }
+    .step-card {
+      position: relative;
+      min-width: 0;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--blue);
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(25, 39, 50, 0.06);
+      overflow: visible;
+    }
+    .step-card.author { border-top-color: var(--violet); }
+    .step-card.world { border-top-color: var(--green); }
+    .step-card:not(:last-child)::after {
+      content: ">";
+      position: absolute;
+      right: -17px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #89959f;
+      font-weight: 700;
+    }
+    .step-main { padding: 13px; }
+    .step-top { display: flex; justify-content: space-between; gap: 9px; margin-bottom: 9px; }
+    .step-number { font-size: 11px; color: var(--muted); font-weight: 700; }
+    .step-kind { font-size: 11px; color: var(--blue); background: var(--blue-soft); padding: 3px 6px; border-radius: 3px; }
+    .step-card.author .step-kind { color: var(--violet); background: var(--violet-soft); }
+    .step-card.world .step-kind { color: var(--green); background: var(--green-soft); }
+    .step-text { font-size: 13px; line-height: 1.65; min-height: 84px; }
+    .step-relation { margin-top: 11px; padding-top: 9px; border-top: 1px dashed var(--line); font-size: 12px; color: var(--muted); }
+    .step-actions { padding: 9px 13px; border-top: 1px solid var(--line); background: var(--surface-soft); }
+    .link-button { border: 0; background: transparent; color: var(--blue); padding: 0; font-size: 12px; }
+    .step-detail { display: none; padding: 12px 13px; border-top: 1px solid var(--line); background: #fbfcfd; }
+    .step-card.open .step-detail { display: block; }
+    .mini-label { margin: 9px 0 4px; color: var(--muted); font-size: 11px; font-weight: 700; }
+    .mini-label:first-child { margin-top: 0; }
+    .mini-text { font-size: 12px; line-height: 1.65; overflow-wrap: anywhere; }
+
+    .status-row { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 10px; }
+    .status-chip { font-size: 10px; padding: 3px 6px; border: 1px solid var(--line); border-radius: 3px; color: #5e6b76; }
+    .status-chip.confirmed { color: var(--green); border-color: #a9d5c8; background: var(--green-soft); }
+    .status-chip.partial { color: var(--amber); border-color: #e8cd96; background: var(--amber-soft); }
+    .status-chip.unsupported { color: var(--red); border-color: #e8bbbb; background: var(--red-soft); }
+
+    .evidence-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .evidence-table th, .evidence-table td { padding: 11px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; line-height: 1.55; }
+    .evidence-table th { color: var(--muted); font-size: 11px; background: var(--surface-soft); }
+    .evidence-table tr:last-child td { border-bottom: 0; }
+
+    .raw-box {
+      width: 100%;
+      min-height: 540px;
+      resize: vertical;
+      border: 1px solid var(--line);
+      background: #101820;
+      color: #d7e2ea;
+      padding: 16px;
+      border-radius: 6px;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 12px;
+      line-height: 1.6;
+      white-space: pre;
+      overflow: auto;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(13, 22, 29, 0.58);
+      z-index: 10;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal { width: min(760px, 100%); max-height: 88vh; background: #fff; border-radius: 7px; overflow: hidden; box-shadow: 0 22px 70px rgba(0,0,0,.25); }
+    .modal-head { display: flex; justify-content: space-between; align-items: center; padding: 13px 16px; border-bottom: 1px solid var(--line); }
+    .modal-body { padding: 16px; overflow: auto; max-height: calc(88vh - 60px); }
+    .close-button { width: 32px; height: 32px; border: 1px solid var(--line); background: #fff; border-radius: 4px; font-size: 19px; line-height: 1; }
+    .paste-area { width: 100%; min-height: 260px; resize: vertical; border: 1px solid var(--line); border-radius: 5px; padding: 12px; font-family: Consolas, monospace; font-size: 12px; }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 12px; }
+    .button.light { background: #fff; color: #33434f; border-color: var(--line); }
+    .error { display: none; margin-top: 10px; color: var(--red); background: var(--red-soft); border: 1px solid #edc1c1; padding: 9px; border-radius: 4px; font-size: 12px; }
+    .error.show { display: block; }
+    .startup-error {
+      display: none;
+      margin: 22px;
+      padding: 16px;
+      background: var(--red-soft);
+      border: 1px solid #ecc1c1;
+      color: #7f2929;
+      border-radius: 6px;
+      line-height: 1.7;
+    }
+    .startup-error.show { display: block; }
+
+    @media (max-width: 1180px) {
+      .layout { grid-template-columns: 72px 280px minmax(0, 1fr); }
+      .sidebar { padding-inline: 8px; }
+      .sidebar-label, .nav-text, .sidebar-note { display: none; }
+      .nav-button { justify-content: center; padding: 8px; border-left: 0; border-bottom: 3px solid transparent; }
+      .nav-button.active { border-left: 0; border-bottom-color: var(--green); }
+      .grid-2 { grid-template-columns: 1fr; }
+      .chain-flow { grid-template-columns: repeat(4, 230px); }
+    }
+
+    @media (max-width: 680px) {
+      .topbar { height: auto; min-height: 58px; padding: 10px 12px; align-items: flex-start; }
+      .brand-sub { display: none; }
+      .button { padding-inline: 9px; }
+      .layout { display: block; }
+      .sidebar { position: sticky; top: 0; z-index: 5; display: flex; gap: 4px; border-right: 0; border-bottom: 1px solid var(--line); padding: 6px; overflow-x: auto; }
+      .nav-button { min-width: 52px; margin: 0; }
+      .browser-panel { position: static; height: auto; max-height: 440px; border-right: 0; border-bottom: 1px solid var(--line); }
+      .record-list { max-height: 270px; }
+      main { padding: 14px; }
+      .case-header { display: block; }
+      .badges { justify-content: flex-start; margin-top: 12px; }
+      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .chain-toolbar { align-items: flex-start; flex-direction: column; }
+      .segmented { width: 100%; }
+      .segment { flex: 1; padding-inline: 6px; font-size: 12px; }
+      .chain-flow { display: block; overflow: visible; }
+      .step-card { margin-bottom: 28px; }
+      .step-card:not(:last-child)::after { content: "v"; right: 50%; top: auto; bottom: -22px; transform: translateX(50%); }
+      .step-text { min-height: 0; }
+      .evidence-table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">SFT</div>
+      <div>
+        <div class="brand-title">证据链训练样本查看器</div>
+        <div class="brand-sub">Author trace / World evidence</div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <input id="fileInput" type="file" accept=".json,.jsonl,.txt" hidden>
+      <button class="button" id="fileButton">打开文件</button>
+      <button class="button primary" id="pasteButton">粘贴 JSON</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-label">样本视图</div>
+      <button class="nav-button active" data-view="overview"><span class="nav-index">01</span><span class="nav-text">样本概览</span></button>
+      <button class="nav-button" data-view="chains"><span class="nav-index">02</span><span class="nav-text">三层推理链</span></button>
+      <button class="nav-button" data-view="evidence"><span class="nav-index">03</span><span class="nav-text">证据边界</span></button>
+      <button class="nav-button" data-view="raw"><span class="nav-index">04</span><span class="nav-text">原始 JSON</span></button>
+      <div class="sidebar-note">蓝色表示事实传导，紫色表示作者推理，绿色表示外部核验。状态颜色用于区分已确认、部分支持和证据不足。</div>
+    </aside>
+
+    <aside class="browser-panel">
+      <div class="browser-head">
+        <div class="browser-title"><strong>数据集样本</strong><span class="record-count" id="recordCount">0 / 0</span></div>
+        <input class="search-input" id="recordSearch" type="search" placeholder="搜索问题、QA ID、案例...">
+        <div class="filter-grid">
+          <select class="filter-select" id="splitFilter"><option value="">全部切分</option><option value="train">训练集</option><option value="validation">验证集</option></select>
+          <select class="filter-select" id="caseFilter"><option value="">全部案例</option></select>
+          <select class="filter-select" id="intentFilter"><option value="">全部意图</option></select>
+          <select class="filter-select" id="scopeFilter"><option value="">全部范围</option></select>
+        </div>
+      </div>
+      <div class="record-list" id="recordList"></div>
+      <div class="browser-footer">
+        <button class="pager-button" id="prevRecord">上一条</button>
+        <button class="pager-button" id="nextRecord">下一条</button>
+      </div>
+    </aside>
+
+    <main>
+      <div class="startup-error" id="startupError"></div>
+      <section id="overview" class="view active">
+        <div id="overviewContent"></div>
+      </section>
+      <section id="chains" class="view">
+        <div class="case-header">
+          <div>
+            <div class="eyebrow">CHAIN INSPECTOR</div>
+            <h1>三层推理链</h1>
+            <p class="question">点击任一步骤可展开前提、证据、关系和支持状态。</p>
+          </div>
+        </div>
+        <div class="chain-toolbar">
+          <div class="segmented" id="chainTabs">
+            <button class="segment active" data-chain="fact_transmission">事实传导</button>
+            <button class="segment" data-chain="author_reasoning">作者推理</button>
+            <button class="segment" data-chain="world_verification">外部核验</button>
+          </div>
+          <button class="button light" id="expandAll">展开全部</button>
+        </div>
+        <div id="chainContent"></div>
+      </section>
+      <section id="evidence" class="view">
+        <div id="evidenceContent"></div>
+      </section>
+      <section id="raw" class="view">
+        <div class="case-header">
+          <div>
+            <div class="eyebrow">SOURCE RECORD</div>
+            <h1>原始训练样本</h1>
+            <p class="question">这里显示当前载入记录的格式化 JSON，不修改源文件。</p>
+          </div>
+          <button class="button light" id="copyRaw">复制 JSON</button>
+        </div>
+        <textarea class="raw-box" id="rawBox" readonly></textarea>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="pasteModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <strong id="modalTitle">粘贴单条 SFT JSON 或 JSONL</strong>
+        <button class="close-button" id="closeModal" aria-label="关闭">x</button>
+      </div>
+      <div class="modal-body">
+        <textarea class="paste-area" id="pasteArea" placeholder='粘贴包含 messages 和 metadata 的 JSON...'></textarea>
+        <div class="error" id="parseError"></div>
+        <div class="modal-actions">
+          <button class="button light" id="cancelPaste">取消</button>
+          <button class="button primary" id="loadPaste">载入样本</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="sft-chain-data.js"></script>
+  <script>
+    const demoPayload = {
+      answerability: "answerable",
+      direct_answer: "作者把进口依赖解释为一条供给与价格传导链：开放进口后，低成本且出油率更高的进口大豆扩大份额，国产大豆种植受到挤压；国际价格随后更容易经进口原料成本传入国内。外证支持进口依赖、价格传导和低价进口抑制种植，但不支持协调攻击或统一操纵动机。",
+      explanation_chain: [
+        "作者以大豆进出口结构变化作为事件起点。",
+        "进口成本与需求变化被作者解释为国产产业承压机制。",
+        "期货价格、企业采购与储备调控构成后续转折。",
+        "作者最终将个案提升为长期粮食安全博弈。"
+      ],
+      verification: "官方统计直接支持进口依赖和价格传导这一结构性事实。海关材料支持进口价格影响国产种植的有限机制。外证没有覆盖协调攻击、主体动机和唯一因果。",
+      uncertainty_note: "完整论证中仍有未获现实外证确认的步骤，作者推理忠实不等于现实因果成立。",
+      chain_completeness: "complete",
+      unsupported_step_refs: ["NODE-GRAIN-A1", "NODE-GRAIN-A2", "NODE-GRAIN-A3", "NODE-GRAIN-A4", "NODE-GRAIN-W3"],
+      author_world_divergence: {
+        status: "bounded",
+        author_claim_refs: ["NODE-GRAIN-A4"],
+        world_conclusion_refs: ["NODE-GRAIN-W4"],
+        explanation: "作者结论按原材料保留；现实结论仅限外部核验链实际覆盖的范围。"
+      },
+      macro_narrative: {
+        central_claim: "作者结论是关键粮食产业必须保持自主调控能力，相关金融和舆论博弈仍会持续。",
+        subclaims: [
+          "作者从中国大豆由净出口转为进口快速增长的历史变化开始叙述。",
+          "作者将贸易开放、进口成本优势和国内需求增长连接为国产大豆种植与加工承压的机制。",
+          "作者随后叙述期货上涨、企业采购、价格反转和储备调控。",
+          "作者判断粮食风险还来自贸易定价、加工控制、期货预期和储备能力。"
+        ],
+        implicit_assumptions: ["历史数据口径可比、国际价格能传导至国内产业，且储备行动足以改变市场预期。"]
+      },
+      citations: [
+        { display_name: "巫师财经（Bilibili/YouTube 官方账号）", source_id: "SRC-AUTHOR-GRAIN", context_id: "CTX-GRAIN-A1", evidence_link_id: "" },
+        { display_name: "国家统计局浙江调查总队", source_id: "SRC-EXT-GRAIN", context_id: "CTX-GRAIN-E1", evidence_link_id: "EL-GRAIN-W1" },
+        { display_name: "中华人民共和国海关总署", source_id: "SRC-EXT-GRAIN-CUSTOMS", context_id: "CTX-GRAIN-E2", evidence_link_id: "EL-GRAIN-W2" }
+      ]
+    };
+
+    function step(no, kind, relation, premiseId, premise, outputId, conclusion, explanation, validity, evidence = []) {
+      return {
+        step_no: no,
+        step_kind: kind,
+        relation,
+        input_refs: [premiseId],
+        output_ref: outputId,
+        evidence_refs: evidence.map(item => item.ref_id),
+        premises: [{ ref_id: premiseId, ref_type: premiseId.startsWith("CTX") ? "context" : "claim_node", text: premise }],
+        conclusion: { ref_id: outputId, ref_type: "claim_node", text: conclusion },
+        evidence,
+        explanation,
+        inference: { relation, explanation },
+        support_status: { author_fidelity: validity === "confirmed" || validity === "partially_supported" || validity === "unsupported" ? "not_applicable" : validity, world_validity: validity === "explicit" || validity === "implicit" ? "not_reviewed" : validity },
+        reasoning_text: `前提：${premise} 推断关系：${relation}。解释：${explanation} 结论：${conclusion}`
+      };
+    }
+
+    demoPayload.chain_bundle = {
+      fact_transmission: [
+        step(1, "fact", "observes", "CTX-GRAIN-A1", "20世纪90年代大豆净出口，2002年后进口快速增长。", "NODE-GRAIN-F1", "作者从中国大豆由净出口转为进口快速增长的历史变化开始叙述。", "作者以大豆进出口结构变化作为事件起点。", "explicit"),
+        step(2, "mechanism", "leads_to", "NODE-GRAIN-F1", "中国大豆进口快速增长。", "NODE-GRAIN-F2", "作者将贸易开放、进口成本优势和国内需求增长连接为国产大豆种植与加工承压的机制。", "进口成本与需求变化被作者解释为国产产业承压机制。", "explicit"),
+        step(3, "turning_point", "followed_by", "NODE-GRAIN-F2", "国产大豆种植和加工承压。", "NODE-GRAIN-F3", "作者随后叙述期货上涨、企业采购、价格反转，以及储备调控。", "期货价格、采购与储备调控构成后续转折。", "explicit"),
+        step(4, "conclusion", "concludes", "NODE-GRAIN-F3", "价格反转和储备调控形成事件转折。", "NODE-GRAIN-F4", "作者把大豆案例归纳为贸易、定价、产业控制和国家储备长期交织的粮食安全博弈。", "作者最终将个案提升为粮食安全博弈。", "explicit")
+      ],
+      author_reasoning: [
+        step(1, "fact", "states", "CTX-GRAIN-A2", "作者援引进口、生产、期货、采购和收储材料。", "NODE-GRAIN-A1", "作者强调进口依赖、国际定价和国内产业变化。", "作者先援引进口、生产和市场数据。", "explicit"),
+        step(2, "judgment", "interprets", "NODE-GRAIN-A1", "进口依赖、国际定价和国内产业均发生变化。", "NODE-GRAIN-A2", "作者判断粮食风险不只来自产量，还来自贸易定价、加工控制、期货预期和储备能力。", "作者把风险范围扩展到贸易、金融和产业控制。", "explicit"),
+        step(3, "assumption", "assumes", "NODE-GRAIN-A2", "粮食风险涉及多种市场和调控机制。", "NODE-GRAIN-A3", "该判断隐含历史数据可比、国际价格能传导至国内产业、储备行动能改变预期等前提。", "该扩展依赖数据可比和政策传导有效等前提。", "implicit"),
+        step(4, "conclusion", "concludes", "NODE-GRAIN-A3", "上述判断依赖数据可比、价格传导和储备有效等假设。", "NODE-GRAIN-A4", "作者结论是关键粮食产业必须保持自主调控能力。", "作者据此主张关键产业需要自主调控能力。", "explicit")
+      ],
+      world_verification: [
+        step(1, "evidence", "supports", "CTX-GRAIN-E1", "国家统计材料确认进口依赖上升和国际价格向国内成本传导。", "NODE-GRAIN-W1", "官方统计材料确认中国大豆进口依赖显著上升，并存在国际价格向国内成本传导。", "官方统计直接支持进口依赖和价格传导。", "confirmed", [{ ref_id: "EL-GRAIN-W1", ref_type: "evidence_link", text: "直接支持进口依赖和价格传导。" }]),
+        step(2, "evidence_boundary", "bounds", "NODE-GRAIN-W1", "进口依赖和价格传导得到官方材料支持。", "NODE-GRAIN-W2", "海关材料进一步支持低价进口可能压制国产大豆价格和种植扩张，但只覆盖特定时期。", "海关材料支持有限范围内的进口价格影响。", "partially_supported", [{ ref_id: "EL-GRAIN-W2", ref_type: "evidence_link", text: "支持特定时期进口价格对国产种植的影响。" }]),
+        step(3, "evidence_boundary", "limits", "NODE-GRAIN-W2", "现有材料只支持特定时期的结构性影响。", "NODE-GRAIN-W3", "这些材料不能证明各主体构成统一协调的攻击，也不能确定储备是价格变化的唯一原因。", "外证没有覆盖协调攻击、主体动机和唯一因果。", "unsupported"),
+        step(4, "conclusion", "concludes", "NODE-GRAIN-W3", "协调攻击和唯一因果均缺少直接证据。", "NODE-GRAIN-W4", "现实上可确认进口依赖、价格传导和储备调控的重要性；更强结论证据不足。", "现实结论收窄到外证实际覆盖的范围。", "partially_supported")
+      ]
+    };
+
+    const demoRecord = {
+      messages: [
+        { role: "system", content: "仅根据给定材料回答，并区分作者论证与现实证据。" },
+        { role: "user", content: "真值范围：author_trace\n用户意图：explain\n问题：作者所说的大豆进口依赖是怎样形成并传导到国内产业的？哪些环节得到外证支持？" },
+        { role: "assistant", content: JSON.stringify(demoPayload) }
+      ],
+      metadata: {
+        qa_id: "QA-V3-0301",
+        case_id: "CASE-GRAIN",
+        event_cluster_id: "china_grain_finance",
+        source_split: "train",
+        truth_scope: "author_trace",
+        user_intent: "explain",
+        answer_mode: "structured_explanation"
+      }
+    };
+
+    let records = Array.isArray(window.SFT_CHAIN_DATA) && window.SFT_CHAIN_DATA.length ? window.SFT_CHAIN_DATA : [demoRecord];
+    let filteredRecords = [...records];
+    let currentIndex = 0;
+    let currentRecord = filteredRecords[0];
+    let currentPayload;
+    let activeChain = "fact_transmission";
+    let expandAll = false;
+
+    const esc = value => String(value ?? "").replace(/[&<>'"]/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[char]);
+    const list = value => Array.isArray(value) ? value : [];
+
+    function parseAssistant(record) {
+      const message = list(record.messages).find(item => item.role === "assistant");
+      if (!message) throw new Error("没有找到 role=assistant 的消息。");
+      return typeof message.content === "string" ? JSON.parse(message.content) : message.content;
+    }
+
+    currentPayload = parseAssistant(currentRecord);
+
+    function extractQuestion(record) {
+      const user = list(record.messages).find(item => item.role === "user")?.content || "";
+      const match = user.match(/问题：([^\n]+)/);
+      return match ? match[1] : "当前训练样本";
+    }
+
+    function validityClass(value) {
+      if (value === "confirmed") return "confirmed";
+      if (value === "partially_supported") return "partial";
+      if (value === "unsupported") return "unsupported";
+      return "";
+    }
+
+    function statusLabel(value) {
+      return ({ confirmed: "已确认", partially_supported: "部分支持", unsupported: "证据不足", not_reviewed: "未核验", explicit: "作者明示", implicit: "隐含前提" })[value] || value || "未知";
+    }
+
+    function renderOverview() {
+      const m = currentRecord.metadata || {};
+      const p = currentPayload;
+      const narrative = p.macro_narrative || {};
+      const totalSteps = Object.values(p.chain_bundle || {}).reduce((sum, steps) => sum + list(steps).length, 0);
+      const citationCount = list(p.citations).length;
+      document.getElementById("overviewContent").innerHTML = `
+        <div class="case-header">
+          <div>
+            <div class="eyebrow">${esc(m.case_id || "SFT RECORD")} / ${esc(m.qa_id || "UNIDENTIFIED")}</div>
+            <h1>${esc(extractQuestion(currentRecord))}</h1>
+            <p class="question">该视图将模型输入、标准答案和三层证据链重新组织为可审计界面。</p>
+          </div>
+          <div class="badges">
+            <span class="badge ok">${esc(statusLabel(p.answerability))}</span>
+            <span class="badge info">${esc(m.truth_scope || "unknown scope")}</span>
+            <span class="badge">${esc(m.user_intent || "unknown intent")}</span>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><div class="metric-value">${Object.keys(p.chain_bundle || {}).length}</div><div class="metric-label">推理链类型</div></div>
+          <div class="metric"><div class="metric-value">${totalSteps}</div><div class="metric-label">可审计步骤</div></div>
+          <div class="metric"><div class="metric-value">${citationCount}</div><div class="metric-label">引用来源</div></div>
+          <div class="metric"><div class="metric-value">${list(p.unsupported_step_refs).length}</div><div class="metric-label">待核验或不足节点</div></div>
+        </div>
+        <div class="grid-2">
+          <div>
+            <section class="panel">
+              <div class="panel-head"><h2 class="panel-title">直接答案</h2><span class="badge ok">answerable</span></div>
+              <div class="panel-body"><div class="answer">${esc(p.direct_answer || "未提供直接答案")}</div></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head"><h2 class="panel-title">宏观叙事</h2><span class="badge info">文章层</span></div>
+              <div class="panel-body">
+                <div class="narrative">${esc(narrative.central_claim || "当前记录未提供 macro_narrative。")}</div>
+                ${list(narrative.subclaims).length ? `<ol class="subclaim-list">${narrative.subclaims.map(item => `<li>${esc(item)}</li>`).join("")}</ol>` : ""}
+              </div>
+            </section>
+          </div>
+          <div>
+            <section class="panel">
+              <div class="panel-head"><h2 class="panel-title">作者与现实的差距</h2><span class="badge warn">${esc(p.author_world_divergence?.status || "unknown")}</span></div>
+              <div class="panel-body detail-list">
+                <div class="detail-row"><div class="detail-key">边界说明</div><div class="detail-value">${esc(p.author_world_divergence?.explanation || "未提供")}</div></div>
+                <div class="detail-row"><div class="detail-key">作者结论</div><div class="detail-value">${esc(list(p.author_world_divergence?.author_claim_refs).join(", ") || "无")}</div></div>
+                <div class="detail-row"><div class="detail-key">现实结论</div><div class="detail-value">${esc(list(p.author_world_divergence?.world_conclusion_refs).join(", ") || "无")}</div></div>
+              </div>
+            </section>
+            <section class="panel">
+              <div class="panel-head"><h2 class="panel-title">不确定性提示</h2></div>
+              <div class="panel-body"><div class="answer" style="border-color: var(--amber)">${esc(p.uncertainty_note || "未提供")}</div></div>
+            </section>
+          </div>
+        </div>`;
+    }
+
+    function renderChains() {
+      const labels = { fact_transmission: "事实发生 -> 机制 -> 转折 -> 结果", author_reasoning: "作者前提 -> 判断 -> 隐含假设 -> 结论", world_verification: "外部证据 -> 支持范围 -> 证据缺口 -> 现实结论" };
+      const cardClass = activeChain === "author_reasoning" ? "author" : activeChain === "world_verification" ? "world" : "";
+      const steps = list(currentPayload.chain_bundle?.[activeChain]);
+      document.getElementById("chainContent").innerHTML = `
+        <div class="chain-summary"><strong>${esc(labels[activeChain])}</strong><span>共 ${steps.length} 步</span><span>完整性：${esc(currentPayload.chain_completeness || "unknown")}</span></div>
+        <div class="chain-flow">
+          ${steps.map((item, index) => {
+            const status = item.support_status || {};
+            return `<article class="step-card ${cardClass} ${expandAll ? "open" : ""}" data-step="${index}">
+              <div class="step-main">
+                <div class="step-top"><span class="step-number">STEP ${esc(item.step_no || index + 1)}</span><span class="step-kind">${esc(item.step_kind || "step")}</span></div>
+                <div class="step-text">${esc(item.conclusion?.text || item.explanation || item.output_ref)}</div>
+                <div class="step-relation">关系：<strong>${esc(item.relation || item.inference?.relation || "unknown")}</strong></div>
+                <div class="status-row">
+                  <span class="status-chip ${validityClass(status.world_validity)}">现实：${esc(statusLabel(status.world_validity))}</span>
+                  <span class="status-chip">作者：${esc(statusLabel(status.author_fidelity))}</span>
+                </div>
+              </div>
+              <div class="step-actions"><button class="link-button" data-toggle-step="${index}">${expandAll ? "收起详情" : "查看详情"}</button></div>
+              <div class="step-detail">
+                <div class="mini-label">前提</div>
+                ${list(item.premises).map(ref => `<div class="mini-text">[${esc(ref.ref_id)}] ${esc(ref.text)}</div>`).join("") || `<div class="mini-text">${esc(list(item.input_refs).join(", "))}</div>`}
+                <div class="mini-label">推断说明</div><div class="mini-text">${esc(item.inference?.explanation || item.explanation || "未提供")}</div>
+                <div class="mini-label">结论命题</div><div class="mini-text">[${esc(item.conclusion?.ref_id || item.output_ref)}] ${esc(item.conclusion?.text || "")}</div>
+                <div class="mini-label">证据</div>
+                ${list(item.evidence).map(ref => `<div class="mini-text">[${esc(ref.ref_id)}] ${esc(ref.text)}</div>`).join("") || `<div class="mini-text">当前步骤未绑定直接外证。</div>`}
+              </div>
+            </article>`;
+          }).join("")}
+        </div>`;
+      document.querySelectorAll("[data-toggle-step]").forEach(button => button.addEventListener("click", () => {
+        const card = button.closest(".step-card");
+        card.classList.toggle("open");
+        button.textContent = card.classList.contains("open") ? "收起详情" : "查看详情";
+      }));
+    }
+
+    function renderEvidence() {
+      const p = currentPayload;
+      const world = list(p.chain_bundle?.world_verification);
+      document.getElementById("evidenceContent").innerHTML = `
+        <div class="case-header">
+          <div><div class="eyebrow">EVIDENCE BOUNDARY</div><h1>外部证据覆盖范围</h1><p class="question">核验链展示“能确认什么”和“不能推出什么”，避免把作者叙事直接写成现实事实。</p></div>
+          <div class="badges"><span class="badge ok">已确认</span><span class="badge warn">部分支持</span><span class="badge no">证据不足</span></div>
+        </div>
+        <section class="panel">
+          <div class="panel-head"><h2 class="panel-title">核验步骤</h2><span class="badge">${world.length} 步</span></div>
+          <div class="panel-body" style="padding:0">
+            <table class="evidence-table">
+              <thead><tr><th>步骤</th><th>现实结论</th><th>依据</th><th>状态</th></tr></thead>
+              <tbody>${world.map(item => `<tr>
+                <td>${esc(item.step_no)} / ${esc(item.relation)}</td>
+                <td>${esc(item.conclusion?.text || item.explanation)}</td>
+                <td>${list(item.evidence).map(ref => `[${esc(ref.ref_id)}] ${esc(ref.text)}`).join("<br>") || "由前一步证据边界推出"}</td>
+                <td><span class="status-chip ${validityClass(item.support_status?.world_validity)}">${esc(statusLabel(item.support_status?.world_validity))}</span></td>
+              </tr>`).join("")}</tbody>
+            </table>
+          </div>
+        </section>
+        <div class="grid-2" style="margin-top:14px">
+          <section class="panel">
+            <div class="panel-head"><h2 class="panel-title">引用来源</h2></div>
+            <div class="panel-body detail-list">${list(p.citations).map(c => `<div class="detail-row"><div class="detail-key">${esc(c.context_id)}</div><div class="detail-value"><strong>${esc(c.display_name)}</strong><br><span style="color:var(--muted)">${esc(c.source_id)} ${esc(c.evidence_link_id || "")}</span></div></div>`).join("") || "未提供引用"}</div>
+          </section>
+          <section class="panel">
+            <div class="panel-head"><h2 class="panel-title">待核验节点</h2><span class="badge no">${list(p.unsupported_step_refs).length}</span></div>
+            <div class="panel-body"><div class="status-row">${list(p.unsupported_step_refs).map(ref => `<span class="status-chip unsupported">${esc(ref)}</span>`).join("") || "无"}</div><p class="question" style="font-size:12px">该列表可能同时包含 not_reviewed 与 unsupported，使用时需结合每一步 support_status 区分。</p></div>
+          </section>
+        </div>`;
+    }
+
+    function renderRaw() {
+      document.getElementById("rawBox").value = JSON.stringify(currentRecord, null, 2);
+    }
+
+    function uniqueValues(key) {
+      return [...new Set(records.map(record => record.metadata?.[key]).filter(Boolean))].sort();
+    }
+
+    function fillFilter(id, values, label) {
+      const select = document.getElementById(id);
+      const current = select.value;
+      select.innerHTML = `<option value="">${label}</option>` + values.map(value => `<option value="${esc(value)}">${esc(value)}</option>`).join("");
+      if (values.includes(current)) select.value = current;
+    }
+
+    function populateFilters() {
+      fillFilter("caseFilter", uniqueValues("case_id"), "全部案例");
+      fillFilter("intentFilter", uniqueValues("user_intent"), "全部意图");
+      fillFilter("scopeFilter", uniqueValues("truth_scope"), "全部范围");
+    }
+
+    function recordHaystack(record) {
+      return [record.metadata?.qa_id, record.metadata?.case_id, record.metadata?.event_cluster_id, extractQuestion(record)].join(" ").toLowerCase();
+    }
+
+    function applyFilters(keepQaId = currentRecord?.metadata?.qa_id) {
+      const query = document.getElementById("recordSearch").value.trim().toLowerCase();
+      const split = document.getElementById("splitFilter").value;
+      const caseId = document.getElementById("caseFilter").value;
+      const intent = document.getElementById("intentFilter").value;
+      const scope = document.getElementById("scopeFilter").value;
+      filteredRecords = records.filter(record => {
+        const meta = record.metadata || {};
+        return (!query || recordHaystack(record).includes(query))
+          && (!split || meta.source_split === split)
+          && (!caseId || meta.case_id === caseId)
+          && (!intent || meta.user_intent === intent)
+          && (!scope || meta.truth_scope === scope);
+      });
+      currentIndex = Math.max(0, filteredRecords.findIndex(record => record.metadata?.qa_id === keepQaId));
+      if (currentIndex < 0) currentIndex = 0;
+      if (filteredRecords.length) selectRecord(currentIndex, false);
+      else renderRecordList();
+    }
+
+    function renderRecordList() {
+      const container = document.getElementById("recordList");
+      document.getElementById("recordCount").textContent = filteredRecords.length ? `${currentIndex + 1} / ${filteredRecords.length}（总计 ${records.length}）` : `0 / ${records.length}`;
+      container.innerHTML = filteredRecords.length ? filteredRecords.map((record, index) => {
+        const m = record.metadata || {};
+        return `<button class="record-item ${index === currentIndex ? "active" : ""}" data-record-index="${index}">
+          <div class="record-id"><span>${esc(m.qa_id || `RECORD-${index + 1}`)}</span><span>${esc(m.source_split || "")}</span></div>
+          <div class="record-question">${esc(extractQuestion(record))}</div>
+          <div class="record-meta">${esc(m.case_id || "unknown case")} · ${esc(m.user_intent || "unknown")}</div>
+        </button>`;
+      }).join("") : `<div style="padding:18px;color:var(--muted);font-size:13px;line-height:1.7">没有符合当前筛选条件的样本。</div>`;
+      container.querySelectorAll("[data-record-index]").forEach(button => button.addEventListener("click", () => selectRecord(Number(button.dataset.recordIndex))));
+      document.getElementById("prevRecord").disabled = currentIndex <= 0 || !filteredRecords.length;
+      document.getElementById("nextRecord").disabled = currentIndex >= filteredRecords.length - 1 || !filteredRecords.length;
+      container.querySelector(".record-item.active")?.scrollIntoView({ block: "nearest" });
+    }
+
+    function selectRecord(index, updateList = true) {
+      if (!filteredRecords[index]) return;
+      currentIndex = index;
+      currentRecord = filteredRecords[index];
+      currentPayload = parseAssistant(currentRecord);
+      renderAll();
+      if (updateList) renderRecordList();
+    }
+
+    function renderAll() {
+      renderOverview();
+      renderChains();
+      renderEvidence();
+      renderRaw();
+      renderRecordList();
+    }
+
+    function loadRecords(newRecords) {
+      if (!Array.isArray(newRecords) || !newRecords.length) throw new Error("没有找到可载入的记录。");
+      newRecords.forEach(record => {
+        if (!record || !Array.isArray(record.messages)) throw new Error("每条记录必须包含 messages 数组。");
+        if (!parseAssistant(record).chain_bundle) throw new Error("某条 assistant 输出中没有 chain_bundle。");
+      });
+      records = newRecords;
+      filteredRecords = [...records];
+      currentIndex = 0;
+      currentRecord = filteredRecords[0];
+      currentPayload = parseAssistant(currentRecord);
+      document.getElementById("recordSearch").value = "";
+      document.getElementById("splitFilter").value = "";
+      populateFilters();
+      renderAll();
+    }
+
+    function showStartupError(error) {
+      const box = document.getElementById("startupError");
+      box.innerHTML = `<strong>样本没有载入</strong><br>${esc(error?.message || error)}<br><span style="font-size:12px">请确认 HTML 与 sft-chain-data.js 在同一目录，或点击顶部“打开文件”导入 JSONL。</span>`;
+      box.classList.add("show");
+    }
+
+    document.querySelectorAll(".nav-button").forEach(button => button.addEventListener("click", () => {
+      document.querySelectorAll(".nav-button").forEach(item => item.classList.remove("active"));
+      document.querySelectorAll(".view").forEach(item => item.classList.remove("active"));
+      button.classList.add("active");
+      document.getElementById(button.dataset.view).classList.add("active");
+    }));
+
+    document.querySelectorAll(".segment").forEach(button => button.addEventListener("click", () => {
+      document.querySelectorAll(".segment").forEach(item => item.classList.remove("active"));
+      button.classList.add("active");
+      activeChain = button.dataset.chain;
+      expandAll = false;
+      document.getElementById("expandAll").textContent = "展开全部";
+      renderChains();
+    }));
+
+    document.getElementById("expandAll").addEventListener("click", event => {
+      expandAll = !expandAll;
+      event.target.textContent = expandAll ? "收起全部" : "展开全部";
+      renderChains();
+    });
+
+    const modal = document.getElementById("pasteModal");
+    const closeModal = () => { modal.classList.remove("open"); document.getElementById("parseError").classList.remove("show"); };
+    document.getElementById("pasteButton").addEventListener("click", () => modal.classList.add("open"));
+    document.getElementById("closeModal").addEventListener("click", closeModal);
+    document.getElementById("cancelPaste").addEventListener("click", closeModal);
+    modal.addEventListener("click", event => { if (event.target === modal) closeModal(); });
+
+    function parseText(text) {
+      const clean = text.trim();
+      if (!clean) throw new Error("内容为空。");
+      try {
+        const value = JSON.parse(clean);
+        return Array.isArray(value) ? value : [value];
+      } catch (_) {
+        return clean.split(/\r?\n/).filter(line => line.trim()).map((line, index) => {
+          try { return JSON.parse(line); }
+          catch (error) { throw new Error(`第 ${index + 1} 行不是有效 JSON。`); }
+        });
+      }
+    }
+
+    document.getElementById("loadPaste").addEventListener("click", () => {
+      const error = document.getElementById("parseError");
+      try {
+        loadRecords(parseText(document.getElementById("pasteArea").value));
+        closeModal();
+      } catch (e) {
+        error.textContent = `无法载入：${e.message}`;
+        error.classList.add("show");
+      }
+    });
+
+    document.getElementById("fileButton").addEventListener("click", () => document.getElementById("fileInput").click());
+    document.getElementById("fileInput").addEventListener("change", async event => {
+      const file = event.target.files[0];
+      if (!file) return;
+      try { loadRecords(parseText(await file.text())); }
+      catch (e) { alert(`无法载入文件：${e.message}`); }
+      event.target.value = "";
+    });
+
+    document.getElementById("copyRaw").addEventListener("click", async event => {
+      await navigator.clipboard.writeText(document.getElementById("rawBox").value);
+      const old = event.target.textContent;
+      event.target.textContent = "已复制";
+      setTimeout(() => event.target.textContent = old, 1200);
+    });
+
+    ["recordSearch", "splitFilter", "caseFilter", "intentFilter", "scopeFilter"].forEach(id => {
+      document.getElementById(id).addEventListener(id === "recordSearch" ? "input" : "change", () => applyFilters());
+    });
+    document.getElementById("prevRecord").addEventListener("click", () => selectRecord(currentIndex - 1));
+    document.getElementById("nextRecord").addEventListener("click", () => selectRecord(currentIndex + 1));
+
+    try {
+      populateFilters();
+      renderAll();
+    } catch (error) {
+      showStartupError(error);
+      console.error(error);
+    }
+  </script>
+</body>
+</html>

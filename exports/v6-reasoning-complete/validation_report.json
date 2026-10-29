@@ -1,0 +1,225 @@
+{
+  "case_path_metrics": {
+    "CASE-BIRTH-SUBSIDY": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 1,
+        "3": 4,
+        "4": 3
+      },
+      "qa_records": 9
+    },
+    "CASE-FED-TRUMP": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 1,
+        "3": 4,
+        "4": 3
+      },
+      "qa_records": 9
+    },
+    "CASE-GAME-INDUSTRY": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 1,
+        "3": 4,
+        "4": 3
+      },
+      "qa_records": 9
+    },
+    "CASE-GRAIN": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 3
+      },
+      "qa_records": 9
+    },
+    "CASE-HEALTH": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 1,
+        "3": 4,
+        "4": 3
+      },
+      "qa_records": 9
+    },
+    "CASE-HOUSING": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 3
+      },
+      "qa_records": 9
+    },
+    "CASE-JAPAN": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 1,
+        "3": 4,
+        "4": 3
+      },
+      "qa_records": 9
+    },
+    "CASE-KOREA": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 1,
+        "3": 4,
+        "4": 3
+      },
+      "qa_records": 9
+    },
+    "CASE-V5-AUTO": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 3,
+        "3": 3,
+        "4": 2
+      },
+      "qa_records": 9
+    },
+    "CASE-V5-FRAUD-ANTHOLOGY": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 3,
+        "3": 3,
+        "4": 2
+      },
+      "qa_records": 9
+    },
+    "CASE-V5-LEHUA-CRASH": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 3,
+        "3": 3,
+        "4": 2
+      },
+      "qa_records": 9
+    },
+    "CASE-V5-LEHUA-PLATFORM": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 3,
+        "3": 3,
+        "4": 2
+      },
+      "qa_records": 9
+    },
+    "CASE-V5-SILVER": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 3,
+        "3": 3,
+        "4": 2
+      },
+      "qa_records": 9
+    },
+    "CASE-V5-TECH": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 3,
+        "3": 3,
+        "4": 2
+      },
+      "qa_records": 9
+    },
+    "CASE-V5-XIAOMI": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 3,
+        "3": 3,
+        "4": 2
+      },
+      "qa_records": 9
+    },
+    "CASE-V5-XUXIANG": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 1,
+        "3": 3,
+        "4": 4
+      },
+      "qa_records": 9
+    },
+    "CASE-V5-YUANYE": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 1,
+        "3": 3,
+        "4": 4
+      },
+      "qa_records": 9
+    },
+    "CASE-V5-ZHAOWEI": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 3,
+        "3": 3,
+        "4": 2
+      },
+      "qa_records": 9
+    },
+    "CASE-VANKE": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 3
+      },
+      "qa_records": 9
+    },
+    "CASE-WAHAHA": {
+      "distinct_path_fingerprints": 9,
+      "path_lengths": {
+        "1": 1,
+        "2": 1,
+        "3": 4,
+        "4": 3
+      },
+      "qa_records": 9
+    }
+  },
+  "counts": {
+    "accepted_evidence": 34,
+    "cases": 20,
+    "master_records": 180,
+    "reasoning_status": {
+      "logic_reviewed": 57,
+      "reasoning_approved": 123
+    },
+    "terminal_kind": {
+      "abstain": 29,
+      "answer": 60,
+      "boundary": 58,
+      "bounded_answer": 33
+    },
+    "train_messages": 99,
+    "validation_messages": 24
+  },
+  "errors": [],
+  "schema_version": "auditable-reasoning/6.1",
+  "status": "PASS",
+  "warnings": []
+}

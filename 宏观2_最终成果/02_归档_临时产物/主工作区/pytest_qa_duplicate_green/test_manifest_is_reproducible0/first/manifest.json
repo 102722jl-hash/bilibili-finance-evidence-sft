@@ -1,0 +1,40 @@
+{
+  "counts": {
+    "contexts": 9,
+    "edge_reviews": 2,
+    "qa_gold": 8,
+    "qa_items": 8
+  },
+  "dataset_version": "1.0.0",
+  "files": {
+    "DATASET_CARD.md": "b64c68bbc7ac53bc4ef387c60c82f389441e03e5d672516f7b3e3a40b4b21fc8",
+    "config.json": "9ca2015298cf494ac08ec5bb4d3c172a6e3c45dfd867886a2d9519e4ada60013",
+    "contexts.jsonl": "b120aee4c82c2fb81bde366b0885e18dafb8379faf37ac8e2c740d66eebf5c04",
+    "edge_reviews.jsonl": "3ab49a109534e9beedb39fcbaa5ff55d7d14c85500d1923c137947a9acffb283",
+    "qa_gold.jsonl": "0b78bec3daa45d343a1db36e9cfd7372bf29591e1676145edc957c16a15d14d3",
+    "qa_items.jsonl": "f7959e86c1395f751a9bbaf9373ab8cfb7c8ca5619f5f0f111bf426153343182"
+  },
+  "quotas": {
+    "author_conclusion_support": 1,
+    "author_fact": 1,
+    "author_multihop": 1,
+    "author_relation": 1,
+    "world_confirmed": 1,
+    "world_partial": 1,
+    "world_source_scope": 1,
+    "world_unanswerable": 1
+  },
+  "seed": 20260810,
+  "source_db": {
+    "name": "research.db",
+    "sha256": "34ed02ed5757363c5405a78c67a902792480cfd1a6458d3389294f166dd4037f"
+  },
+  "splits": {
+    "dev": 3,
+    "test": 5
+  },
+  "truth_scopes": {
+    "author_trace": 4,
+    "world_evidence": 4
+  }
+}

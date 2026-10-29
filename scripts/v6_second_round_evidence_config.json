@@ -1,0 +1,67 @@
+{
+  "schema_version": "evidence-acquisition-config/6.0-second-round",
+  "sources": [
+    {
+      "case_id": "CASE-V5-XIAOMI",
+      "candidate_id": "CAND-V6R2-XIAOMI-AR2018",
+      "source_id": "SRC-V6R2-XIAOMI-AR2018",
+      "source_url": "https://ir.mi.com/system/files-encrypted/nasdaq_kms/assets/2021/07/27/4-59-41/2018%20AR.pdf",
+      "publisher": "Xiaomi Corporation",
+      "published_at": "2019-03-19T00:00:00+08:00",
+      "source_tier": "T2",
+      "discovery_method": "ANYSEARCH",
+      "search_query": "site:ir.mi.com/system/files-encrypted/nasdaq_kms/assets 2018 Annual Report Xiaomi 1810 PDF",
+      "search_rank": 6,
+      "title": "Xiaomi Corporation 2018 Annual Report"
+    },
+    {
+      "case_id": "CASE-V5-LEHUA-CRASH",
+      "candidate_id": "CAND-V6R2-LEHUA-CRASH-EN",
+      "source_id": "SRC-V6R2-LEHUA-CRASH-EN",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0116/2024011600602.pdf",
+      "publisher": "YH Entertainment Group / HKEXnews",
+      "published_at": "2024-01-16T00:00:00+08:00",
+      "source_tier": "T2",
+      "discovery_method": "LANGUAGE_VARIANT_PROBE",
+      "derived_from_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0116/2024011600603_c.pdf",
+      "title": "YH Entertainment Group - Unusual Price Movement"
+    },
+    {
+      "case_id": "CASE-V5-LEHUA-PLATFORM",
+      "candidate_id": "CAND-V6R2-LEHUA-PROSPECTUS-EN",
+      "source_id": "SRC-V6R2-LEHUA-PROSPECTUS-EN",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2022/0824/2022082400017.pdf",
+      "publisher": "YH Entertainment Group / HKEXnews",
+      "published_at": "2022-08-24T00:00:00+08:00",
+      "source_tier": "T2",
+      "discovery_method": "LANGUAGE_VARIANT_PROBE",
+      "derived_from_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2022/0824/2022082400018_c.pdf",
+      "title": "YH Entertainment Group - Prospectus"
+    },
+    {
+      "case_id": "CASE-V5-LEHUA-PLATFORM",
+      "candidate_id": "CAND-V6R2-LEHUA-INTERIM-EN",
+      "source_id": "SRC-V6R2-LEHUA-INTERIM-EN",
+      "source_url": "https://www.hkexnews.hk/listedco/listconews/sehk/2023/0830/2023083002666.pdf",
+      "publisher": "YH Entertainment Group / HKEXnews",
+      "published_at": "2023-08-30T00:00:00+08:00",
+      "source_tier": "T2",
+      "discovery_method": "LANGUAGE_VARIANT_PROBE",
+      "derived_from_url": "https://www.hkexnews.hk/listedco/listconews/sehk/2023/0830/2023083002667_c.pdf",
+      "title": "YH Entertainment Group - 2023 Interim Report"
+    },
+    {
+      "case_id": "CASE-V5-TECH",
+      "candidate_id": "CAND-V6R2-BAILITIANHENG-AR2024",
+      "source_id": "SRC-V6R2-BAILITIANHENG-AR2024",
+      "source_url": "http://static.cninfo.com.cn/finalpage/2025-03-29/1222948012.PDF",
+      "publisher": "四川百利天恒药业股份有限公司 / 上海证券交易所",
+      "published_at": "2025-03-29T00:00:00+08:00",
+      "source_tier": "T2",
+      "discovery_method": "ANYSEARCH",
+      "search_query": "百利天恒 2024 年年度报告 84亿美元 8亿美元 2025-03-29 PDF",
+      "search_rank": 1,
+      "title": "四川百利天恒药业股份有限公司2024年年度报告"
+    }
+  ]
+}

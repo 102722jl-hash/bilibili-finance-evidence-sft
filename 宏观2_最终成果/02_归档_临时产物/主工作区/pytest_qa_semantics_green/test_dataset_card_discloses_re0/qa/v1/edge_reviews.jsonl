@@ -1,0 +1,2 @@
+{"author_fidelity":"confirmed","edge_id":"VDEV:E1","evidence_refs":["TEXT:VDEV"],"reason":"The edge is an explicit-author relation with source and target quotations; no external causal validation is claimed.","reviewer_id":"codex-review-v1","world_validity":"unverifiable"}
+{"author_fidelity":"confirmed","edge_id":"VTEST:E1","evidence_refs":["TEXT:VTEST"],"reason":"The edge is an explicit-author relation with source and target quotations; no external causal validation is claimed.","reviewer_id":"codex-review-v1","world_validity":"unverifiable"}

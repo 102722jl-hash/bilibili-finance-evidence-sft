@@ -1,0 +1,7 @@
+{
+  "blueprints_path": "D:\\桌面\\workspace\\宏观2\\.worktrees\\evidence-chain\\.pytest-v4-final-full\\test_qa_build_and_score_dispat0\\qa_blueprints.jsonl",
+  "dataset_version": "2.0.0",
+  "maximum_per_case": 12,
+  "minimum_per_case": 10,
+  "seed": 20260811
+}

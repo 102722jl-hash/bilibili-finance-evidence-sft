@@ -1,0 +1,9 @@
+{
+  "allowed_source_splits": [
+    "dev"
+  ],
+  "blocked_event_cluster_ids": [],
+  "seed": 20260810,
+  "system_prompt_version": "evidence-multitask-v1",
+  "training_dataset_version": "1.0.0"
+}

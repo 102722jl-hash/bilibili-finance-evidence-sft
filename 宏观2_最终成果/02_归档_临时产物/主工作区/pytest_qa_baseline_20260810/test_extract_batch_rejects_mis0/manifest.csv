@@ -1,0 +1,11 @@
+bvid,title,video_url,author_mid,article_url,discovery_source,text_source,selection_status,selection_rationale
+BVTEST00,BVTEST00,https://www.bilibili.com/video/BVTEST00/,472747194,,https://example.com/search,subtitle,selected,test
+BVTEST01,BVTEST01,https://www.bilibili.com/video/BVTEST01/,472747194,,https://example.com/search,subtitle,selected,test
+BVTEST02,BVTEST02,https://www.bilibili.com/video/BVTEST02/,472747194,,https://example.com/search,subtitle,selected,test
+BVTEST03,BVTEST03,https://www.bilibili.com/video/BVTEST03/,472747194,,https://example.com/search,subtitle,selected,test
+BVTEST04,BVTEST04,https://www.bilibili.com/video/BVTEST04/,472747194,,https://example.com/search,subtitle,selected,test
+BVTEST05,BVTEST05,https://www.bilibili.com/video/BVTEST05/,472747194,,https://example.com/search,subtitle,selected,test
+BVTEST06,BVTEST06,https://www.bilibili.com/video/BVTEST06/,472747194,,https://example.com/search,subtitle,selected,test
+BVTEST07,BVTEST07,https://www.bilibili.com/video/BVTEST07/,472747194,,https://example.com/search,subtitle,selected,test
+BVTEST08,BVTEST08,https://www.bilibili.com/video/BVTEST08/,472747194,,https://example.com/search,subtitle,selected,test
+BVTEST09,BVTEST09,https://www.bilibili.com/video/BVTEST09/,472747194,,https://example.com/search,subtitle,selected,test

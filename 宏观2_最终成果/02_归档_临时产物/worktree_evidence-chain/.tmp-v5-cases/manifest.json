@@ -1,0 +1,137 @@
+{
+  "dataset_version": "5.0.0",
+  "files": {
+    "DATASET_CARD.md": "b2d91159861710f9fe64ff7157a70f7a3777cd61562e32c200ac9402db128102",
+    "case_graphs.jsonl": "22a929e9b3d9e1a668fc182bd5010dc703989b78088c26442733346523762ebb",
+    "config.json": "f290d3059281f1e70efd1b24661da8e727f06d07071e9d6b6a68010c369a6beb",
+    "evidence_records.jsonl": "d822177f18929c6ac707d1edac243a4209b202440d7b31ecf12a9a1ab7ad96ea",
+    "split_manifest.json": "be4460cc174eb6818f8a78aa58c6f48990d9b10d7d00127b5500bcd040a416b5"
+  },
+  "frozen_baseline_hashes": {
+    "data/cases/v4.1/manifest.json": "4c3d32498fc4a174be11c2ce15cb34586da9ac9382a799ab3a833d2d70a88842",
+    "data/cases/v4/manifest.json": "6f6adbc21ac865699b98fac43d405243ef4f64eb3ad74e1deb021e274864edd4",
+    "data/sample_manifest.csv": "41bfdaef857f9a49a28eaadb0b6a152aa8d668562f3c8a8bb6d79738547db1d5",
+    "data/train/v4.1/manifest.json": "094a3a4221b1b9ec9d72100ac29082bcd8860644424957c00cf2ba5f0a69b540",
+    "data/train/v4/manifest.json": "13020f3531bf2f8af78741711d261e4111dca2a8f38bfc4a91e5580fd87e5a98",
+    "reports/all/claim_evidence.csv": "241fadd060b0cc0f0c150ca2d8eeeadabbd1d23aeb24353ee64c274b391d5110",
+    "reports/all/claims.csv": "ca0a04d03bfac43468823e70d12493467a9e476b5eaa43552bcfdf8f859c6573",
+    "reports/all/edges.csv": "b47e72b89804451c9cf8c30dcda9723ec850de3b0a771cce0b91eff90230b88c",
+    "reports/all/sources.csv": "30c89a47e6870ed42e4e53f77b13ecf2c387f84085195c4ad41142a9dd3fb93b"
+  },
+  "metrics": {
+    "answerability": {
+      "answerable": 30,
+      "partially_answerable": 50,
+      "unanswerable": 10
+    },
+    "cases": 10,
+    "graphs": [
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-XUXIANG",
+        "event_cluster_id": "xu_xiang_market_operations",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": null,
+        "split": "train",
+        "video_id": "BV1Htgh6DErU"
+      },
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-SILVER",
+        "event_cluster_id": "hunt_silver_manipulation",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": null,
+        "split": "train",
+        "video_id": "BV1rhpRzFEHx"
+      },
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-FRAUD-ANTHOLOGY",
+        "event_cluster_id": "financial_fraud",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": null,
+        "split": "validation",
+        "video_id": "BV1c8mZYxEBU"
+      },
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-YUANYE",
+        "event_cluster_id": "financial_fraud",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": null,
+        "split": "validation",
+        "video_id": "BV1yP411J7Gd"
+      },
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-XIAOMI",
+        "event_cluster_id": "xiaomi_capital_strategy",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": null,
+        "split": "train",
+        "video_id": "BV1zx4y1x7bG"
+      },
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-ZHAOWEI",
+        "event_cluster_id": "zhaowei_longwei_acquisition",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": null,
+        "split": "train",
+        "video_id": "BV1LiypBAEAQ"
+      },
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-LEHUA-CRASH",
+        "event_cluster_id": "lehua_listing_liquidity",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": "lehua_capital_cycle",
+        "split": "train",
+        "video_id": "BV1bp421D7Lv"
+      },
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-LEHUA-PLATFORM",
+        "event_cluster_id": "lehua_artist_platform",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": "lehua_capital_cycle",
+        "split": "train",
+        "video_id": "BV1BXXCBnEHN"
+      },
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-AUTO",
+        "event_cluster_id": "auto_industry_competition",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": null,
+        "split": "train",
+        "video_id": "BV1cCDTYsEKJ"
+      },
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-TECH",
+        "event_cluster_id": "technology_innovation_financing",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": null,
+        "split": "train",
+        "video_id": "BV1ZBgk6kEzo"
+      }
+    ],
+    "path_signatures": 90,
+    "qa_records": 90,
+    "splits": {
+      "train": 72,
+      "validation": 18
+    }
+  }
+}

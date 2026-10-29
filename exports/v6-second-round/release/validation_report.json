@@ -1,0 +1,19 @@
+{
+  "counts": {
+    "accepted_evidence": 34,
+    "closed_from_pending": 32,
+    "contexts": 34,
+    "evidence_links": 34,
+    "qa_records": 180,
+    "release_partition": {
+      "abstention_sft": 20,
+      "answer_sft": 103,
+      "evidence_pending": 57
+    },
+    "sources": 17
+  },
+  "errors": [],
+  "schema_version": "auditable-sft/6.0-second-round",
+  "status": "PASS",
+  "warnings": []
+}

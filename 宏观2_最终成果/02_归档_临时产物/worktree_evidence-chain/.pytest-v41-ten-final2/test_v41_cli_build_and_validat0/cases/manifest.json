@@ -1,0 +1,129 @@
+{
+  "dataset_version": "4.1.0",
+  "files": {
+    "DATASET_CARD.md": "e41d4e7d22f5ccf66cb2a3f939b6b51742c760c02a4e6f5a44e414ce69681fc5",
+    "case_graphs.jsonl": "8c03033fad54335b5b5b7fb8b3cf327caed1d89c188329131c96790f6892479d",
+    "config.json": "a8688ab02ed641d6d763fe39e9cacbbfebac9747994983d4730bcb31b89c9b48",
+    "evidence_records.jsonl": "f7735138bf9fa2d9b89f0eb0f1ce545e0fa020469d8d0249552bc225a3fad856",
+    "source_audit.jsonl": "4e19f6f553dcd80af44cbe3c6de5bd6fa2b87c7706b34fd7d49b0f66de7f2043"
+  },
+  "metrics": [
+    {
+      "alignments": 6,
+      "case_id": "CASE-BIRTH-SUBSIDY",
+      "chain_steps": {
+        "author_reasoning": 7,
+        "fact_transmission": 8,
+        "world_verification": 8
+      },
+      "evidence_records": 8,
+      "nodes": 23
+    },
+    {
+      "alignments": 6,
+      "case_id": "CASE-FED-TRUMP",
+      "chain_steps": {
+        "author_reasoning": 7,
+        "fact_transmission": 8,
+        "world_verification": 8
+      },
+      "evidence_records": 8,
+      "nodes": 23
+    },
+    {
+      "alignments": 6,
+      "case_id": "CASE-GAME-INDUSTRY",
+      "chain_steps": {
+        "author_reasoning": 7,
+        "fact_transmission": 8,
+        "world_verification": 8
+      },
+      "evidence_records": 8,
+      "nodes": 23
+    },
+    {
+      "alignments": 6,
+      "case_id": "CASE-GRAIN",
+      "chain_steps": {
+        "author_reasoning": 7,
+        "fact_transmission": 8,
+        "world_verification": 8
+      },
+      "evidence_records": 8,
+      "nodes": 23
+    },
+    {
+      "alignments": 6,
+      "case_id": "CASE-HEALTH",
+      "chain_steps": {
+        "author_reasoning": 7,
+        "fact_transmission": 8,
+        "world_verification": 8
+      },
+      "evidence_records": 8,
+      "nodes": 23
+    },
+    {
+      "alignments": 6,
+      "case_id": "CASE-HOUSING",
+      "chain_steps": {
+        "author_reasoning": 7,
+        "fact_transmission": 8,
+        "world_verification": 8
+      },
+      "evidence_records": 8,
+      "nodes": 23
+    },
+    {
+      "alignments": 6,
+      "case_id": "CASE-JAPAN",
+      "chain_steps": {
+        "author_reasoning": 7,
+        "fact_transmission": 8,
+        "world_verification": 8
+      },
+      "evidence_records": 8,
+      "nodes": 23
+    },
+    {
+      "alignments": 6,
+      "case_id": "CASE-KOREA",
+      "chain_steps": {
+        "author_reasoning": 7,
+        "fact_transmission": 8,
+        "world_verification": 8
+      },
+      "evidence_records": 8,
+      "nodes": 23
+    },
+    {
+      "alignments": 6,
+      "case_id": "CASE-VANKE",
+      "chain_steps": {
+        "author_reasoning": 7,
+        "fact_transmission": 9,
+        "world_verification": 8
+      },
+      "evidence_records": 10,
+      "nodes": 24
+    },
+    {
+      "alignments": 6,
+      "case_id": "CASE-WAHAHA",
+      "chain_steps": {
+        "author_reasoning": 7,
+        "fact_transmission": 8,
+        "world_verification": 8
+      },
+      "evidence_records": 8,
+      "nodes": 23
+    }
+  ],
+  "seed": 20260813,
+  "source_dataset_version": "4.0.0",
+  "v4_baseline_hashes": {
+    "data/cases/v4/case_packs.jsonl": "e9883021dfa7e4dc61423d93aad8b31d3cdb3b087f347773db28d1fb1524b062",
+    "data/cases/v4/manifest.json": "6f6adbc21ac865699b98fac43d405243ef4f64eb3ad74e1deb021e274864edd4",
+    "data/train/v4/qa_records.jsonl": "3751b4d8464e3b9e5fd2ffb4ef346255fac2c78d25c8f2607ec98d1e1d66ddc4"
+  }
+}

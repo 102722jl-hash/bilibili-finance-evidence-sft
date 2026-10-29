@@ -1,0 +1,419 @@
+[html_block:1]
+Statement of Dan Berkovitz, General Counsel | CFTC
+
+[html_block:2]
+/PressRoom/SpeechesTestimony/proposedrule011410_berkovitz
+
+[html_block:3]
+Skip to main content
+
+[html_block:4]
+icon-hamburger Created with Sketch. Menu
+
+[html_block:5]
+Transparency
+
+[html_block:6]
+Contact Us
+
+[html_block:7]
+Main navigation
+
+[html_block:8]
+About the CFTC
+
+[html_block:9]
+The Commission
+
+[html_block:10]
+Chairman & Commissioners
+
+[html_block:11]
+CFTC Organization
+
+[html_block:12]
+Advisory Committees
+
+[html_block:13]
+Innovation at the CFTC
+
+[html_block:14]
+Agriculture at the CFTC
+
+[html_block:15]
+Budget & Performance
+
+[html_block:16]
+Privacy at the CFTC
+
+[html_block:17]
+Industry Oversight
+
+[html_block:18]
+Industry Filings
+
+[html_block:19]
+Trading Organizations
+
+[html_block:20]
+Clearing Organizations
+
+[html_block:21]
+Data Repositories
+
+[html_block:22]
+Intermediaries
+
+[html_block:23]
+Market Surveillance
+
+[html_block:24]
+Contracts & Products
+
+[html_block:25]
+Rules & Rule Amendments
+
+[html_block:26]
+Anti-Money Laundering
+
+[html_block:27]
+Law & Regulation
+
+[html_block:28]
+Commodity Exchange Act & Regulations
+
+[html_block:29]
+How Rules Are Made
+
+[html_block:30]
+Holding Wrongdoers Accountable
+
+[html_block:31]
+Federal Register
+
+[html_block:32]
+Public Comments
+
+[html_block:33]
+CFTC Staff Letters
+
+[html_block:34]
+Market Data & Economic Analysis
+
+[html_block:35]
+Data at CFTC
+
+[html_block:36]
+Commitments of Traders
+
+[html_block:37]
+Bank Participation Reports
+
+[html_block:38]
+Cotton On-Call
+
+[html_block:39]
+Financial Data for FCMS
+
+[html_block:40]
+Staff Reports
+
+[html_block:41]
+Weekly Swaps Report
+
+[html_block:42]
+Cleared Margin Reports
+
+[html_block:43]
+Office of the Chief Economist
+
+[html_block:44]
+Forms & Submissions
+
+[html_block:45]
+Learn & Protect
+
+[html_block:46]
+Understanding Prediction Markets and Event Contracts
+
+[html_block:47]
+Check Registration & Disciplinary History
+
+[html_block:48]
+Submit a Tip or Complaint
+
+[html_block:49]
+RED List
+
+[html_block:50]
+Office of Proceedings
+
+[html_block:51]
+Learning Resources
+
+[html_block:52]
+Materiales Antifraude en Español
+
+[html_block:53]
+News & Events
+
+[html_block:54]
+Press Releases
+
+[html_block:55]
+Public Statements & Remarks
+
+[html_block:56]
+Carousel Rotation On
+
+[html_block:57]
+Chairman Michael S. Selig
+
+[html_block:58]
+Statement of Dan M. Berkovitz, General Counsel, Background on Position Limits and the Hedge Exemption
+
+[html_block:59]
+Overview
+
+[html_block:60]
+January 14, 2010
+
+[html_block:61]
+This statement provides a brief history of the federal legislation authorizing and directing the Commodity Futures Trading Commission (“CFTC” or “Commission”) to impose position limits in CFTC-regulated futures markets and of the CFTC’s regulatory program to implement this authority. This paper also describes the legislative and regulatory provisions that exempt bona fide hedgers from these position limits.
+
+[html_block:62]
+Since 1936, the Commodity Exchange Act (CEA) has directed the CFTC to establish such limits on trading as it finds “are necessary to diminish, eliminate, or prevent” the undue burdens on interstate commerce that result from excessive speculation in those commodities. Presently, position limits are imposed in several ways. The CFTC fixes the position limits for certain agricultural commodities, and specifies acceptable practices for the exchanges to follow when establishing limits for other commodities. The CEA also allows the exchanges to use “position accountability levels” in months other than the spot month for commodities, “where necessary and appropriate.”
+
+[html_block:63]
+The CEA has always exempted “bona fide hedging transactions” from position limits. Initially, the Act defined the term “bona fide hedging” as transactions that were offsetting price risks in the cash market for a commodity. In 1974, Congress provided the Commission with discretion to define the term, provided that the definition enables producers and users of a commodity to hedge their anticipated business needs. 1
+
+[html_block:64]
+Position Limits
+
+[html_block:65]
+The inclusion of position limits in the CEA of 1936 was the culmination of a fierce debate that had raged since the depression in farm prices set in after the end of the First World War. The initial legislation passed after the War to regulate grain futures did not contain any trading limits. Throughout the 1920s and 1930s, arguments persisted as to whether regulation could better be accomplished by the exchanges rather than by a federal agency, whether speculators were to blame for depressed farm prices, and whether the imposition of limits on speculation would impair hedging in the grain business.
+
+[html_block:66]
+In 1934, following the stock market crash and in the midst of the Great Depression, President Roosevelt recommended to the Congress the regulation of the securities and commodities markets to protect investors, safeguard values, and prevent “destructive speculation”:
+
+[html_block:67]
+Back to Top
+
+[html_block:68]
+It is my belief that exchanges for dealing in securities and commodities are necessary and of definite value to our commercial and agricultural life. Nevertheless, it should be our national policy to restrict, as far as possible, the use of these exchanges for purely speculative operations.
+
+[html_block:69]
+I therefore recommend to the Congress the enactment of legislation providing for the regulation by the Federal Government of the operations of exchanges dealing in securities and commodities for the protection of investors, for the safeguarding of values, and so far as it may be possible, for the elimination of unnecessary, unwise, and destructive speculation. 2
+
+[html_block:70]
+The Congress swiftly responded to the President’s call by enacting the Securities Exchange Act of 1934 and, two years later, the CEA. In Section 4a of the Act, the Congress found that excessive speculation in futures contracts created an “undue and unnecessary burden” on interstate commerce. It directed the Commission to establish such limits on trading as it finds “is necessary to diminish, eliminate, or prevent” such burdens. 3
+
+[html_block:71]
+Implementation of 1936 Act
+
+[html_block:72]
+After the passage of the 1936 Act, the Commission set position limits and daily trading limits of 2 million bushels for wheat and other grains. Later, the Commission established position limits for cotton and several other agricultural commodities.
+
+[html_block:73]
+Prior to 1974, when the CFTC was created, the CFTC’s predecessor agency did not have legal authority over all of the futures contracts that were being traded. For several of the commodities that were not traded on federally-regulated futures markets, such as the livestock commodities, the exchanges determined position limits were an appropriate tool to ensure the integrity of those markets and set position limits themselves. These exchange-set limits established the precedent for the Commission to rely on the exchanges to set limits after the CFTC’s jurisdiction was expanded in 1974.
+
+[html_block:74]
+1974 Amendments
+
+[html_block:75]
+During the mid and late 1970s, the newly established CFTC studied and considered both whether and how it should establish position limits for the commodities added to its jurisdiction by the 1974 Amendments.
+
+[html_block:76]
+The debate continued into the early 1980s, when, in the aftermath of the manipulation of the silver market by the Hunt brothers, the CFTC issued a proposed rule to require the exchanges to establish position limits with respect to those commodities that did not have Commission-set limits. In the proposed rule, the Commission stated:
+
+[html_block:77]
+[T]he Commission believes that a trader’s net position has a continued effect on price, and if sufficiently large can become a perceptible market factor. In this context, the Commission observes that speculative position limits serve to decrease the potential for positions to influence the general price level. Moreover, by limiting the ability of one person or group of persons to obtain extraordinarily large positions, speculative limits diminish the possibility of accentuating price swings if large positions must be liquidated sharply in the face of adverse price movements or for other reasons. 4
+
+[html_block:78]
+Commenters on the proposed rule raised a number of issues, including whether the Commission “had demonstrated that speculative limits provided necessary market protection,” “whether such price movements could in any event be prevented by the imposition of such limits,” and whether the proposed rule was appropriate “for markets with broad dependable deliverable supplies and was premised on recent events in the silver market.” 5
+
+[html_block:79]
+In the notice of final rulemaking in October 1981, the Commission reiterated its findings as to the need for position limits:
+
+[html_block:80]
+As stated in the proposal, the prevention of large and/or abrupt price movements which are attributable to extraordinarily large speculative positions is a Congressionally endorsed regulatory objective of the Commission. Further, it is the Commission’s view that this objective is enhanced by speculative position limits since it appears that the capacity of any contract market to absorb the establishment and liquidation of large speculative positions in an orderly manner is related to the relative size of such positions, i.e., the capacity of the market is not unlimited. 6
+
+[html_block:81]
+The Commission also addressed the general objections regarding the effectiveness and need for position limits:
+
+[html_block:82]
+The Commission believes that the observations concerning the general desirability of limits are contrary to Congressional findings in sections 3 and 4a of the Act and considerable years of Federal and contract market regulatory experience. 7
+
+[html_block:83]
+In this rulemaking, the Commission adopted Rule 1.61 (now Rule 150.5), which required exchanges to have position limits for all commodities that did not have Commission-set limits.
+
+[html_block:84]
+In 1982, Congress ratified the CFTC’s regulatory policy by enacting Section 4a(e), which stated that nothing in the CEA prohibited the exchanges from establishing positions limits themselves, provided that such limits are not higher than any limits the Commission may have established. 8
+
+[html_block:85]
+Prior to 1993, the Commission used several criteria to establish the levels of the single-month and all-months-combined position limits. These included the breadth and liquidity of the cash market for the commodity, the financial exposure of traders in the event of limit price moves, and the extent to which various potential limits would constrain trading.
+
+[html_block:86]
+In 1993, the Commission adopted, by rule, an "open interest formula” for determining the all-months-combined limits for Commission-set position limits. 9 The open interest formula provided that the all-months-combined limit may be fixed at 10 percent of the average month-end open interest for futures and options combined on a futures equivalent basis up to 25,000 contracts, plus 2.5 percent of the open interest above 25,000 contracts. The Commission also amended its regulations to permit exchanges to establish position limits based upon the open interest formula. 10
+
+[html_block:87]
+Position Accountability
+
+[html_block:88]
+In January 1992, the CFTC approved the CME’s request for an exemption from the position limit requirement and permitted the CME to establish “position accountability” for a variety of financial contracts. “Position accountability” levels were not fixed limits but rather position sizes that would trigger review by the exchange of a trader’s position and give the exchange authority to address potential problems, such as preventing a trader from increasing his position or forcing a reduction in a position.
+
+[html_block:89]
+Initially, the CFTC stated that position accountability could apply to financial instruments that had a high degree of liquidity. Six months later, the CFTC determined it would also allow position accountability to be used for highly liquid energy and metals contracts.
+
+[html_block:90]
+In 1999, the Commission issued a rule that formally recognized the practice of position accountability. 11 The rule provided, however, that the exchanges were still required to set spot month position limits at a level no greater than one-quarter of the estimated spot month deliverable supply.
+
+[html_block:91]
+Commodity Futures Modernization Act of 2000 (CFMA)
+
+[html_block:92]
+In the Commodity Futures Modernization Act of 2000, the Congress statutorily authorized the use of position accountability by the exchanges. Designated Contract Market Core Principle 5 states: “To reduce the potential threat of market manipulation or congestion, especially during trading in the delivery month, the board of trade shall adopt position limitations or position accountability for speculators, where necessary and appropriate.”
+
+[html_block:93]
+The CFMA did not alter, however, the Commission’s mandate in Section 4a to establish position limits as it finds are necessary to prevent such undue burdens on interstate commerce that may arise from excessive speculation.
+
+[html_block:94]
+Bona Fide Hedge Exemption
+
+[html_block:95]
+Since 1936, Congress has stated that position limits should not apply to the use of the futures markets by commodity producers or users to discover prices or manage their price risks. Section 4a originally defined a bona fide hedge transaction to mean sales or purchases of futures contracts that were offset by purchases or sales of the same cash commodity.
+
+[html_block:96]
+Legislative and Regulatory Developments: 1956-1974
+
+[html_block:97]
+By the mid-1950s, concern arose that the statutory hedge exemption criteria was too restrictive. In 1956, Congress responded by permitting anticipatory hedging. In 1974, the Congress repealed the statutory definition of a bona fide hedge transaction and gave the CFTC discretion to define what constituted bona fide hedging, provided that its definition permit commercial producers, purchasers, or users of the commodity “to hedge their legitimate anticipated business needs.”
+
+[html_block:98]
+In 1977, the Commission defined what constituted a bona fide hedging transaction in Rule 1.3(z). This definition remains in place today.
+
+[html_block:99]
+Application of Bona Fide Hedge Exemption to Risk Management Activities
+
+[html_block:100]
+In 1987, the CFTC clarified its interpretation of its bona fide hedging rule. It stated there was concern that the link to transactions in the physical commodity markets required under Rule 1.3(z) precluded numerous hedging strategies that reduced risks. The CFTC clarified that the bona fide hedge exemption should not be construed to apply only to firms using futures contracts to reduce their exposure to risks in the cash market. The CFTC concluded that to qualify as a bona fide hedge, a transaction in the futures market could also include various balance sheet and trading strategies that are risk reducing and otherwise consistent with this interpretation.
+
+[html_block:101]
+Several months later, the CFTC issued a new interpretation of its definition of bona fide hedge transactions to permit exchanges to grant hedge exemptions for various risk management transactions. The Commission stated that the exemption of certain risk management positions from the exchange speculation limits would be consistent with the objectives of the hedge exemption. It specified that such exemptions be granted on a case-by-case basis, subject to a demonstrated need for the exemption. It also required that applicants for these exemptions be typically engaged in the buying, selling, or holding of cash market instruments. Additionally, the CFTC required the exchanges to monitor the exemptions it granted to ensure that any positions held under the exemption did not result in any large positions that could disrupt the market. 12
+
+[html_block:102]
+In accordance with the 1987 clarification and the following interpretation, in 1991 the Commission staff granted a bona fide hedge exemption to a swap dealer who was seeking to manage price risk on its books as a result of swaps it planned to enter into with various investors seeking exposure to commodity indexes. Similar hedge exemptions were subsequently granted in other cases where the futures positions offset risks related to swaps or similar OTC positions involving both individual commodities and commodity indexes.
+
+[html_block:103]
+Following a recommendation in September 2008, in the CFTC’s Report on Commodity Swap Dealers and Index Traders, in March 2009, the CFTC published a concept release on whether to eliminate the bona fide hedge exemption for certain swap dealers and create a new limited risk management exemption from speculative position limits.
+
+[html_block:104]
+Energy Commodity Position Limits
+
+[html_block:105]
+In July 1975, the New York Mercantile Exchange (NYMEX) began trading futures contracts for New York Harbor Heating Oil, the first energy commodity to be traded on a futures exchange. The NYMEX began trading gasoline futures in 1981 and light sweet crude oil futures in 1983. The trading of Henry Hub natural gas futures contracts began in 1990.
+
+[html_block:106]
+The first position limits for energy commodities were imposed by NYMEX—with Commission approval—when trading commenced in the light sweet crude oil futures contract. The initial spot-month limit for crude oil was 750 contracts, which represented about 15% of the then-deliverable supply. The single-month and all-months-combined limits were fixed at 5,000 contracts, on the basis of the liquidity of the cash market for light sweet crude oil and the potential financial exposure of a trader holding positions assuming a limit price move of $1 per barrel. The Commission subsequently approved NYMEX position limits for heating oil and gasoline in August, 1984. Position limits were imposed on natural gas futures and options when trading in Henry Hub natural gas commenced in 1990.
+
+[html_block:107]
+the Commission has revised its position limits on energy contracts a number of times. In 1997, the Commission approved exchange-proposed increases in the speculative position limits for the NYMEX crude oil futures and options contracts in accordance with the open interest formula that the Commission had established in 1993 for the agricultural commodities (i.e. 10% of the first 25,000 contracts of open interest, and 2.5% of open interest above 25,000 contracts.). This formula resulted in an increase in the single-month limit for crude oil contracts from 5,000 to 7,500 contracts, and in the all-months-combined limit from 10,000 to 15,000 contracts.
+
+[html_block:108]
+In late 1999 the Commission approved increases in the position limits for both the crude oil and natural gas contracts, again based on the open interest formula. For crude oil, this resulted in a single-month limit of 10,000 contracts and an all-months-combined limit of 20,000 contracts. For natural gas, the revised single-month limit was 7,000 contracts, and the all-months-combined limit was 12,000 contracts.
+
+[html_block:109]
+In June 2001, NYMEX certified amendments replacing the single-month and all-months-combined position limits for futures and options with position accountability provisions with the same trigger level set both for single and all-months-combined at the previous all-months-combined position limit level. In September 2007, NYMEX certified amendments to decrease the single-month accountability levels for futures and options combined for each of the four major energy contracts. The new single-month accountability levels were 10,000 contracts for crude oil, 6,000 contracts for natural gas, 5,000 contracts for gasoline, and 5,000 contracts for heating oil. In its due-diligence review of the amendments, the CFTC staff noted, “The lower accountability levels and additional Exchange discretion to apply the levels on a futures-only basis will better enable the Exchange to respond to potential threats of market manipulation or congestion in the subject contracts.” The all-months-combined accountability levels for futures and options combined have remained at the same levels since 2001.
+
+[html_block:110]
+1 See also , Position Limits and the Hedge Exemption, A Brief Legislative History, Testimony of General Counsel Dan M. Berkovitz, Commodity Futures Trading Commission, July 28, 2009.
+
+[html_block:111]
+2 Reprinted in Report of the House Committee on Interstate and Foreign Commerce, Securities Exchange Bill of 1934, H. Rep. No. 1383, 73d Cong., 2d Sess., at pp 1-2 (April 27, 1934).
+
+[html_block:112]
+3 “Excessive speculation in any commodity under contracts of sale of such commodity for future delivery made on or subject to the rules of contract markets causing sudden or unreasonable fluctuations or unwarranted changes in the price of such commodity, is an undue and unnecessary burden on interstate commerce in such commodity. For the purpose of diminishing, eliminating, or preventing such burden, the commission shall, from time to time, after due notice and opportunity for hearing, by order, proclaim and fix such limits on the amount of trading under contracts of sale of such commodity for future delivery on or subject to the rules of any contract market which may be done by any person as the commission finds is necessary to diminish, eliminate, or prevent such burden.”
+
+[html_block:113]
+Commodity Exchange Act of 1936, P.L 74-675, 49 Stat. 1491, § 5.
+
+[html_block:114]
+4 45 Fed. Reg. 79831, at 79833 (Dec. 2, 1980).
+
+[html_block:115]
+46 Fed. Reg. 50938 (Oct.16, 1981).
+
+[html_block:116]
+8 7 U.S.C. § 6a(e) (2008). The Commission has continued to apply regulatory requirements and provide guidance for the exchanges on exchange-set position limits.
+
+[html_block:117]
+9 CFTC, Revision of Federal Speculative Position Limits, 58 Fed. Reg. 17973 (April 7, 1993). .
+
+[html_block:118]
+10 The initial rule adopted in 1993 was an “interim final rule.” Although the Commission adopted the open interest formula, it stated that it would phase in this and the other changes the Commission was adopting in the interim rule. With respect to the open interest formula, the Commission stated that for an interim period it would permit increases in position limits to half the number allowed under the newly adopted formula, and, after the conclusion of the interim period, determine whether to permit increases to the full number of positions allowed under the formula. In 1999, the Commission adopted the open interest formula as a final rule, which it codified at 17 C.F.R. 150.5. CFTC, Revision of Federal Speculative Position Limits and Associated Rules, 64 Fed. Reg. 17973 (May 5, 1999).
+
+[html_block:119]
+11 17 C.F.R. 150.5(e)(2009).
+
+[html_block:120]
+12 See Risk Management Exemptions From Speculative Position Limits Approved Under Commission Regulation 1.61, 52 Fed. Reg. 34633 (Sept. 14, 1987).
+
+[html_block:121]
+Last Updated: January 24, 2011
+
+[html_block:122]
+RELATED LINKS
+
+[html_block:123]
+Public Meeting Regarding Proposed Position Limits Rule
+
+[html_block:124]
+Policy and Notices
+
+[html_block:125]
+Privacy Policy
+
+[html_block:126]
+Web Policy
+
+[html_block:127]
+No FEAR Act
+
+[html_block:128]
+Accessibility Statement
+
+[html_block:129]
+Whistleblower Protection Enhancement Act
+
+[html_block:130]
+Resources
+
+[html_block:131]
+CFTC Regulations
+
+[html_block:132]
+Commodity Exchange Act
+
+[html_block:133]
+Procurement
+
+[html_block:134]
+Glossary
+
+[html_block:135]
+Search Public Comments
+
+[html_block:136]
+Submit Tips & Complaints
+
+[html_block:137]
+Search Industry Filings
+
+[html_block:138]
+Whistleblower.gov Inspector General
+
+[html_block:139]
+CFTC Headquarters
+
+[html_block:140]
+Three Lafayette Centre 1155 21st Street, NW Washington, DC 20581 202.418.5000

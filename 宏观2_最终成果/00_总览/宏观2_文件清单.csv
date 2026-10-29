@@ -1,0 +1,21 @@
+﻿序号,当前路径,内容类型,归属阶段,是否必要,说明与处理建议
+1,（根目录）项目最新进展汇报.docx,进展汇报文档,阶段汇报,必要,项目进展汇报，保留原位
+2,（根目录）FinGoose_宏观事件研究数据阶段成果汇报_完善版_2026-08-12.docx,成果汇报文档,阶段成果,必要,宏观事件研究数据阶段成果汇报（完善版），保留原位
+3,（根目录）FinGoose_宏观事件研究数据阶段成果汇报_QA更新版_2026-08-12.docx,成果汇报文档,阶段成果,必要,阶段成果汇报（QA 更新版），保留原位
+4,（根目录）sft-cases-data.js,SFT 案例数据,SFT 工作台,必要,全量 SFT 案例数据（约 7.6 MB），供工作台加载
+5,（根目录）sft-case-grain-data.js,SFT 案例数据,SFT 工作台,必要,粮食金融案例单例数据
+6,（根目录）sft-chain-data.js,推理链数据,推理链可视化,必要,事实链/推理链可视化数据（约 2.2 MB）
+7,（根目录）sft-cases-workbench.js,交互脚本,SFT 工作台,必要,案例工作台前端逻辑
+8,（根目录）sft-case-ui-demo.html,演示页,SFT 工作台,必要,单案例 UI 演示页
+9,（根目录）sft-chain-visualizer.html,可视化页,推理链可视化,必要,事实传导链与作者推理链可视化页面
+10,（根目录）ui-10-cases-desktop.png,UI 截图,验收证据,必要,10 案例桌面端渲染截图
+11,（根目录）ui-10-cases-mobile.png,UI 截图,验收证据,必要,10 案例移动端渲染截图
+12,docs/,"设计规格与实施计划（2 文件）",设计文档,必要,巫师财经公开视频事件与推理链数据集设计 + 实施计划；git 已跟踪，保留原位
+13,exports/,"SFT 数据集导出（97 文件）",最终数据集,必要,v6 首轮/二轮/推理完整 + v7 跨链推理 + 90 条 V4.1/V2.3 兼容集与 UI 审计，保留原位
+14,reports/,"v4.1 UI 验证（3 文件）",验收证据,必要,desktop/mobile 截图 + verification.json（23 节点 / 9 问题 / 5 对话路径 / 3 泳道渲染校验），保留原位
+15,scripts/,"构建与核验脚本（16 文件）",工具脚本,必要,证据采集、SFT 导出、进度报告、UI 数据构建等，保留原位
+16,.worktrees/evidence-chain/,"证据链源码工程（489 文件）",最终源码（feature 分支）,必要,src 52 / tests 64 / docs 12 / scripts 19 + reports/data；git worktree 注册于 feature/evidence-chain(c320b85)
+17,宏观2_最终成果/00_总览/,"总览清单与展示页",本次整理产出,必要,文件清单 CSV + 项目展示 HTML（含归档位置与 git 完整性说明）
+18,宏观2_最终成果/02_归档_临时产物/主工作区/,"临时产物（41 项）",历史临时产物,非必要,21 个 pytest/tmp 目录 + 20 个补丁/临时脚本/日志；移入归档，可随时取回或删除
+19,宏观2_最终成果/02_归档_临时产物/worktree_evidence-chain/,"临时产物（24 项）",历史临时产物,非必要,23 个 .pytest-*/.tmp-* 运行目录 + .pytest_cache；移入归档，可随时取回或删除
+20,宏观2_最终成果/03_归档_可重下素材/worktree_data_raw/,"可重下素材（766 MB）",可重下素材,非必要,原 worktree data/raw：models(faster-whisper 463.7MB) + audio(299.1MB) + bilibili(2.4MB) + asr + wechat；可重新下载

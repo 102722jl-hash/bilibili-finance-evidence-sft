@@ -1,0 +1,24 @@
+{
+  "dataset_version": "1.0.0",
+  "dev_video_ids": [
+    "VDEV"
+  ],
+  "event_clusters": {
+    "VDEV": "financial_fraud",
+    "VTEST": "VTEST"
+  },
+  "quotas": {
+    "author_conclusion_support": 1,
+    "author_fact": 1,
+    "author_multihop": 1,
+    "author_relation": 1,
+    "world_confirmed": 1,
+    "world_partial": 1,
+    "world_source_scope": 1,
+    "world_unanswerable": 1
+  },
+  "sampled_asr_video_ids": [
+    "VDEV"
+  ],
+  "seed": 20260810
+}

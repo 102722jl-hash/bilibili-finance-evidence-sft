@@ -1,0 +1,19 @@
+{
+  "analysis_as_of": "2026-08-17",
+  "dataset_version": "7.1.0-layered-cross-chain-preview",
+  "formal_ready": false,
+  "input_sha256": {
+    "accepted_evidence.jsonl": "0b820569c5872d8ff20ad2962f7ae83df1b7a7d896e9c0d8fecc16cf87035109",
+    "case_audit_contexts.jsonl": "02f2bdac2e54f64c9f69057163e19a5f4dff1bbed5d49238358e8dc8b0e11e5e",
+    "reasoning_master_180.jsonl": "c91063747c7631af88b731eec87574131455b3243e73728ba3d0ac638bfda71f"
+  },
+  "output_sha256": {
+    "DATASET_CARD.md": "bacb69611adb197d7b7fb0237783fc011754b2255781961b62788ce141f9fc55",
+    "reasoning_preview.jsonl": "02f924d73d986e8d41bd53d2b69015f8acbe6b0b8160e0459fc2b49c4770096f",
+    "reasoning_preview.pretty.json": "1c2867a9f24a35fdb6c166e299281c859b60cdc87ebb590c0db339b5e9c72040",
+    "validation_report.json": "dca961bedbb63c95063a8ff468d01a4e46d5a362dabc073d869655aac70a4f1e"
+  },
+  "parent_version": "6.1.0-reasoning-complete",
+  "preview_only": true,
+  "schema_version": "auditable-video-reasoning/7.1-layered-preview"
+}

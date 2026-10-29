@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>宏观2 · 项目完全剖析</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;color:#1a2233;background:#f5f7fa;line-height:1.78;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.hero{background:linear-gradient(135deg,#0b1f3a 0%,#10344f 55%,#0f5f5c 100%);color:#fff;padding:56px 0 54px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-120px;top:-140px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,.4),transparent 70%)}
+.hero:before{content:"";position:absolute;left:-100px;bottom:-160px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,.28),transparent 70%)}
+.hero .wrap{position:relative;z-index:1}
+.kicker{font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:#5eead4;font-weight:700;margin-bottom:14px}
+.hero h1{margin:0 0 10px;font-size:42px;letter-spacing:-.6px;line-height:1.15}
+.hero .sub{margin:0 0 8px;font-size:19px;color:#cfe0f0;font-weight:500}
+.hero .desc{margin:0 0 22px;color:#9fb4cc;max-width:860px;font-size:14.5px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);color:#e6f2ff;padding:6px 14px;border-radius:999px;font-size:13px}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin:-36px 0 0;position:relative;z-index:2}
+.metric{background:#fff;border:1px solid #e6ecf4;border-radius:14px;padding:18px 14px;box-shadow:0 10px 26px -18px rgba(15,40,80,.45);text-align:center}
+.metric-v{font-size:26px;font-weight:800;color:#0f766e;letter-spacing:-.5px;font-variant-numeric:tabular-nums}
+.metric-k{font-size:12.5px;color:#64748b;margin-top:4px}
+.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:20px;margin:26px 0 6px}
+.chart{background:#fff;border:1px solid #e6ecf4;border-radius:14px;padding:22px 20px}
+.chart h3{margin:0 0 16px;font-size:14.5px;color:#0b1f3a;letter-spacing:.2px}
+.bar{display:grid;grid-template-columns:126px 1fr 66px;align-items:center;gap:12px;margin-bottom:11px;font-size:13px}
+.bar:last-child{margin-bottom:0}
+.bar-l{color:#475569;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar-t{background:#eef2f7;border-radius:999px;height:12px;overflow:hidden}
+.bar-f{height:100%;border-radius:999px;background:linear-gradient(90deg,#2dd4bf,#0f766e);min-width:2px;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.bar-v{text-align:right;font-variant-numeric:tabular-nums;color:#0b1f3a;font-weight:600}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:36px;align-items:start;margin:36px auto 60px}
+.sidebar{position:sticky;top:24px;background:#fff;border:1px solid #e6ecf4;border-radius:14px;padding:18px 12px;max-height:calc(100vh - 48px);overflow:auto}
+.toc-title{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:#94a3b8;font-weight:700;padding:0 10px 10px}
+.sidebar a{display:block;color:#475569;text-decoration:none;font-size:13.5px;padding:5px 10px;border-radius:8px;border-left:2px solid transparent;line-height:1.5}
+.sidebar a:hover{background:#f1f5f9;color:#0f766e}
+.sidebar a.lv3{padding-left:24px;font-size:12.8px;color:#64748b}
+.sidebar a.active{background:#e6fffb;color:#0f766e;border-left-color:#14b8a6;font-weight:600}
+.content{background:#fff;border:1px solid #e6ecf4;border-radius:16px;padding:40px 46px;box-shadow:0 12px 34px -26px rgba(15,40,80,.5);min-width:0;overflow-wrap:break-word}
+.content h1{font-size:29px;margin:0 0 18px;padding-bottom:14px;border-bottom:2px solid rgba(15,118,110,.18);color:#0b1f3a}
+.content h2{font-size:23px;margin:44px 0 16px;padding:6px 0 6px 14px;border-left:4px solid #14b8a6;color:#0b1f3a;scroll-margin-top:20px}
+.content h3{font-size:17.5px;margin:30px 0 12px;color:#134e4a;scroll-margin-top:20px}
+.content h4{font-size:15px;margin:22px 0 10px;color:#0f766e}
+.content p{margin:12px 0}
+.content ul,.content ol{margin:12px 0;padding-left:26px}
+.content li{margin:6px 0}
+.content li>ul,.content li>ol{margin:6px 0}
+.content code{background:#f1f5f9;border:1px solid #e2e8f0;border-radius:5px;padding:1px 6px;font-family:"JetBrains Mono","Cascadia Code",Consolas,monospace;font-size:.87em;color:#be185d}
+.content pre.code{background:#0b1f3a;color:#dbeafe;border-radius:12px;padding:18px 20px;overflow:auto;font-size:12.8px;line-height:1.62;margin:16px 0}
+.content pre.code code{background:none;border:none;padding:0;color:inherit;font-size:12.8px}
+.content blockquote{margin:16px 0;padding:14px 18px;background:#f0fdfa;border-left:4px solid #14b8a6;border-radius:0 10px 10px 0;color:#334155}
+.content blockquote p{margin:6px 0}
+.content hr{border:none;border-top:1px dashed #cbd5e1;margin:30px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid #e6ecf4;border-radius:12px}
+.content table{border-collapse:collapse;width:100%;font-size:13.5px}
+.content th{background:#f0f7f6;color:#0b1f3a;text-align:left;padding:10px 12px;border-bottom:2px solid #cfe8e4;font-weight:700}
+.content td{padding:9px 12px;border-bottom:1px solid #eef2f7;vertical-align:top}
+.content tr:last-child td{border-bottom:none}
+.content tbody tr:nth-child(even){background:#fafcfd}
+.foot{background:#0b1f3a;color:#8aa2bd;padding:28px 0;font-size:13px;text-align:center}
+@media(max-width:900px){.layout{grid-template-columns:1fr;gap:0}.sidebar{display:none}.content{padding:26px 20px}.hero h1{font-size:32px}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap"><div class="kicker">项目完全剖析 · 面试版</div><h1>宏观2</h1><p class="sub">B站财经视频证据链 → 可审计推理 SFT 数据集</p><p class="desc">F/M/I/C/U 五类节点 · 8 种关系 · 三链推理（事实传导 / 作者推理 / 世界核验）· 拒答与边界机制 · 防泄漏可复现门禁</p><div class="chips"><span class="chip">20 个案例</span><span class="chip">180 条 V7 样本</span><span class="chip">515 条推理步</span><span class="chip">9 项审核门禁</span><span class="chip">766MB 归档</span></div></div></header>
+<div class="wrap"><section class="metrics"><div class="metric"><div class="metric-v">20</div><div class="metric-k">案例数</div></div><div class="metric"><div class="metric-v">180</div><div class="metric-k">V7 样本</div></div><div class="metric"><div class="metric-v">515</div><div class="metric-k">推理步</div></div><div class="metric"><div class="metric-v">154</div><div class="metric-k">证据引用</div></div><div class="metric"><div class="metric-v">645</div><div class="metric-k">gap 引用</div></div><div class="metric"><div class="metric-v">14</div><div class="metric-k">输入冻结文件</div></div><div class="metric"><div class="metric-v">9</div><div class="metric-k">审核门禁</div></div><div class="metric"><div class="metric-v">97</div><div class="metric-k">导出文件</div></div></section><section class="charts"><div class="chart"><h3>终态分布（V6.1 master）</h3><div class="bar"><div class="bar-l" title="answer">answer</div><div class="bar-t"><div class="bar-f" style="width:100.0%"></div></div><div class="bar-v">60</div></div><div class="bar"><div class="bar-l" title="boundary">boundary</div><div class="bar-t"><div class="bar-f" style="width:96.7%"></div></div><div class="bar-v">58</div></div><div class="bar"><div class="bar-l" title="bounded_answer">bounded_answer</div><div class="bar-t"><div class="bar-f" style="width:55.0%"></div></div><div class="bar-v">33</div></div><div class="bar"><div class="bar-l" title="abstain">abstain</div><div class="bar-t"><div class="bar-f" style="width:48.3%"></div></div><div class="bar-v">29</div></div></div><div class="chart"><h3>V7 跨链推理规模</h3><div class="bar"><div class="bar-l" title="gap_refs">gap_refs</div><div class="bar-t"><div class="bar-f" style="width:100.0%"></div></div><div class="bar-v">645</div></div><div class="bar"><div class="bar-l" title="reasoning_steps">reasoning_steps</div><div class="bar-t"><div class="bar-f" style="width:79.8%"></div></div><div class="bar-v">515</div></div><div class="bar"><div class="bar-l" title="samples">samples</div><div class="bar-t"><div class="bar-f" style="width:27.9%"></div></div><div class="bar-v">180</div></div><div class="bar"><div class="bar-l" title="accepted_evidence">accepted_evidence</div><div class="bar-t"><div class="bar-f" style="width:23.9%"></div></div><div class="bar-v">154</div></div></div><div class="chart"><h3>三条推理链步数</h3><div class="bar"><div class="bar-l" title="fact_transmission">fact_transmission</div><div class="bar-t"><div class="bar-f" style="width:100.0%"></div></div><div class="bar-v">8</div></div><div class="bar"><div class="bar-l" title="world_verification">world_verification</div><div class="bar-t"><div class="bar-f" style="width:100.0%"></div></div><div class="bar-v">8</div></div><div class="bar"><div class="bar-l" title="author_reasoning">author_reasoning</div><div class="bar-t"><div class="bar-f" style="width:87.5%"></div></div><div class="bar-v">7</div></div></div></section></div>
+<div class="wrap layout"><aside class="sidebar"><div class="toc-title">目录</div><nav id="toc"></nav></aside><main id="content" class="content"></main></div>
+<footer class="foot"><div class="wrap">宏观2 · 项目完全剖析 · 面向技术面试整理</div></footer>
+<script type="text/markdown" id="md"># 宏观2 · 项目完全剖析
+
+> 本文档面向**技术面试**场景，对"宏观2（B站财经视频证据链 → 可审计推理 SFT 数据集）"做一次"完全解剖"：
+> 从项目定位、技术栈、三链领域模型（F/M/I/C/U 节点 + 8 种关系）、案例规模、
+> 可审计推理与拒答机制、V7 跨链推理、防泄漏与可复现门禁，到版本演进与工程踩坑，逐层展开。
+>
+> 阅读方式建议：面试前通读第 1、3、4、7 章建立全局观；被追问细节时按第 5、6、8~11 章逐层下钻；
+> 第 9、13、14 章是"门禁 + 踩坑 + 加分点"，是拉开差距的地方。
+>
+> —— 所有案例数、样本数、字段枚举、常量、哈希均以项目内文件实测为准；关键处标注文件与行号。
+> 凡代码/文件未直接证实者，均显式标注"未确认"。
+
+
+## 1. 项目一句话与定位
+
+**一句话**：把 B 站财经视频（UP 主"巫师财经"）的口播内容，抽成**以"原子命题"为单位的证据链**，再逐链组织成**可审计、可追溯、可拒答**的推理 SFT 数据集——核心卖点是"**证据链 + 审计治理 + 拒答**"，而不是普通问答对生成。
+
+**与"普通视频摘要 / 普通问答对生成"的本质区别**：
+
+| 维度 | 普通视频转 QA | 本项目 |
+|---|---|---|
+| 内容单位 | 段落摘要 | **原子命题（Claim）** + 关系边（Edge） |
+| 作者观点 | 当成事实 | 显式区分"作者推断 / 作者结论 / 可核验事实"，禁止把作者观点升格为事实 |
+| 结论来源 | 模型自由生成 | 三链分离（事实传导 / 作者推理 / 现实验证），跨链对齐 |
+| 答不出来 | 编一个 | **主动拒答**（`terminal_kind=abstain`，`causal_conclusion="ABSTAIN"`） |
+| 时序 | 忽略 | 时序关系（`precedes`）与因果关系（`causes`）分离，防"时序=因果"混淆 |
+| 数据泄漏 | 无意识 | **14 文件输入冻结哈希 + 导出后复校验 + 训练输入字段黑名单** |
+| 交付质量 | 人肉看 | 9 项审核布尔门禁 + 双哈希快照 + 确定性指纹 |
+
+**合规立场**（设计文档显式声明）：**不复现违法行为、不使用非公开信息、不绕过登录 / 验证码 / 付费墙 / 反爬**。视频时间戳与画面（视觉证据）缺口一律保留为 gap，不补写。
+
+**目标用户**：财经内容理解 / 可审计 AI 推理方向的研究者与数据集工程团队、下游 SFT 训练工程师。
+
+---
+
+## 2. 技术栈与运行环境
+
+| 层 | 技术 | 备注 |
+|---|---|---|
+| 后端 / 脚本 | **Python 3.11/3.12+**（stdlib + `dataclasses` + `json` + `hashlib`(SHA-256) + `argparse`） | `scripts/` 16 个 `.py` |
+| 抓取 / 解析 | `requests`、`beautifulsoup4`、`pypdf`、`python-docx` | 视频文案 / 网页 / PDF 解析 |
+| 测试 | **pytest**（`tests/conftest.py` 注入 `SRC_DIR` 到 `sys.path`，定义 `FIXTURES_DIR`） | worktree `tests/` 64 个文件 |
+| 存储 | **SQLite**（`research.db` / `research_v2.db` / `db.sqlite`）+ **JSONL** + CSV | 项目内出现真实 DB 夹具 |
+| 前端 | 纯 **HTML + 原生 JS**（无框架），全局 `window.SFT_CASES_DATA` / `window.SFT_CHAIN_DATA` | 三链泳道可视化 |
+| UI 验收 | **Playwright（`.mjs`）双视口** | 桌面 + 移动端 |
+| 本地服务 | HTTP 端口 **8765** | 日志 `http_8765.stdout.log` 佐证 |
+| 图表 | **Mermaid** | 设计文档 / 总览 |
+| 导出格式 | JSONL 为主，另导出合并 JSON | 如 `financial_reasoning_sft_v41_v23_compatible_90.json` |
+
+---
+
+## 3. 架构总览：三链模型与三泳道
+
+### 3.1 三链模型（`chain_type` 三值）
+
+```
+┌──────────────────────────── 一个案例（case）────────────────────────────┐
+│  ① fact_transmission   事实传导链   （8 步；CASE-VANKE 例外 9 步）        │
+│     —— "外部世界发生了什么、怎么传导"                                    │
+├──────────────────────────────────────────────────────────────────────┤
+│  ② author_reasoning    作者推理链   （7 步）                             │
+│     —— "UP 主是怎么推断的（含其隐含假设）"                               │
+├──────────────────────────────────────────────────────────────────────┤
+│  ③ world_verification  现实验证链   （8 步）                             │
+│     —— "用公开证据去验证作者的说法"                                     │
+└──────────────────────────────────────────────────────────────────────┘
+                    ↓ chain_alignments（跨链对齐）
+   fact_to_author_premise / evidence_to_claim / gap_blocks_inference /
+   author_to_bounded_world
+```
+
+**三泳道设计**：前端以三条泳道并排展示，`laneStepCounts = [8, 7, 8]`（万科 `[9, 7, 8]`），与 `data/cases/v4.1/manifest.json` 完全一致，并由 Playwright 双视口断言各案例 `nodeCount`。
+
+> 面试点：**三链分离是整个项目的思想内核**——"作者说的"（author_reasoning）和"客观发生的"（fact_transmission）和"能被验证的"（world_verification）是三种不同的东西，混在一起就会把"作者观点"当成"事实"。所有治理机制都是为了守住这条边界。
+
+### 3.2 数据结构骨架
+
+- `Claim`（`frozen=True` dataclass）：`claim_id / video_id / node_type / subject / predicate / object / event_time_start / event_time_end / quote / timestamp_start / timestamp_end / source_ref / source_grade / verification_status / notes`。
+- `Edge`：`edge_id / from_claim_id / to_claim_id / relation_type / origin / mechanism_text / evidence_refs / confidence / alternative_explanation / review_status`。
+- `CaseChain`：`chain_id / chain_type / start_ref / end_ref / steps`；`ChainStep`：`step_no / step_kind / input_refs / relation / output_ref / explanation / support_status`。
+
+> 面试点：`Claim` 用 `frozen=True` 定义——**命题一旦入库不可变**，任何修正都通过新增血缘纠正记录（lineage_correction）完成，而不是原地改写。这是"可审计"的技术基础。
+
+---
+
+## 4. 目录结构与规模统计
+
+```
+宏观2/
+├── exports/                          # 97 个导出文件（v6 三阶段 + v7 跨链）
+│   ├── v6-first-round/               # schema auditable-sft/6.0-first-round
+│   ├── v6-reasoning-complete/        # schema auditable-reasoning/6.1
+│   ├── v6-second-round/{acquisition,release}/
+│   ├── v7-cross-chain-reasoning/     # schema auditable-video-reasoning/7.1-layered
+│   └── v7-cross-chain-reasoning-preview/
+├── scripts/                          # 16 个 .py（采集 / 导出 / 校验 / 报告）
+├── reports/v4.1-ui/                  # Playwright 双视口验收（desktop.png / mobile.png / verification.json）
+├── docs/superpowers/{specs,plans}/   # 设计文档与计划
+├── sft-case-ui-demo.html             # 案例 UI 演示
+├── sft-chain-visualizer.html/js      # 三链泳道可视化
+├── sft-cases-data.js (~7.6MB) / sft-case-grain-data.js / sft-cases-workbench.js
+├── 宏观2_最终成果/00_总览/            # 项目展示 HTML + 文件清单 CSV
+├── 宏观2_最终成果/02_归档_临时产物/    # worktree 临时产物归档
+└── .worktrees/evidence-chain/        # 工作树工程：src 52 模块 / tests 64 / docs 12 / scripts 19
+```
+
+**规模统计**（`宏观2_文件清单.csv`）：
+
+| 项 | 数量 |
+|---|---|
+| exports 导出文件 | **97** |
+| scripts | 16 个 `.py` |
+| worktree 工程文件 | **489**（src **52** / tests **64** / docs 12 / scripts 19） |
+| 归档素材体积 | **766MB**（faster-whisper 模型 463.7MB + audio 299.1MB + bilibili 2.4MB） |
+
+**源码模块 52 个分布**：`src/evidence_chain/` 根 10 + `cases/` 7 + `qa/` 24 + `sources/` 3 + `training/` 8。
+**数据目录**：`data/cases/`（v2/v3/v4/v4.1/v5）、`data/qa/`（v1/v3）、`data/train/`（v1~v5）。
+**git 基线**（总览 HTML）：main `b05bd95`、worktree `feature/evidence-chain` `c320b85`。
+
+> 面试点：**"模型权重（faster-whisper 463.7MB）"也在归档里**——说明项目从音频转写开始就是自建流水线，而不是"拿现成文本"。766MB 归档的构成可以精确拆解，体现资产管理意识。
+
+---
+
+## 5. 领域模型：F/M/I/C/U 节点与 8 种关系
+
+### 5.1 节点类型（`node_type`）
+
+| 类型 | 语义 |
+|---|---|
+| **F** | 可核验事实（Fact） |
+| **M** | 传导机制（Mechanism） |
+| **I** | 作者推断（Inference） |
+| **C** | 作者结论（Conclusion） |
+| **U** | 传闻 / 缺证 / 无法判定（Unverifiable） |
+
+> 注：代码中 `report.py` 的分组逻辑直接枚举 F/M/I/C；U（传闻/缺证/无法判定）在设计层存在，其独立代码分支落点**未确认**。
+
+### 5.2 8 种关系类型（设计目标）
+
+`precedes / causes / triggers / amplifies / enables / supports / contradicts / author_implies`
+
+**代码实现现状**（`edges.py` 的 `build_author_edges`）实际自动生成 **3 种**：
+
+| 关系 | 中文线索词 | confidence |
+|---|---|---|
+| `causes` | 因此 / 所以 / 从而 / 进而 | medium |
+| `precedes` | 随后 / 之后 / 此后 | high |
+| `supports` | 作者认为 / 作者指出 / 这说明 / 这意味着 / 这就是 | medium |
+
+其余 5 种（`triggers/amplifies/enables/contradicts/author_implies`）的自动生成落点**未确认**（可能落在案例数据或 `qa` 模块的半人工标注中）。
+
+> 面试点：**诚实地区分"设计目标"与"当前实现"**——8 种关系是建模目标，自动生成目前覆盖 3 种，其余依赖案例数据标注。面试时如实说明，反而体现工程诚实度。
+
+### 5.3 边的 origin（4 值）
+
+`explicit_author / implicit_author / externally_supported / narrative_only`
+（代码可见自动生成 `explicit_author`）。
+
+### 5.4 来源强度与核验状态
+
+- **来源强度 S1–S5**（设计层）：S5 最强（判决书 / 公告），S1 最弱（口播 / 匿名爆料）。
+  实现层实际使用的 `source_tier` 取值为 **`T1 / T2 / T4 / AUTHOR`**（AUTHOR = 作者口播；T1 = 强一手来源）。
+- **核验状态 6 值**：`confirmed / partially_confirmed / unsupported / contradicted / disputed / unverifiable`。
+- `stance` 合法值：`{"supports", "contradicts", "context_only"}`（`verification.py`）。
+
+> 面试点：**`AUTHOR`（作者口播）单列一档**，不和 T1~T5 混用——因为"作者自己说的"是一个特殊来源：它可能是事实，但它首先是"作者主张"。这条边界直接对应"禁止把作者观点升格为事实"的门禁。
+
+### 5.5 跨链对齐类型（`chain_alignments[].alignment_type`）
+
+`fact_to_author_premise`（事实→作者前提）/ `evidence_to_claim`（证据→命题）/ `gap_blocks_inference`（缺口阻断推断）/ `author_to_bounded_world`（作者→有界世界）。
+
+---
+
+## 6. 案例规模与数据结构
+
+### 6.1 V4.1 十案例基线（`data/cases/v4.1/manifest.json`，seed=20260813）
+
+- 每案例：`author_reasoning=7` / `fact_transmission=8` / `world_verification=8`、**`nodes=23`**、`evidence_records=8`、`alignments=6`；
+- 例外 **CASE-VANKE**：`fact_transmission=9`、**`nodes=24`**、`evidence_records=10`；
+- 含 `v4_baseline_hashes`（基线冻结）。
+
+**首轮 10 案例主题**（设计文档）：徐翔、万科争夺战、世纪白银操纵案、上市公司财务造假、雷军与小米、香港金融保卫战、保时捷与大众并购、赵薇资本博弈、娃哈哈治理、王一博。
+样例 BVID：`BV1Htgh6DErU`（徐翔）、`BV1odj2zEEuQ`（生育补贴）、`BV11G7JzoEZ3`（美联储）、`BV1TZFoehE5w`（粮食）。
+
+### 6.2 V6 三阶段导出
+
+| 阶段 | schema | 关键数字 | status |
+|---|---|---|---|
+| **首轮** `v6-first-round` | `auditable-sft/6.0-first-round` | records **180** / case_audit_contexts 20；answerability `{answerable:48, partially_answerable:112, unanswerable:20}`；source_split `{train:144, validation:36}`；release_partition `{audit_only:109, candidate:71}`；truth_scope `{author_trace:60, world_evidence:120}` | PASS |
+| **推理完整版** `v6-reasoning-complete` | `auditable-reasoning/6.1` | master_records **180** / cases 20 / accepted_evidence 34；reasoning_status `{reasoning_approved:123, logic_reviewed:57}`；terminal_kind `{answer:60, boundary:58, bounded_answer:33, abstain:29}`；**train_messages 99 / validation_messages 24**；每案 `distinct_path_fingerprints=9`、`qa_records=9` | PASS |
+| **二轮发布** `v6-second-round/release` | `auditable-sft/6.0-second-round` | qa_records 180；release_partition `{answer_sft:103, evidence_pending:57, abstention_sft:20}`；accepted_evidence 34 / contexts 34 / evidence_links 34 / closed_from_pending 32 / sources 17 | PASS |
+
+**20 案例 ID**（来自 V6 推理版 `case_path_metrics`）：
+CASE-BIRTH-SUBSIDY、CASE-FED-TRUMP、CASE-GAME-INDUSTRY、CASE-GRAIN、CASE-HEALTH、CASE-HOUSING、CASE-JAPAN、CASE-KOREA、CASE-V5-AUTO、CASE-V5-FRAUD-ANTHOLOGY、CASE-V5-LEHUA-CRASH、CASE-V5-LEHUA-PLATFORM、CASE-V5-SILVER、CASE-V5-TECH、CASE-V5-XIAOMI、CASE-V5-XUXIANG、CASE-V5-YUANYE、CASE-V5-ZHAOWEI、CASE-VANKE、CASE-WAHAHA。
+
+### 6.3 合并 / 兼容导出
+
+- `financial_reasoning_sft_v41_v23_compatible_90.json`（90 条）+ 对应 `..._ui_audit_90.json`；
+- `sft_v41_v5_ui_audit_180.json`（180 条）。
+
+### 6.4 案例级 UI 元数据（`sft-chain-data.js`，CASE-GRAIN 样例）
+
+- `chain_bundle` 三链各含：`conclusion / evidence / inference / input_refs / output_ref / premises / reasoning_text / relation / step_kind / step_no / support_status`；
+- 另有 `macro_narrative`（`central_claim / author_conclusion_ref / generator_id="macro-narrative-v1" / reviewer_id="reviewer-v3" / review_status="approved" / implicit_assumptions / subclaims`）、`chain_completeness`、`macro_narrative_ref`。
+
+> 面试点：`macro_narrative` 专门记录"**作者的隐含假设（implicit_assumptions）**"——很多财经视频的力量来自未明说的前提，把它显式列出来，才能判断作者的推理是否成立。
+
+---
+
+## 7. 可审计推理与拒答（abstention）机制
+
+### 7.1 终态四值（`terminal_kind`）
+
+`answer`（直接回答）/ `bounded_answer`（有界回答）/ `boundary`（边界说明）/ `abstain`（拒答）。
+
+V6.1 实际分布：**answer 60 / boundary 58 / bounded_answer 33 / abstain 29**（合计 180）。
+
+> 面试点：**四态比"答/不答"两态细腻得多**——`bounded_answer` 是"能答一部分，且明确划出边界"，`boundary` 是"说明证据边界但不给结论"。这是"把不确定性编码进输出契约"的体现。
+
+### 7.2 拒答字段契约
+
+`causal_conclusion="ABSTAIN"`、`causal_attribution_allowed=false`、`identification_status="NOT_IDENTIFIED"`（见 `case_audit_contexts.jsonl` 的 `causal_assessments`）。
+
+`causal_assessments[]` 字段：`alternative_explanations / boundary_zh / causal_attribution_allowed / causal_conclusion / confounder_refs / identification_status / mediator_refs / method / moderator_refs / required_evidence / target_ref`。
+
+### 7.3 审计上下文（`case_audit_contexts.jsonl`）
+
+- 外层 schema `case-audit-context/6.0-first-round`，内层 `ui-audit-context/1.0`；
+- **`training_visibility="metadata_only_excluded_from_messages"` / `excluded_from_messages`**——即"这些审计元数据绝不进训练输入"；
+- 含 `author_central_claim`、`case_overview`（entities / event_cluster_id / `generator_id="v41-deep-graph-builder"` / review_status / reviewer_id / `source_provenance` / `sponsorship_disclosure{status="none"}` / time_scope / title / video_id / split）；
+- `claim_level_evidence[]`：`acceptance_status ∈ {ACCEPTED, CONTEXT_ONLY, GAP, REJECTED}`、`source_tier ∈ {AUTHOR, T1, T4}`、`stance`；
+- `completeness.dimensions`（**8 项**）：`alternative_explanation_coverage / causal_identification / cross_chain_alignment / event_coverage / evidence_coverage / mechanism_coverage / provenance_completeness / temporal_consistency`，status ∈ `{complete, partial, blocked}`；
+- `dialogue_paths[]`（dialogue_id / entry_kind / qa_ids / turn_count / cumulative_coverage_tags）、`followup_graph`、`macro_narrative`、`mother_graph`（`chains[3]` / critical_distinctions / `nodes[{event_time, node_id, node_kind, provenance_type, text}]`）、`published_contexts`、`question_catalog`（9 条 QA）、`source_registry`；
+- `ui_summary`：`chain_step_counts / claim_evidence_status_counts / context_count=4 / dialogue_path_count=5 / evidence_link_count=4 / node_count=23 / question_count=9 / source_count=2`。
+
+### 7.4 推理消息层（`reasoning_approved_answer.jsonl`）
+
+`terminal_kind / reasoning_status / truth_scope="author_trace" / split / question_role="origin" / user_intent="understand" / chain_completeness="complete_to_terminal"`；
+`reasoning_contract{required_evidence_ids, target_author_nodes, target_claim_ids, target_fact_nodes, target_world_nodes, terminal_kind}`；
+`local_reasoning_path[]{conclusion, evidence_refs, explanation, input_refs, output_ref, relation, step_kind, step_no, support_status{author_fidelity, world_validity}}`。
+
+### 7.5 bounded_answer 样例（`reasoning_approved_bounded.jsonl`）
+
+- `answerability="partially_answerable"`；
+- `author_world_divergence[{author_ref, divergence_type="evidence_scope_narrower_than_author_claim", explanation, terminal_kind="bounded_answer", world_ref}]`——**显式记录"作者主张"与"现实证据"的偏离**；
+- `citations` 含 `content_sha256 / snapshot_sha256 / source_tier=T1 / temporal_role="POST_EVENT_VALIDATION"`；
+- `missing_step_refs=["CONCLUSION_SCOPE_LIMITED","SOURCE_EVIDENCE_INCOMPLETE"]`。
+
+### 7.6 9 项审核布尔门禁（`reasoning_review_log.jsonl` 的 `checks`）
+
+| 门禁 | 防的是什么 |
+|---|---|
+| `alternative_explanation_omitted` | 漏掉替代解释 |
+| **`author_claim_upgraded_to_world_fact`** | **把作者观点升格为世界事实**（核心） |
+| `citations_support_steps` | 引证是否真的支撑推理步 |
+| `evidence_reviewed` | 证据是否已审 |
+| `has_skipped_step` | 是否跳步 |
+| `logic_reviewed` | 逻辑是否已审 |
+| `reasoning_approved` | 推理是否已批准 |
+| `structurally_complete` | 结构是否完整 |
+| **`temporal_causal_confusion`** | **把"先后发生"误当"因果"** |
+
+- `decision ∈ {reasoning_approved, logic_reviewed}`；另有 `sample_group`、`stable_gap_codes`、`before_path_fingerprint / after_path_fingerprint`（修改前后路径指纹对比）。
+
+> 面试点：这两个门禁名（`author_claim_upgraded_to_world_fact`、`temporal_causal_confusion`）就是**"财经内容 AI 最常见的两类错误"**的代码化。面试时直接点名，很能体现对领域错误的洞察。
+
+### 7.7 问答分类维度
+
+- `question_role` **9 值**：`origin / mechanism / author_assumption / evidence_confirmation / evidence_boundary / causal_refusal / alternative_explanation / bounded_impact / cross_chain_synthesis`。
+- `user_intent` **6 类**：understand / explain / verify / impact / evaluate / compare。
+- `SupportStatus.world_validity` 值：`confirmed / partially_supported / unsupported / not_reviewed`。
+
+> 面试点：`causal_refusal`（因果拒答）是一个**独立的问答类型**——说明"拒答"不是异常分支，而是数据集里被显式建模、可被评测的一类期望行为。
+
+---
+
+## 8. V7 跨链推理：五层结构
+
+`exports/v7-cross-chain-reasoning`（schema `auditable-video-reasoning/7.1-layered`，status `PASS_CANDIDATE_PREVIEW`）：
+
+- samples **180** / cases **20** / **reasoning_steps 515** / accepted_evidence_refs **154** / gap_refs **645** / **lineage_corrections 10**；
+- 9 种 role 各 20（与第 7.7 节 `question_role` 一一对应）。
+
+**每条记录拆为 5 层**：`qa / answer / reasoning / audit / training_projection`。
+训练投影标记 **`PREVIEW_ONLY_EXCLUDED`**（V7 全量目录即"候选预览"，非正式训练发布）。
+
+**warnings**：`SOURCE_CONTEXT_NOT_EMBEDDED / VIDEO_TIMESTAMP_NOT_AVAILABLE / VISUAL_EVIDENCE_NOT_EXTRACTED`。
+
+**预览目录** `v7-cross-chain-reasoning-preview`（schema `.../7.1-layered-preview`，status `PASS_PREVIEW`）：samples 1 / chains 3 / reasoning_steps 24 / accepted_evidence 6 / evidence_gaps 2 / messages 3。
+
+V7 另含：`gap_manifest.jsonl`、`answer_records.jsonl`、`qa_records.jsonl`、`reasoning_master_180.jsonl`、`training_messages_preview.jsonl`、`reasoning_preview_vanke.pretty.json`。
+
+> 面试点：**`gap_refs=645` 远大于 `accepted_evidence_refs=154`**（约 4:1）——这个比例恰恰说明系统"承认的缺口比它掌握的确定证据多得多"。诚实的数据集不怕暴露 gap。
+
+---
+
+## 9. 防泄漏与可复现门禁（核心）
+
+这是本项目的**第一加分项**，面试务必讲到。
+
+### 9.1 输入冻结哈希（`EXPECTED_INPUT_HASHES`）
+
+`scripts/export_sft_v6_reasoning_complete.py` **第 57–72 行**：14 个文件的 SHA-256 白名单——
+`abstention_sft / accepted_evidence / answer_sft / case_audit_contexts / closed_from_pending / contexts / DATASET_CARD.md / evidence_links / evidence_pending / manifest.json / qa_records / search_audit / sources / validation_report`。
+
+- 第 **112–118 行**：逐文件比对，缺失 → `missing frozen input`，不符 → `frozen input changed`；
+- 第 **764–766 行**：导出后**再校验一次**，变更则报 `V6 second-round source hashes changed`。
+
+> 面试点：**"导出前冻结 + 导出后复校验"双向锁**——防止"读入 A 版本、写出 B 版本"的静默漂移。这是数据血缘工程的关键手法。
+
+### 9.2 防泄漏字段黑名单
+
+`scripts/export_sft_v6_reasoning_complete.py` **第 758–760 行**：**禁止 `"audit_context" / "mother_graph" / "terminal_kind"` 进入训练输入 messages**。
+
+与审计上下文里的 `training_visibility="excluded_from_messages"` 呼应——**审计元数据与训练输入物理隔离**。
+
+> 面试点：为什么连 `terminal_kind`（终态）都要禁？因为它等于"答案标签"。如果终态泄漏进输入，模型就"看着答案做推理"，评测全废。
+
+### 9.3 快照双哈希门禁
+
+来源快照**同时携带 `snapshot_sha256` 与 `content_sha256`**（见 bounded 样本 citations、`v4.1/config.json` 的 `source_audit`）——**内容与快照双向锁定**（同一内容无论怎么打包，两个哈希都对得上）。
+
+### 9.4 已知 bug 与血缘纠正
+
+- 常量 **`KNOWN_V5_CONTEXT_LEAK = "CTX-BIRTH-SUBSIDY-A1"`**（`scripts/export_sft_v7_cross_chain_full.py` **第 33 行**）：V5 阶段发现的**跨案例上下文泄漏点**。
+- V7 处理（第 **204–226 行**）：检测到该 ref 后，把它**归一化为 `mother_graph.fact_transmission.start_ref`**，并产出纠正记录
+  `{correction_code:"V6_CROSS_CASE_CONTEXT_REPLACED", from_ref, to_ref, authority:"mother_graph.fact_transmission.start_ref"}`；
+- 第 **526–529 行**：对 `CASE-V5-*` 再检，命中 premise_refs 则报 `V5_CROSS_CASE_CONTEXT_LEAK`。
+
+> 面试点：**"发现 bug → 不篡改原始数据，而是新增一条血缘纠正记录"**——这是本项目最值得讲的一个工程态度：**原始数据 immutable，修改以"纠正层"叠加**。`lineage_corrections=10` 就是这 10 条纠正。
+
+### 9.5 因果与引证门禁（`export_sft_v7_cross_chain_full.py`）
+
+- 第 **530–534 行**：`status != "IDENTIFIED"` 却 `causal_attribution_allowed` 或 `causal_conclusion != "ABSTAIN"` → 报 **`CAUSAL_GATE_CONTRADICTION`**；
+- 第 **524–525 行**：answer 引证的 `source_tier` 必须 ∈ `{T1, T2}`，否则报 **`ANSWER_CITATION_TIER_INELIGIBLE`**；
+- `export_sft_v6_reasoning_complete.py` 第 **733 行**：对 `contradicted` 情形设卡。
+
+### 9.6 基线冻结与确定性
+
+- `data/cases/v5/config.json` 的 `frozen_baseline_hashes`（锁 v4/v4.1 manifest、`sample_manifest.csv`、`reports/all/*.csv`）；`split_strategy="event_cluster"`；
+- `data/cases/v4.1` 的 `v4_baseline_hashes`；`build_progress_report_complete.py` 的 `REFERENCE_SHA256` 校验；
+- 导出脚本对 master 做 `sample_sha256` 汇总（V7 = `79305fb7…`、preview = `02f924d7…`），配合固定 seed（v4.1 `seed=20260813`）。
+
+> 面试点：**按 `event_cluster` 切分**（而非按样本）——同一事件簇的样本不会跨越 train/val 边界。
+
+---
+
+## 10. 数据采集与来源治理
+
+### 10.1 采集流水线
+
+- 脚本：`acquire_v5_evidence.py`（138 行）、`acquire_v5_evidence_expansion.py`（116 行）、`extract_v5_evidence_snapshots.py`（172 行）；二轮证据配置 `scripts/v6_second_round_evidence_config.json`。
+- 产物：`exports/v6-second-round/acquisition/` 下 `acquisition_records.jsonl`、`expansion_acquisition_records.jsonl`、`extraction_candidates.jsonl`、`expansion_extraction_candidates.jsonl`，以及 `snapshots/` 下**成对的 `<sha256>.html / .pdf` 与 `.txt`**（约 40+ 文件，**文件名即内容哈希**）。
+
+> 面试点：**快照文件名 = 内容 SHA-256**——这是"内容寻址存储（content-addressed storage）"的思路，天然去重、天然防篡改。
+
+### 10.2 来源治理状态机
+
+`source_audit` 的 statuses ∈ `{CONTEXT_ONLY, REJECTED, ACCEPTED}`；reasons ∈
+`{CONTEXT_ONLY_NOT_SOURCE_FACT, HTTP_403_ACCESS_RESTRICTED, HTTP_404_CURRENTLY_NOT_REPRODUCIBLE, T1_SOURCE_QUOTE_LOCATOR_URL_COMPLETE, GATES_PASSED}`。
+
+**准入规则**：来源须"可引用定位器 URL 完整 + 门禁通过"（`T1_SOURCE_QUOTE_LOCATOR_URL_COMPLETE` / `GATES_PASSED`）方入 **ACCEPTED**；不可复现（403/404）或非来源事实（`CONTEXT_ONLY_NOT_SOURCE_FACT`）则降级或拒绝。
+
+### 10.3 披露与合规
+
+- `sponsorship_disclosure{status, sponsor, source_ref, notes}`（案例中 `status="none"`）——**明示是否含商业赞助**；
+- 视频时间戳与画面缺口一律保留为 gap，不补写（V7 warnings）。
+
+---
+
+## 11. 前端可视化与交付形态
+
+- `sft-case-ui-demo.html`：案例级 UI 演示；`sft-chain-visualizer.html` + `sft-chain-data.js`：三链泳道可视化。
+- 全局数据：`window.SFT_CASES_DATA` / `window.SFT_CHAIN_DATA`；`sft-cases-data.js`（约 7.6MB）/ `sft-case-grain-data.js` 为静态数据源。
+- 本地服务端口 **8765**；Playwright 双视口验收（`reports/v4.1-ui/desktop.png`、`mobile.png`、`verification.json` 约 1314 行，断言各案例 `nodeCount`）。
+- 界面可展示：三链泳道、跨链对齐、ABSTAIN 状态、证据引用。
+
+> 面试点：前端不是"演示壳"，而是**审计结果的可视化验证工具**——`verification.json` 用断言把"页面渲染出的节点数"与"数据集里的节点数"绑死，形成 UI 与数据的一致性门禁。
+
+---
+
+## 12. 版本演进：V1 → V7
+
+```
+V1 → V2 → V3 → V4 → V4.1（十案例基线，seed=20260813）
+     → V5（dataset_version 5.0.0，冻结 v4/v4.1 基线哈希）
+     → V6-first-round（180 记录 / 20 案例）
+     → V6-reasoning-complete（180 master / terminal 四态 / train 99 + val 24）
+     → V6-second-round（103 answer + 57 pending + 20 abstention）
+     → V7-cross-chain（180 样本 / 515 步 / 10 条血缘纠正 / 五层结构）
+```
+
+**schema_version 对照**：`auditable-sft/6.0-first-round`、`auditable-reasoning/6.1`、`auditable-sft/6.0-second-round`、`auditable-video-reasoning/7.1-layered`、`.../7.1-layered-preview`。
+
+**发布口径的可管理性**（worktree plan `2026-08-12-conversational-qa-v3.md`）：
+"原 V3 基线收窄为 **7 个批准案例、63 条规范 QA、35 条自适应对话路径**；后续**十案例恢复计划取代该发布计数**……产出 **10 案例、90 QA、50 对话路径**，并保持 V2 不变。"
+
+> 面试点：这段记录说明团队**明确管理"发布口径"的变化**——先收窄基线保证质量，再恢复规模。这是"数据产品发布管理"的成熟表现。
+
+**worktree plan 时间线**：`2026-08-07-bilibili-evidence-chain` → `08-10-batch-verification` → `08-10-multitask-training-dataset` → `08-11-event-case-pack-v2` → `08-12-conversational-qa-v3` → `08-12-v3-sft-dataset` → `08-12-v3-ten-case-restoration`。
+
+---
+
+## 13. 工程踩坑与解决总览
+
+| # | 踩坑 | 解决 | 面试价值 |
+|---|---|---|---|
+| 1 | **V5 跨案例上下文泄漏**（`CTX-BIRTH-SUBSIDY-A1`） | V7 加血缘纠正层（`V6_CROSS_CASE_CONTEXT_REPLACED`），**不改原始数据**，产出 `lineage_corrections` | 展示"数据 immutable + 纠正可追溯"的工程态度 |
+| 2 | 审计元数据混入训练输入 | 训练输入**字段黑名单**（`audit_context` / `mother_graph` / `terminal_kind`）+ `training_visibility` 标记 | 展示"标签泄漏"意识 |
+| 3 | 输入版本静默漂移 | `EXPECTED_INPUT_HASHES` 14 文件冻结 + 导出后复校验 | 展示数据血缘与可复现 |
+| 4 | 因果口径被随意放宽 | 因果门禁（非 IDENTIFIED 必 ABSTAIN）+ `CAUSAL_GATE_CONTRADICTION` | 展示"抗幻觉"的制度化 |
+| 5 | 引证来源强度不足 | `ANSWER_CITATION_TIER_INELIGIBLE`（只允许 T1/T2） | 展示证据分级治理 |
+| 6 | 来源不可复现（403/404） | 降级为 `CONTEXT_ONLY` / `REJECTED`，**不伪造** | 展示合规与诚信底线 |
+| 7 | 时序被误当因果 | `temporal_causal_confusion` 审核门禁 + `precedes`/`causes` 分离 | 展示领域错误洞察 |
+
+---
+
+## 14. 面试加分点提炼
+
+> 这一章是"拉开差距"的地方，建议背下 3~5 条。
+
+### 14.1 "原子命题级"证据图
+
+`Claim`（frozen dataclass）→ `Edge` 的图结构 + `node_type`（F/M/I/C/U）分类，展示对"事实—机制—推断—结论"的严谨区分。
+
+### 14.2 三链分层建模
+
+`fact_transmission / author_reasoning / world_verification`，8/7/8 步固定骨架（VANKE 例外 9 步），并有 `chain_alignments` 跨链对齐——**"作者叙事"与"现实证据"的分离**是核心叙事。
+
+### 14.3 可审计推理 + 主动拒答
+
+- `terminal_kind` 四态（answer / bounded_answer / boundary / abstain）；
+- ABSTAIN 三件套字段（`causal_conclusion="ABSTAIN"` / `causal_attribution_allowed=false` / `identification_status="NOT_IDENTIFIED"`）；
+- 9 项审核布尔门禁，尤其 `author_claim_upgraded_to_world_fact`（防"把作者观点升格为事实"）与 `temporal_causal_confusion`（防"时序=因果"）。
+
+### 14.4 防泄漏工程
+
+- **14 文件输入冻结哈希 + 导出后复校验**；
+- **双哈希来源快照**（`snapshot_sha256` + `content_sha256`）；
+- **训练输入字段黑名单**（`audit_context` / `mother_graph` / `terminal_kind`）。
+
+### 14.5 数据血缘纠错
+
+`KNOWN_V5_CONTEXT_LEAK` 常量 + `lineage_corrections` 机制——**"发现 bug → 加门禁 → 留纠正记录 → 不篡改原始数据"**。
+
+### 14.6 可背的量化成果数字
+
+- 20 案例 / **180 master 记录** / **515 推理步** / 154 证据引用 / **645 gap 引用** / 17 来源 / 34 accepted evidence；
+- V6.1 终态：answer **60** / boundary **58** / bounded_answer **33** / abstain **29**；train/val **99/24**；
+- 每案例 23 节点（万科 24）、9 QA、5 对话路径；三泳道 8/7/8；
+- 规模：**97 导出文件 / 52 源码模块 / 64 测试 / 766MB 归档**（含 faster-whisper 模型 463.7MB）；
+- 门禁：14 文件输入冻结、9 项审核布尔门禁、10 条血缘纠正。
+
+### 14.7 一句话总结（面试收尾）
+
+> "我做的是一个**把'财经视频里的说法'拆成'可审计证据链'的项目**：一句口播要被拆成原子命题，标注它是事实 / 机制 / 作者推断 / 作者结论；作者的观点永远不能被当成世界事实；证据不够就主动拒答；原始数据不可改，任何修正都以'血缘纠正'叠加。所以它的价值不是'转写了多少视频'，而是'每条结论能不能被审计与复现'。"
+
+---
+
+## 15. 已知局限与后续规划
+
+### 15.1 已知局限
+
+1. **视觉 / 时间戳缺失**：V7 三处 warning（`VIDEO_TIMESTAMP_NOT_AVAILABLE` / `VISUAL_EVIDENCE_NOT_EXTRACTED` / `SOURCE_CONTEXT_NOT_EMBEDDED`）。
+2. **V5 跨案例上下文泄漏**：已知 bug `CTX-BIRTH-SUBSIDY-A1`，V7 以血缘纠正（10 条）修复而非清洗原始数据。
+3. **训练集隔离而非清洗**：审计元数据通过"排除字段"避免进入训练输入，属**工程隔离**，非内容脱敏。
+4. **关系类型实现不完整**：设计 8 关系，`edges.py` 自动生成仅 `causes / precedes / supports`（其余依赖案例数据标注，`未确认`是否有独立生成器）。
+5. **U 类节点 / 部分关系类型的代码枚举未完全确证**。
+6. **V7 仍为候选预览**：`PASS_CANDIDATE_PREVIEW`、`training_projection` 标 `PREVIEW_ONLY_EXCLUDED`，非正式训练发布。
+7. **部分 QA 未闭环**：二轮发布 `evidence_pending=57`（约占 180 的 32%），且 `logic_reviewed=57` 尚未晋升 `reasoning_approved`。
+8. **"224 passed" 出处为叙述文本**：`build_progress_brief.py:213` 写入 docx 的描述；仓库内**未找到独立 pytest 汇总日志**佐证该数字。
+9. 前端 `sft-cases-data.js`（≈7.6MB）为静态演示数据，未确认真实服务端。
+
+### 15.2 后续规划
+
+- 补齐**视觉证据提取**与**视频时间戳**（补上 V7 三处 warning）；
+- 把 `evidence_pending` 的 57 条 QA 继续闭环；
+- 将 `logic_reviewed` 晋升为 `reasoning_approved`，扩大可训练子集；
+- 扩展关系类型的自动生成覆盖（从 3 种向 8 种逼近）；
+- 将 V7 从 `PASS_CANDIDATE_PREVIEW` 推进到正式训练发布。
+
+---
+
+## 16. 附录：关键数字速查表 & 高频追问题库
+
+### 16.1 关键数字速查表
+
+| 项目 | 数字 |
+|---|---|
+| 案例数 | 20（V4.1 十案例基线 + V5 扩展） |
+| 每案例节点数 | 23（CASE-VANKE 24） |
+| 每案例 QA 数 | 9 |
+| 每案例对话路径数 | 5 |
+| 三泳道步数 | 8 / 7 / 8（VANKE 9 / 7 / 8） |
+| V6 首轮记录 | 180（train 144 / val 36） |
+| V6.1 master | 180（train 99 / val 24） |
+| 终态分布 | answer 60 / boundary 58 / bounded_answer 33 / abstain 29 |
+| V7 样本 / 推理步 | 180 / 515 |
+| V7 证据引用 / gap 引用 | 154 / 645 |
+| 血缘纠正 | 10 |
+| 输入冻结文件 | 14（SHA-256 白名单） |
+| 审核布尔门禁 | 9 项 |
+| 导出文件 / 源码 / 测试 | 97 / 52 / 64 |
+| 归档体积 | 766MB |
+| 本地 UI 端口 | 8765 |
+
+### 16.2 高频追问题库（附参考答法）
+
+**Q1：你怎么防止"把作者观点当成事实"？**
+A：三层——①建模层把节点分成 F/M/I/C/U，作者推断（I）、作者结论（C）与世界事实（F）不同类；②三链分离（author_reasoning vs world_verification）并做跨链对齐；③审核门禁 `author_claim_upgraded_to_world_fact` 专门拦这一类错误。
+
+**Q2：`abstain`（拒答）为什么是加分项？**
+A：拒答被建模成一等公民——`terminal_kind` 四态之一、`causal_refusal` 是独立问答类型、ABSTAIN 有三件套字段。V6.1 里 180 条中 29 条拒答。它证明系统**能识别"证据不足以给因果"并如实承认**，而不是硬编一个。
+
+**Q3：你说的"可复现"具体靠什么？**
+A：三层锁定——①`EXPECTED_INPUT_HASHES` 14 文件输入冻结；②导出后再次校验，变更即报错；③固定 seed + master 的 `sample_sha256` 指纹 + 基线哈希冻结（`frozen_baseline_hashes`）。
+
+**Q4：`KNOWN_V5_CONTEXT_LEAK` 是什么问题，你怎么修的？**
+A：V5 阶段发现某案例的上下文引用会跨案例泄漏（常量 `CTX-BIRTH-SUBSIDY-A1`）。V7 的处理是**不改原始数据**，而是在导出时把它归一化到 `mother_graph.fact_transmission.start_ref`，并产出一条 `V6_CROSS_CASE_CONTEXT_REPLACED` 纠正记录（共 10 条 `lineage_corrections`），同时对 `CASE-V5-*` 再设卡复查。
+
+**Q5：为什么训练输入要禁 `terminal_kind`？**
+A：它是"答案终态标签"，等价于把答案告诉模型。同理禁 `audit_context`、`mother_graph`。所以训练输入与审计元数据物理隔离（`training_visibility="excluded_from_messages"`）。
+
+**Q6：`gap_refs=645` 远多于 `accepted_evidence_refs=154`，是不是数据质量差？**
+A：正相反。这表示系统**承认的缺口远多于它掌握的确定证据**——它不掩盖缺证，而是把每个 gap 显式列出来（`gap_manifest`）。诚实比"看起来完整"更重要。
+
+**Q7：项目最大的技术难点是什么？**
+A：**建立并守住"事实 / 机制 / 作者推断 / 作者结论"四类节点的边界，并让整条链路可审计、可复现、可拒答**。难点不在抽文本，而在：把口径写成门禁、把修改写成血缘、把泄漏挡在导出前、把不确定编码成四态终态。
+
+---
+
+*文档基于项目内文件实测整理；标注"未确认 / 版本差异"处请以最新交付物为准。*</script>
+<script>
+(function(){
+  var rawEl = document.getElementById('md');
+  if(!rawEl){ return; }
+  var raw = rawEl.textContent.replace(/^\n/, '');
+
+  function esc(s){
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function inline(s){
+    s = esc(s);
+    var codes = [];
+    s = s.replace(/\x60([^\x60]+)\x60/g, function(m,p){ codes.push(p); return '\u0001' + (codes.length-1) + '\u0001'; });
+    s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    s = s.replace(/(^|[^*\w])\*([^*\n]+)\*(?!\*)/g, '$1<em>$2</em>');
+    s = s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+    s = s.replace(/\u0001(\d+)\u0001/g, function(m,d){ return '<code>' + codes[+d] + '</code>'; });
+    return s;
+  }
+
+  function indentWidth(l){ return l.match(/^[ \t]*/)[0].replace(/\t/g,'    ').length; }
+  function itemMatch(l){ return l.match(/^([ \t]*)([-*+]|\d+[.)])[ \t]+([\s\S]*)$/); }
+  function isTableSep(l){ return l.indexOf('|') >= 0 && /^\s*\|?[\s:\-|]+\|[\s:\-|]*$/.test(l) && l.indexOf('-') >= 0; }
+  function splitRow(l){
+    var t = l.trim();
+    if(t.charAt(0) === '|'){ t = t.slice(1); }
+    if(t.charAt(t.length-1) === '|'){ t = t.slice(0,-1); }
+    return t.split('|').map(function(c){ return c.trim(); });
+  }
+
+  function parseList(lines, start, baseIndent){
+    var first = itemMatch(lines[start]);
+    var ordered = /^\d/.test(first[2]);
+    var items = [];
+    var i = start;
+    while(i < lines.length){
+      if(/^\s*$/.test(lines[i])){
+        var j = i;
+        while(j < lines.length && /^\s*$/.test(lines[j])){ j++; }
+        if(j < lines.length && itemMatch(lines[j]) && indentWidth(lines[j]) >= baseIndent){ i = j; }
+        else { break; }
+      }
+      var m = itemMatch(lines[i]);
+      if(!m){ break; }
+      var ind = indentWidth(lines[i]);
+      if(ind < baseIndent){ break; }
+      if(ind > baseIndent){
+        var sub = parseList(lines, i, ind);
+        if(items.length){ items[items.length-1].children.push(sub.html); }
+        i = sub.next;
+        continue;
+      }
+      var item = { text: m[3].trim(), children: [], cont: [] };
+      items.push(item);
+      i++;
+      while(i < lines.length){
+        if(/^\s*$/.test(lines[i])){
+          var k = i;
+          while(k < lines.length && /^\s*$/.test(lines[k])){ k++; }
+          if(k < lines.length && itemMatch(lines[k]) && indentWidth(lines[k]) >= baseIndent){ i = k; }
+          break;
+        }
+        var m2 = itemMatch(lines[i]);
+        if(m2){
+          if(indentWidth(lines[i]) > baseIndent){
+            var sub2 = parseList(lines, i, indentWidth(lines[i]));
+            item.children.push(sub2.html);
+            i = sub2.next;
+            continue;
+          }
+          break;
+        }
+        if(indentWidth(lines[i]) > baseIndent){ item.cont.push(lines[i].trim()); i++; continue; }
+        break;
+      }
+    }
+    var tag = ordered ? 'ol' : 'ul';
+    var html = '<' + tag + '>' + items.map(function(it){
+      var t = it.text;
+      if(it.cont.length){ t += ' ' + it.cont.join(' '); }
+      return '<li>' + inline(t) + it.children.join('') + '</li>';
+    }).join('') + '</' + tag + '>';
+    return { html: html, next: i };
+  }
+
+  function renderMD(md){
+    var lines = md.replace(/\r\n?/g, '\n').split('\n');
+    var out = [];
+    var heads = [];
+    var hid = 0;
+    var i = 0;
+    while(i < lines.length){
+      var line = lines[i];
+
+      if(/^\s*\x60\x60\x60/.test(line)){
+        var fm = line.match(/^\s*\x60\x60\x60(.*)$/);
+        var buf = [];
+        i++;
+        while(i < lines.length && !/^\s*\x60\x60\x60/.test(lines[i])){ buf.push(lines[i]); i++; }
+        if(i < lines.length){ i++; }
+        out.push('<pre class="code"><code>' + esc(buf.join('\n')) + '</code></pre>');
+        continue;
+      }
+
+      if(/^\s*$/.test(line)){ i++; continue; }
+
+      if(/^\s*(-{3,}|\*{3,}|_{3,})\s*$/.test(line)){ out.push('<hr>'); i++; continue; }
+
+      var h = line.match(/^(#{1,6})\s+(.*?)\s*#*\s*$/);
+      if(h){
+        var lvl = h[1].length;
+        var txt = h[2];
+        hid++;
+        var id = 'sec' + hid;
+        out.push('<h' + lvl + ' id="' + id + '">' + inline(txt) + '</h' + lvl + '>');
+        if(lvl >= 2 && lvl <= 3){ heads.push({ id: id, lvl: lvl, text: txt.replace(/[*\x60]/g,'') }); }
+        i++;
+        continue;
+      }
+
+      if(/^\s*>/.test(line)){
+        var bq = [];
+        while(i < lines.length && /^\s*>/.test(lines[i])){ bq.push(lines[i].replace(/^\s*>\s?/,'')); i++; }
+        var paras = [];
+        var cur = [];
+        bq.forEach(function(t){
+          if(t.trim() === ''){ if(cur.length){ paras.push(cur.join(' ')); cur = []; } }
+          else { cur.push(t.trim()); }
+        });
+        if(cur.length){ paras.push(cur.join(' ')); }
+        out.push('<blockquote>' + paras.map(function(p){ return '<p>' + inline(p) + '</p>'; }).join('') + '</blockquote>');
+        continue;
+      }
+
+      if(line.indexOf('|') >= 0 && i+1 < lines.length && isTableSep(lines[i+1])){
+        var header = splitRow(line);
+        i += 2;
+        var rows = [];
+        while(i < lines.length && lines[i].indexOf('|') >= 0 && !/^\s*$/.test(lines[i])){
+          rows.push(splitRow(lines[i])); i++;
+        }
+        var th = '<div class="table-wrap"><table><thead><tr>';
+        header.forEach(function(c){ th += '<th>' + inline(c) + '</th>'; });
+        th += '</tr></thead><tbody>';
+        rows.forEach(function(r){
+          th += '<tr>';
+          for(var k2 = 0; k2 < header.length; k2++){ th += '<td>' + (r[k2] !== undefined ? inline(r[k2]) : '') + '</td>'; }
+          th += '</tr>';
+        });
+        th += '</tbody></table></div>';
+        out.push(th);
+        continue;
+      }
+
+      if(itemMatch(line)){
+        var res = parseList(lines, i, indentWidth(lines[i]));
+        out.push(res.html);
+        i = res.next;
+        continue;
+      }
+
+      var pbuf = [line];
+      i++;
+      while(i < lines.length && !/^\s*$/.test(lines[i]) && !/^#{1,6}\s/.test(lines[i]) && !/^\s*>/.test(lines[i]) && !itemMatch(lines[i]) && !/^\s*\x60\x60\x60/.test(lines[i]) && !/^\s*(-{3,}|\*{3,}|_{3,})\s*$/.test(lines[i])){
+        if(lines[i].indexOf('|') >= 0 && i+1 < lines.length && isTableSep(lines[i+1])){ break; }
+        pbuf.push(lines[i]); i++;
+      }
+      out.push('<p>' + inline(pbuf.join(' ')) + '</p>');
+    }
+    return { html: out.join('\n'), heads: heads };
+  }
+
+  var parsed = renderMD(raw);
+  document.getElementById('content').innerHTML = parsed.html;
+
+  var toc = document.getElementById('toc');
+  parsed.heads.forEach(function(h){
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.text;
+    if(h.lvl === 3){ a.className = 'lv3'; }
+    toc.appendChild(a);
+  });
+  var links = [].slice.call(toc.querySelectorAll('a'));
+  var targets = links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
+  function spy(){
+    var pos = window.scrollY + 130;
+    var idx = 0;
+    for(var t = 0; t < targets.length; t++){
+      if(targets[t] && targets[t].offsetTop <= pos){ idx = t; }
+    }
+    for(var u = 0; u < links.length; u++){ links[u].classList.toggle('active', u === idx); }
+  }
+  window.addEventListener('scroll', spy, { passive: true });
+  window.addEventListener('resize', spy);
+  spy();
+})();
+</script>
+</body>
+</html>

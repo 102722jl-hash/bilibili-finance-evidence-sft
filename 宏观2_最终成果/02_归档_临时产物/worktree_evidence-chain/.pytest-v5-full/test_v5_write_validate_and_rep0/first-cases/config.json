@@ -1,0 +1,17 @@
+{
+  "dataset_version": "5.0.0",
+  "frozen_baseline_hashes": {
+    "data/cases/v4.1/manifest.json": "4c3d32498fc4a174be11c2ce15cb34586da9ac9382a799ab3a833d2d70a88842",
+    "data/cases/v4/manifest.json": "6f6adbc21ac865699b98fac43d405243ef4f64eb3ad74e1deb021e274864edd4",
+    "data/sample_manifest.csv": "41bfdaef857f9a49a28eaadb0b6a152aa8d668562f3c8a8bb6d79738547db1d5",
+    "data/train/v4.1/manifest.json": "094a3a4221b1b9ec9d72100ac29082bcd8860644424957c00cf2ba5f0a69b540",
+    "data/train/v4/manifest.json": "13020f3531bf2f8af78741711d261e4111dca2a8f38bfc4a91e5580fd87e5a98",
+    "reports/all/claim_evidence.csv": "241fadd060b0cc0f0c150ca2d8eeeadabbd1d23aeb24353ee64c274b391d5110",
+    "reports/all/claims.csv": "ca0a04d03bfac43468823e70d12493467a9e476b5eaa43552bcfdf8f859c6573",
+    "reports/all/edges.csv": "b47e72b89804451c9cf8c30dcda9723ec850de3b0a771cce0b91eff90230b88c",
+    "reports/all/sources.csv": "30c89a47e6870ed42e4e53f77b13ecf2c387f84085195c4ad41142a9dd3fb93b"
+  },
+  "seed": 20260813,
+  "source_dataset": "V1 ten-video evidence graph",
+  "split_strategy": "event_cluster"
+}

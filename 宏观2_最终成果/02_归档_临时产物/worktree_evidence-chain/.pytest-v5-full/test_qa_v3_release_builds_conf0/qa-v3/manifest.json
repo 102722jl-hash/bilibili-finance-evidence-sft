@@ -1,0 +1,40 @@
+{
+  "answerability": {
+    "answerable": 90
+  },
+  "counts": {
+    "cases": 10,
+    "demand_signals": 90,
+    "dialogue_paths": 50,
+    "followup_graphs": 10,
+    "qa_items": 90
+  },
+  "dataset_version": "3.0.0",
+  "files": {
+    "DATASET_CARD.md": "6aaf895f4689cb7de44607ef9e9790a28201488027234846bade7787560b77f5",
+    "config.json": "885b949729e8286781d9a1f73a19f6b233382a8997ba134f13d193815b7ca2fc",
+    "demand_signals.jsonl": "1c27706dbc20325df142f1709e4862b6980d9e3f8280015319d99d938cdd0f14",
+    "dialogue_paths.jsonl": "cbb981aa01a18095cf55d5f17611ed6e888d668bc35e1224647774ee1285484b",
+    "followup_graphs.jsonl": "ad4b1b222ad968af056d92dabde9d3d3e58341bdfa75d31e67fc1a429232d76c",
+    "macro_narratives.jsonl": "a086e8a31e8382c0013f474a2238ea9ae810ee99ce18d0ca0499c0012e12d826",
+    "qa_gold.jsonl": "bd574be2851d3d89c3f22a280fc2c999238c013492e9f21db34243892c2e1e6b",
+    "qa_items.jsonl": "50f80444960840b6f5f9bec49122f04f9a5e74b8f7ab2ea2ca03d2f62828d9cf"
+  },
+  "intents": {
+    "compare": 10,
+    "evaluate": 20,
+    "explain": 10,
+    "impact": 10,
+    "understand": 20,
+    "verify": 20
+  },
+  "path_lengths": {
+    "2": 10,
+    "3": 10,
+    "4": 10,
+    "5": 10,
+    "6": 10
+  },
+  "seed": 20260812,
+  "source_case_manifest_sha256": "e6b4c345be4a3cd871e9aede99611aeaa84680401d4188e339e0e14240a19b7a"
+}

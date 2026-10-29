@@ -1,0 +1,2 @@
+claim_id,video_id,node_type,subject,predicate,object,event_time_start,event_time_end,quote,timestamp_start,timestamp_end,source_ref,source_grade,verification_status,notes
+V1:C1,V1,F,公司,公告,事件,,,公司公告事件,,,SRC1,S1,unverifiable,

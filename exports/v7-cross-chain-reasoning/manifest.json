@@ -1,0 +1,24 @@
+{
+  "analysis_as_of": "2026-08-17",
+  "dataset_version": "7.1.0-layered-cross-chain",
+  "formal_ready": false,
+  "input_sha256": {
+    "accepted_evidence.jsonl": "0b820569c5872d8ff20ad2962f7ae83df1b7a7d896e9c0d8fecc16cf87035109",
+    "case_audit_contexts.jsonl": "02f2bdac2e54f64c9f69057163e19a5f4dff1bbed5d49238358e8dc8b0e11e5e",
+    "contexts.jsonl": "ff7cd4548526b78eba937cff73610eefb1738a02438de34786bccd85de21eaf7",
+    "reasoning_master_180.jsonl": "c91063747c7631af88b731eec87574131455b3243e73728ba3d0ac638bfda71f"
+  },
+  "output_sha256": {
+    "DATASET_CARD.md": "d5e2c862687108a5a311d0287945e275faf45d96822775353969de6fac017298",
+    "answer_records.jsonl": "db056cf05e69b4890208c567249b1a154c68d722f8e03cc6ce0533abf31b4106",
+    "gap_manifest.jsonl": "51d5cc7ca6b4a7bc89caa3b5bce64bd63e3eb44f40fa57278fda7390e29c08e8",
+    "qa_records.jsonl": "b80513db61e46427440483997c5437f52a535ab82bf497faca6362491081ee97",
+    "reasoning_master_180.jsonl": "79305fb72f8bbfa8803c75be6c935362a477e90fc6af4b6c610b8dbb5c014a81",
+    "reasoning_preview_vanke.pretty.json": "49a6185ca5dcd990745ed8b9595ee9d2a6684d407b829255ca05e59f81a706de",
+    "training_messages_preview.jsonl": "7ec170d80b07d3777c4f7388cc1c6a81f0041c5ef5b8187c2773bebd8bfff00a",
+    "validation_report.json": "0f9597d9e422e282180fc57b4d5317273ab0aafaf6e8a7abbc8b978ceae164f6"
+  },
+  "parent_version": "6.1.0-reasoning-complete",
+  "preview_only": true,
+  "schema_version": "auditable-video-reasoning/7.1-layered"
+}

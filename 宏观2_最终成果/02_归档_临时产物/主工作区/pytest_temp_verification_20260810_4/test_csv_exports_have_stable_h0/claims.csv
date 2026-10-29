@@ -1,0 +1,4 @@
+claim_id,video_id,node_type,subject,predicate,object,event_time_start,event_time_end,quote,timestamp_start,timestamp_end,source_ref,source_grade,verification_status,notes
+V1:C1,V1,F,证金,买入,标的,2015-07,,证金买入标的,,,SRC1,S1,partially_confirmed,
+V1:C2,V1,M,买方,形成,价格不敏感,,,买方形成价格不敏感,,,SRC1,S1,unverifiable,
+V1:C3,V1,C,作者,判断,可预测买方,,,作者认为这是可预测买方,,,SRC1,S1,unverifiable,

@@ -1,0 +1,125 @@
+{
+  "dataset_version": "5.0.0",
+  "files": {
+    "DATASET_CARD.md": "b2d91159861710f9fe64ff7157a70f7a3777cd61562e32c200ac9402db128102",
+    "config.json": "f290d3059281f1e70efd1b24661da8e727f06d07071e9d6b6a68010c369a6beb",
+    "qa_records.jsonl": "b88758b2913d18138176b666a81a5afa800ace2e9117d0a006142915f3df84ae"
+  },
+  "metrics": {
+    "answerability": {
+      "answerable": 30,
+      "partially_answerable": 50,
+      "unanswerable": 10
+    },
+    "cases": 10,
+    "graphs": [
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-XUXIANG",
+        "event_cluster_id": "xu_xiang_market_operations",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": null,
+        "split": "train",
+        "video_id": "BV1Htgh6DErU"
+      },
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-SILVER",
+        "event_cluster_id": "hunt_silver_manipulation",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": null,
+        "split": "train",
+        "video_id": "BV1rhpRzFEHx"
+      },
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-FRAUD-ANTHOLOGY",
+        "event_cluster_id": "financial_fraud",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": null,
+        "split": "validation",
+        "video_id": "BV1c8mZYxEBU"
+      },
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-YUANYE",
+        "event_cluster_id": "financial_fraud",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": null,
+        "split": "validation",
+        "video_id": "BV1yP411J7Gd"
+      },
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-XIAOMI",
+        "event_cluster_id": "xiaomi_capital_strategy",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": null,
+        "split": "train",
+        "video_id": "BV1zx4y1x7bG"
+      },
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-ZHAOWEI",
+        "event_cluster_id": "zhaowei_longwei_acquisition",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": null,
+        "split": "train",
+        "video_id": "BV1LiypBAEAQ"
+      },
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-LEHUA-CRASH",
+        "event_cluster_id": "lehua_listing_liquidity",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": "lehua_capital_cycle",
+        "split": "train",
+        "video_id": "BV1bp421D7Lv"
+      },
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-LEHUA-PLATFORM",
+        "event_cluster_id": "lehua_artist_platform",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": "lehua_capital_cycle",
+        "split": "train",
+        "video_id": "BV1BXXCBnEHN"
+      },
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-AUTO",
+        "event_cluster_id": "auto_industry_competition",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": null,
+        "split": "train",
+        "video_id": "BV1cCDTYsEKJ"
+      },
+      {
+        "alignments": 6,
+        "case_id": "CASE-V5-TECH",
+        "event_cluster_id": "technology_innovation_financing",
+        "evidence_records": 8,
+        "nodes": 23,
+        "parent_event_cluster_id": null,
+        "split": "train",
+        "video_id": "BV1ZBgk6kEzo"
+      }
+    ],
+    "path_signatures": 90,
+    "qa_records": 90,
+    "splits": {
+      "train": 72,
+      "validation": 18
+    }
+  },
+  "source_graph_manifest_sha256": "b44e256de2d6ae9dcdbcd3b901b564492b07e31d693a6b03e88f50340df5512d"
+}

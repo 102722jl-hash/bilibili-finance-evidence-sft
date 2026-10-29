@@ -1,0 +1,18 @@
+{
+  "counts": {
+    "accepted_evidence": 6,
+    "chains": 3,
+    "evidence_gaps": 2,
+    "messages": 3,
+    "reasoning_steps": 24,
+    "samples": 1
+  },
+  "errors": [],
+  "sample_sha256": "02f924d73d986e8d41bd53d2b69015f8acbe6b0b8160e0459fc2b49c4770096f",
+  "schema_version": "auditable-video-reasoning/7.1-layered-preview",
+  "status": "PASS_PREVIEW",
+  "warnings": [
+    "VIDEO_TIMESTAMP_NOT_AVAILABLE",
+    "VISUAL_EVIDENCE_NOT_EXTRACTED"
+  ]
+}

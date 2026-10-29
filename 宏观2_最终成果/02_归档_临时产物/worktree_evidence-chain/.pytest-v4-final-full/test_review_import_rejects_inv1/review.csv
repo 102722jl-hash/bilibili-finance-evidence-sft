@@ -1,0 +1,2 @@
+claim_id,status,source_grade,evidence_refs,reason,reviewer
+C1,confirmed,S0,SRC1,核验通过,reviewer

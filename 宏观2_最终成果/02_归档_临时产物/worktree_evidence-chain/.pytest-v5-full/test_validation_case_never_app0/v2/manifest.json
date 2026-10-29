@@ -1,0 +1,43 @@
+{
+  "counts": {
+    "answerability": {
+      "answerable": 14,
+      "partially_answerable": 4,
+      "unanswerable": 2
+    },
+    "event_clusters": {
+      "event_one": 10,
+      "event_one-VALIDATION": 10
+    },
+    "question_types": {
+      "alternative_explanation": 2,
+      "causality_vs_chronology": 2,
+      "conclusion_strength": 2,
+      "evidence_boundary": 2,
+      "full_chain_synthesis": 2,
+      "insufficient_evidence": 2,
+      "mechanism_explanation": 2,
+      "multihop_reconstruction": 4,
+      "premise_sufficiency": 2
+    },
+    "train_records": 10,
+    "truth_scopes": {
+      "author_trace": 14,
+      "world_evidence": 6
+    },
+    "validation_records": 10
+  },
+  "files": {
+    "TRAINING_CARD.md": "cc16fafebe829c1238f92e700f457d48beba34ef00052dbb584a7d45ef141261",
+    "config.json": "9f6ffe852bae76e30f7e2329f6d3037bb44a5def1ccc30d74eeaedb97441d19c",
+    "train_messages.jsonl": "2c59f5bc20fc52788a81062133fc0d955a2ab76e03015376c45884aa203b2ada",
+    "validation_messages.jsonl": "cf87fdef6b96e263c8ff361953f930c88a971530661db5be9d0fd9253d27c5ef"
+  },
+  "seed": 20260811,
+  "source_case_manifest_sha256": "58c2c61cfcacc10f9b4d0dd7a71281cd51faeff3a6c8b7dea5e27c3057c699af",
+  "source_dataset_path": "..\\cases\\v2",
+  "source_dataset_version": "2.0.0",
+  "source_qa_manifest_sha256": "ff75ec3f315143f079c0cf8a9cb3c4d9ea4ceda3f5dd9a3320d09f3cd5599450",
+  "system_prompt_version": "evidence-multitask-v2",
+  "training_dataset_version": "2.0.0"
+}

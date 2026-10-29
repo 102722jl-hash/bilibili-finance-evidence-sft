@@ -1,0 +1,41 @@
+diff --git a/src/evidence_chain/report.py b/src/evidence_chain/report.py
+--- a/src/evidence_chain/report.py
++++ b/src/evidence_chain/report.py
+@@ -45,1 +45,5 @@
+-def _edge_lines(graph: GraphData, relation_types: set[str] | None = None) -> list[str]:
++def _edge_lines(
++    graph: GraphData,
++    relation_types: set[str] | None = None,
++    target_types: set[str] | None = None,
++) -> list[str]:
+@@ -51,7 +55,9 @@
+         source = claims.get(edge.from_claim_id)
+         target = claims.get(edge.to_claim_id)
+         if source is None or target is None:
+             continue
++        if target_types and target.node_type not in target_types:
++            continue
+         lines.append(
+             f"- `{source.claim_id}` {source.quote} --[{edge.relation_type}; {edge.origin}; "
+             f"{edge.review_status}]--> `{target.claim_id}` {target.quote}"
+@@ -91,6 +97,7 @@
+     lines = [
+         f"# {graph.title or graph.video_id}", "", f"- 视频 ID：`{graph.video_id}`",
+         f"- 命题数：{len(graph.claims)}；关系数：{len(graph.edges)}", "", "## 事实传导链", "",
+-        *_edge_lines(graph, fact_edges), "", "## 作者推理链", "", *_edge_lines(graph, reasoning_edges),
++        *_edge_lines(graph, fact_edges, {"F", "M"}), "", "## 作者推理链", "",
++        *_edge_lines(graph, reasoning_edges, {"I", "C"}),
+         "", "## 外部核验", "", *_verification_lines(graph), "", "## 断裂边、争议边和替代解释", "",
+     ]
+@@ -122,7 +129,10 @@
+     claims = [Claim(**dict(row)) for row in claim_rows]
+     edges: list[Edge] = []
+     for row in edge_rows:
+         data = dict(row)
+         data["evidence_refs"] = json.loads(data["evidence_refs"])
+         edges.append(Edge(**data))
+-    return GraphData(video_id, video_id, claims, edges, [SourceRecord(**dict(row)) for row in source_rows])
++    source_ids = {claim.source_ref for claim in claims if claim.source_ref}
++    source_ids.update(ref for edge in edges for ref in edge.evidence_refs)
++    sources = [SourceRecord(**dict(row)) for row in source_rows if row["source_id"] in source_ids]
++    return GraphData(video_id, video_id, claims, edges, sources)

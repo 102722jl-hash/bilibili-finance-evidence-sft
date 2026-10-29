@@ -1,0 +1,32 @@
+{
+  "answerability": {
+    "answerable": 2
+  },
+  "counts": {
+    "cases": 1,
+    "demand_signals": 2,
+    "dialogue_paths": 1,
+    "followup_graphs": 1,
+    "qa_items": 2
+  },
+  "dataset_version": "3.0.0",
+  "files": {
+    "DATASET_CARD.md": "ef635fb9253325013a7658c70fe4a75ca26f535f53f07f6cae45b1ab56ab5cff",
+    "config.json": "c2870bac1bb23bfb2b872e969d97a8a3a735087d5e4b089ed49651ac11596b9a",
+    "demand_signals.jsonl": "9f8f3e4709f50d7cd14effd5570a6deabfc7d5d530f18440491ebeca3e7d4728",
+    "dialogue_paths.jsonl": "1b3dcad4855ba7fa4c765424cd7c0446dc1907d905c859962e10461abcc6d6dc",
+    "followup_graphs.jsonl": "283fb49bb9acaef09aac7a5839142862e81e085b535825da80017665493ecde1",
+    "macro_narratives.jsonl": "b56fbc382557bb67c08c1165be9ca81b40b834feb14ae571b112b0b99af1776a",
+    "qa_gold.jsonl": "da0aa327b71efd2e06f777c4ddd619a78962e39a1e53becfdaf1d1ac667b881a",
+    "qa_items.jsonl": "0eafa650b116fe5e15f0ce3d769d861e3a75d6d9e8a93d10c1e500182a2da83c"
+  },
+  "intents": {
+    "explain": 1,
+    "verify": 1
+  },
+  "path_lengths": {
+    "2": 1
+  },
+  "seed": 1,
+  "source_case_manifest_sha256": "4905b9ae03827033a5f1f001c0904e790d03b2c779b2b235fa21f2d2af0aa526"
+}

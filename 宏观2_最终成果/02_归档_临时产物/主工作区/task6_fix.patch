@@ -1,0 +1,165 @@
+diff --git a/src/evidence_chain/verification.py b/src/evidence_chain/verification.py
+index 3942386..0000000 100644
+--- a/src/evidence_chain/verification.py
++++ b/src/evidence_chain/verification.py
+@@ -47,13 +47,18 @@ class ReviewRecord:
+ 
+ 
+ def classify_claim(supporting: list[SourceRecord], contradicting: list[SourceRecord]) -> VerificationResult:
++    for source in [*supporting, *contradicting]:
++        if source.source_grade not in VALID_GRADES:
++            raise ValueError(f"invalid source grade {source.source_grade}")
+     if supporting and contradicting:
+         return VerificationResult("disputed", "supporting and contradictory sources both exist")
+     if contradicting:
+         return VerificationResult("contradicted", "reliable sources contradict the claim")
+     if supporting:
+         strongest = max(source.source_grade for source in supporting)
+-        status = "confirmed" if strongest in {"S4", "S5"} else "partially_confirmed"
+-        return VerificationResult(status, f"supported by source grade {strongest}")
++        return VerificationResult(
++            "partially_confirmed",
++            f"supported by source grade {strongest}; claim coverage requires reviewer confirmation",
++        )
+     return VerificationResult("unverifiable", "no supporting or contradictory source was recorded")
+ 
+ 
+@@ -89,6 +94,8 @@ class EvidenceStore:
+             )
+ 
+     def put_source(self, source: SourceRecord) -> None:
++        if source.source_grade not in VALID_GRADES:
++            raise ValueError(f"invalid source grade {source.source_grade}")
+         with self.store._connect() as connection:
+             connection.execute(
+                 """
+@@ -103,6 +110,10 @@ class EvidenceStore:
+         return SourceRecord(**dict(row)) if row else None
+ 
+     def put_review(self, review: ReviewRecord) -> None:
++        if review.status not in VALID_STATUSES:
++            raise ValueError(f"invalid status {review.status}")
++        if review.source_grade not in VALID_GRADES:
++            raise ValueError(f"invalid source grade {review.source_grade}")
+         with self.store._connect() as connection:
+             connection.execute(
+                 "INSERT OR REPLACE INTO reviews VALUES (?, ?, ?, ?, ?, ?)",
+@@ -143,5 +154,10 @@ def import_review_csv(path: str | Path, store: Store) -> list[ReviewRecord]:
+                 reviewer=row["reviewer"],
+             )
+             evidence.put_review(review)
++            with store._connect() as connection:
++                connection.execute(
++                    "UPDATE claims SET verification_status = ?, source_grade = ? WHERE claim_id = ?",
++                    (review.status, review.source_grade, review.claim_id),
++                )
+             imported.append(review)
+     return imported
+diff --git a/tests/test_verification.py b/tests/test_verification.py
+index 9e0882e..0000000 100644
+--- a/tests/test_verification.py
++++ b/tests/test_verification.py
+@@ -19,6 +19,20 @@ def test_unverified_claim_is_not_labeled_false():
+     assert result.status != "contradicted"
+ 
+ 
++def test_supporting_source_does_not_auto_confirm_full_claim():
++    support = SourceRecord("S1", "https://example.com/a", "交易所", None, None, "S5", "公告", "支持", "abc", 200, "")
++    assert classify_claim([support], []).status == "partially_confirmed"
++
++
++def test_contradicting_source_marks_claim_contradicted():
++    conflict = SourceRecord("S2", "https://example.com/b", "法院", None, None, "S5", "判决", "反驳", "def", 200, "")
++    assert classify_claim([], [conflict]).status == "contradicted"
++
++
++def test_invalid_source_grade_is_rejected(tmp_path):
++    evidence = EvidenceStore(tmp_path / "research.db")
++    source = SourceRecord("S0", "https://example.com/a", "未知", None, None, "S0", "标题", "内容", "abc", 200, "")
++    with pytest.raises(ValueError, match="invalid source grade S0"):
++        evidence.put_source(source)
++
++
+ def test_conflicting_sources_are_disputed():
+     support = SourceRecord("S1", "https://example.com/a", "交易所", None, None, "S5", "公告", "支持", "abc", 200, "")
+     conflict = SourceRecord("S2", "https://example.com/b", "法院", None, None, "S5", "判决", "反驳", "def", 200, "")
+@@ -40,3 +54,69 @@ def test_review_import_rejects_unknown_claim_with_line_number(tmp_path):
+         writer.writerow({"claim_id": "missing", "status": "confirmed", "source_grade": "S5", "evidence_refs": "SRC1", "reason": "x", "reviewer": "r"})
+     with pytest.raises(ValueError, match="line 2.*unknown claim"):
+         import_review_csv(path, store)
++
++
++def _claim(claim_id="C1"):
++    return Claim(
++        claim_id,
++        "V1",
++        "F",
++        "主体",
++        "发生",
++        "事件",
++        None,
++        None,
++        "原文",
++        None,
++        None,
++        "SRC1",
++        "S1",
++        "unverifiable",
++        "",
++    )
++
++
++@pytest.mark.parametrize(
++    ("field", "value", "message"),
++    [
++        ("status", "false", "line 2: invalid status false"),
++        ("source_grade", "S0", "line 2: invalid source grade S0"),
++    ],
++)
++def test_review_import_rejects_invalid_values_with_line_number(tmp_path, field, value, message):
++    store = Store(tmp_path / "research.db")
++    store.put_claim(_claim())
++    path = tmp_path / "review.csv"
++    row = {
++        "claim_id": "C1",
++        "status": "confirmed",
++        "source_grade": "S5",
++        "evidence_refs": "SRC1",
++        "reason": "核验通过",
++        "reviewer": "reviewer",
++    }
++    row[field] = value
++    with path.open("w", newline="", encoding="utf8") as handle:
++        writer = csv.DictWriter(handle, fieldnames=list(row))
++        writer.writeheader()
++        writer.writerow(row)
++    with pytest.raises(ValueError, match=message):
++        import_review_csv(path, store)
++
++
++def test_successful_review_import_updates_claim(tmp_path):
++    store = Store(tmp_path / "research.db")
++    store.put_claim(_claim())
++    path = tmp_path / "review.csv"
++    with path.open("w", newline="", encoding="utf8") as handle:
++        writer = csv.DictWriter(
++            handle,
++            fieldnames=["claim_id", "status", "source_grade", "evidence_refs", "reason", "reviewer"],
++        )
++        writer.writeheader()
++        writer.writerow(
++            {
++                "claim_id": "C1",
++                "status": "confirmed",
++                "source_grade": "S5",
++                "evidence_refs": "SRC1;SRC2",
++                "reason": "核验通过",
++                "reviewer": "reviewer",
++            }
++        )
++    reviews = import_review_csv(path, store)
++    assert reviews[0].evidence_refs == ["SRC1", "SRC2"]
++    claim = store.get_claim("C1")
++    assert claim is not None
++    assert claim.verification_status == "confirmed"
++    assert claim.source_grade == "S5"

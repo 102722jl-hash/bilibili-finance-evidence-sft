@@ -1,0 +1,30 @@
+{
+  "counts": {
+    "accepted_evidence_refs": 154,
+    "cases": 20,
+    "gap_refs": 645,
+    "lineage_corrections": 10,
+    "reasoning_steps": 515,
+    "roles": {
+      "alternative_explanation": 20,
+      "author_assumption": 20,
+      "bounded_impact": 20,
+      "causal_refusal": 20,
+      "cross_chain_synthesis": 20,
+      "evidence_boundary": 20,
+      "evidence_confirmation": 20,
+      "mechanism": 20,
+      "origin": 20
+    },
+    "samples": 180
+  },
+  "errors": [],
+  "sample_sha256": "79305fb72f8bbfa8803c75be6c935362a477e90fc6af4b6c610b8dbb5c014a81",
+  "schema_version": "auditable-video-reasoning/7.1-layered",
+  "status": "PASS_CANDIDATE_PREVIEW",
+  "warnings": [
+    "SOURCE_CONTEXT_NOT_EMBEDDED",
+    "VIDEO_TIMESTAMP_NOT_AVAILABLE",
+    "VISUAL_EVIDENCE_NOT_EXTRACTED"
+  ]
+}

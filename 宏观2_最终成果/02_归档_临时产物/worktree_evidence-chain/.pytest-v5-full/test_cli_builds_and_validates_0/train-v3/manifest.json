@@ -1,0 +1,47 @@
+{
+  "counts": {
+    "answerability": {
+      "answerable": 90
+    },
+    "cases": {
+      "CASE-BIRTH-SUBSIDY": 9,
+      "CASE-FED-TRUMP": 9,
+      "CASE-GAME-INDUSTRY": 9,
+      "CASE-GRAIN": 9,
+      "CASE-HEALTH": 9,
+      "CASE-HOUSING": 9,
+      "CASE-JAPAN": 9,
+      "CASE-KOREA": 9,
+      "CASE-VANKE": 9,
+      "CASE-WAHAHA": 9
+    },
+    "train_records": 72,
+    "truth_scopes": {
+      "author_trace": 52,
+      "world_evidence": 38
+    },
+    "user_intents": {
+      "compare": 10,
+      "evaluate": 20,
+      "explain": 10,
+      "impact": 10,
+      "understand": 20,
+      "verify": 20
+    },
+    "validation_records": 18
+  },
+  "files": {
+    "TRAINING_CARD.md": "53585bcac8d02b2a01febef35aa16e8c8cdc71b76d3c8e1d4576e7706c6324cf",
+    "config.json": "3ebb989835d91dfe59ce23c92f0587bab2c05d8658067585d63069ff1a8ee08b",
+    "train_messages.jsonl": "b3c1088f6bd770f6260210a6713c00b83d9c7f1269051ccbb64357737ad085cb",
+    "validation_messages.jsonl": "d7549b4ad3d363cd41ce42b194b406655bfa615a42389be0f1350045079c3310"
+  },
+  "seed": 20260812,
+  "source_case_manifest_sha256": "e6b4c345be4a3cd871e9aede99611aeaa84680401d4188e339e0e14240a19b7a",
+  "source_cases_path": "..\\..\\..\\data\\cases\\v3",
+  "source_dataset_version": "3.0.0",
+  "source_qa_manifest_sha256": "b013f7a552df3cda28ddccd50f5a9c0b9d89adcb196cb5312354366dc981b08b",
+  "source_qa_path": "..\\..\\..\\data\\qa\\v3",
+  "system_prompt_version": "evidence-sft-v3",
+  "training_dataset_version": "3.0.0"
+}

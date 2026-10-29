@@ -1,0 +1,143 @@
+127.0.0.1 - - [13/Aug/2026 13:31:25] "GET /sft-case-ui-demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 13:31:25] "GET /sft-cases-data.js HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 64155)
+Traceback (most recent call last):
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\http\server.py", line 1342, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                             directory=args.directory)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\http\server.py", line 683, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\http\server.py", line 447, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\http\server.py", line 435, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\http\server.py", line 690, in do_GET
+    self.copyfile(f, self.wfile)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\http\server.py", line 892, in copyfile
+    shutil.copyfileobj(source, outputfile)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\shutil.py", line 204, in copyfileobj
+    fdst_write(buf)
+    ~~~~~~~~~~^^^^^
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+----------------------------------------
+127.0.0.1 - - [13/Aug/2026 13:31:25] "GET /sft-cases-workbench.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 13:32:28] "GET /sft-case-ui-demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 13:32:28] "GET /sft-cases-data.js HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 58551)
+Traceback (most recent call last):
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\http\server.py", line 1342, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                             directory=args.directory)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\http\server.py", line 683, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\http\server.py", line 447, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\http\server.py", line 435, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\http\server.py", line 690, in do_GET
+    self.copyfile(f, self.wfile)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\http\server.py", line 892, in copyfile
+    shutil.copyfileobj(source, outputfile)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\shutil.py", line 204, in copyfileobj
+    fdst_write(buf)
+    ~~~~~~~~~~^^^^^
+  File "C:\Users\LL\.workbuddy\binaries\python\versions\3.13.12\Lib\socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+----------------------------------------
+127.0.0.1 - - [13/Aug/2026 13:32:31] "HEAD /sft-case-ui-demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 13:38:19] "GET /sft-case-ui-demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 13:38:19] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 13:38:19] "GET /sft-cases-workbench.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 14:56:43] "GET /sft-case-ui-demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 14:56:43] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 14:56:43] "GET /sft-cases-workbench.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 14:56:44] "GET /sft-case-ui-demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 14:56:44] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 14:56:44] "GET /sft-cases-workbench.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:10:10] "GET /sft-case-ui-demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:10:10] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:10:10] "GET /sft-cases-workbench.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:10:12] "GET /sft-case-ui-demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:10:12] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:10:12] "GET /sft-cases-workbench.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:13:56] "GET /sft-case-ui-demo.html HTTP/1.1" 304 -
+127.0.0.1 - - [13/Aug/2026 15:13:56] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:13:56] "GET /sft-cases-workbench.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:18:36] "GET /sft-case-ui-demo.html HTTP/1.1" 304 -
+127.0.0.1 - - [13/Aug/2026 15:18:36] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:18:36] "GET /sft-cases-workbench.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:34:48] "GET /sft-case-ui-demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:34:48] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:34:48] "GET /sft-cases-workbench.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:34:49] "GET /sft-case-ui-demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:34:49] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:34:49] "GET /sft-cases-workbench.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:42:03] "GET /sft-case-ui-demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:42:03] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:42:03] "GET /sft-cases-workbench.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:42:05] "GET /sft-case-ui-demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:42:05] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:42:05] "GET /sft-cases-workbench.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:43:25] "GET /sft-case-ui-demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:43:25] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 15:43:25] "GET /sft-cases-workbench.js HTTP/1.1" 304 -
+127.0.0.1 - - [13/Aug/2026 15:43:26] "GET /sft-case-ui-demo.html HTTP/1.1" 304 -
+127.0.0.1 - - [13/Aug/2026 15:43:26] "GET /sft-cases-workbench.js HTTP/1.1" 304 -
+127.0.0.1 - - [13/Aug/2026 15:43:26] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 16:34:58] "GET /sft-case-ui-demo.html HTTP/1.1" 304 -
+127.0.0.1 - - [13/Aug/2026 16:34:58] "GET /sft-cases-data.js HTTP/1.1" 304 -
+127.0.0.1 - - [13/Aug/2026 16:34:58] "GET /sft-cases-workbench.js HTTP/1.1" 304 -
+127.0.0.1 - - [13/Aug/2026 16:43:17] "GET /sft-case-ui-demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 16:43:17] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 16:43:17] "GET /sft-cases-workbench.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 16:43:20] "GET /sft-case-ui-demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 16:43:20] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 16:43:20] "GET /sft-cases-workbench.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 16:56:34] "GET /sft-case-ui-demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 16:56:35] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 16:56:35] "GET /sft-cases-workbench.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 17:16:14] "GET /sft-case-ui-demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 17:16:14] "GET /sft-cases-workbench.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 17:16:14] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 17:16:19] "GET /sft-case-ui-demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 17:16:19] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 17:16:19] "GET /sft-cases-workbench.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 17:18:21] "GET /sft-case-ui-demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 17:18:21] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 17:18:21] "GET /sft-cases-workbench.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 17:18:25] "GET /sft-case-ui-demo.html HTTP/1.1" 304 -
+127.0.0.1 - - [13/Aug/2026 17:18:25] "GET /sft-cases-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 17:18:25] "GET /sft-cases-workbench.js HTTP/1.1" 200 -

@@ -1,0 +1,6 @@
+diff --git a/src/evidence_chain/sources/wechat.py b/src/evidence_chain/sources/wechat.py
+--- a/src/evidence_chain/sources/wechat.py
++++ b/src/evidence_chain/sources/wechat.py
+@@ -39,1 +39,1 @@
+-    if any(marker in html for marker in _BLOCK_MARKERS):
++    if any(marker in html for marker in (*_BLOCK_MARKERS, "secitptpage/verify", 'id="js_verify"', "TCaptcha.js")):

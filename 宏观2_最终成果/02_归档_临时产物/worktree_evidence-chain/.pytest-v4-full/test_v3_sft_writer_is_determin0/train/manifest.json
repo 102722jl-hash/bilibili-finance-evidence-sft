@@ -1,0 +1,34 @@
+{
+  "counts": {
+    "answerability": {
+      "answerable": 2
+    },
+    "cases": {
+      "CASE-ONE": 2
+    },
+    "train_records": 2,
+    "truth_scopes": {
+      "author_trace": 1,
+      "world_evidence": 1
+    },
+    "user_intents": {
+      "explain": 1,
+      "verify": 1
+    },
+    "validation_records": 0
+  },
+  "files": {
+    "TRAINING_CARD.md": "48fa09b490611152fb8d6d8724b1d3e6c8b27ea5da364e8dc7c2eb7a5df1aa16",
+    "config.json": "3ebb989835d91dfe59ce23c92f0587bab2c05d8658067585d63069ff1a8ee08b",
+    "train_messages.jsonl": "0792a90cc4832eb82479ccf51947009f06e014ec2d1624affdd56066469b09a5",
+    "validation_messages.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "seed": 20260812,
+  "source_case_manifest_sha256": "4905b9ae03827033a5f1f001c0904e790d03b2c779b2b235fa21f2d2af0aa526",
+  "source_cases_path": "..\\cases",
+  "source_dataset_version": "3.0.0",
+  "source_qa_manifest_sha256": "b8200338f92d064907ff3a64841c4d5b3c2f43d96ad72d5cc7c1638ba81ea2b8",
+  "source_qa_path": "..\\qa",
+  "system_prompt_version": "evidence-sft-v3",
+  "training_dataset_version": "3.0.0"
+}

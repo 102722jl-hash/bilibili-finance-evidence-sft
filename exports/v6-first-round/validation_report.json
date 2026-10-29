@@ -1,0 +1,30 @@
+{
+  "counts": {
+    "answerability": {
+      "answerable": 48,
+      "partially_answerable": 112,
+      "unanswerable": 20
+    },
+    "candidate_split": {
+      "train": 55,
+      "validation": 16
+    },
+    "case_audit_contexts": 20,
+    "records": 180,
+    "release_partition": {
+      "audit_only": 109,
+      "candidate": 71
+    },
+    "source_split": {
+      "train": 144,
+      "validation": 36
+    },
+    "truth_scope": {
+      "author_trace": 60,
+      "world_evidence": 120
+    }
+  },
+  "errors": [],
+  "schema_version": "auditable-sft/6.0-first-round",
+  "warnings": []
+}

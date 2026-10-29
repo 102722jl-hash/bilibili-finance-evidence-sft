@@ -1,0 +1,1314 @@
+[
+  {
+    "viewport": {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000
+    },
+    "versions": {
+      "merged": {
+        "CASE-BIRTH-SUBSIDY": {
+          "title": "生育补贴：转移支付叙事与政策效果边界",
+          "eyebrow": "CASE-BIRTH-SUBSIDY · CHINA_BIRTH_SUBSIDY",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-FED-TRUMP": {
+          "title": "美联储与特朗普：货币政策冲突、归因与证据边界",
+          "eyebrow": "CASE-FED-TRUMP · US_FED_TRUMP_MONETARY_CONFLICT",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-GAME-INDUSTRY": {
+          "title": "中国游戏产业：出海叙事、竞合判断与证据边界",
+          "eyebrow": "CASE-GAME-INDUSTRY · CHINA_GAME_INDUSTRY",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-GRAIN": {
+          "title": "中国粮食金融保卫战",
+          "eyebrow": "CASE-GRAIN · CHINA_GRAIN_FINANCE",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 11
+        },
+        "CASE-HEALTH": {
+          "title": "保健品行业资本博弈",
+          "eyebrow": "CASE-HEALTH · HEALTH_PRODUCTS_CAPITAL",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 11
+        },
+        "CASE-HOUSING": {
+          "title": "中国房价系统：价格调整、金融传导与证据边界",
+          "eyebrow": "CASE-HOUSING · CHINA_HOUSING_PRICE_SYSTEM",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-JAPAN": {
+          "title": "日本经济泡沫破裂与长期停滞",
+          "eyebrow": "CASE-JAPAN · JAPAN_BUBBLE_COLLAPSE",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 11
+        },
+        "CASE-KOREA": {
+          "title": "韩国工薪经济与结构压力",
+          "eyebrow": "CASE-KOREA · KOREA_WORKER_ECONOMY",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-VANKE": {
+          "title": "万科控制权争夺",
+          "eyebrow": "CASE-VANKE · VANKE_CONTROL_BATTLE",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 24,
+          "laneStepCounts": [
+            9,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 12
+        },
+        "CASE-WAHAHA": {
+          "title": "娃哈哈继承纠纷",
+          "eyebrow": "CASE-WAHAHA · WAHAHA_INHERITANCE_DISPUTE",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-V5-AUTO": {
+          "title": "豪华车与新能源竞争：销量、成本和产业链叙事",
+          "eyebrow": "CASE-V5-AUTO · AUTO_INDUSTRY_COMPETITION",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-FRAUD-ANTHOLOGY": {
+          "title": "上市公司财务造假合辑：造假机制与发现边界",
+          "eyebrow": "CASE-V5-FRAUD-ANTHOLOGY · FINANCIAL_FRAUD",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-LEHUA-CRASH": {
+          "title": "乐华娱乐股价异动：解禁、流动性与收入集中",
+          "eyebrow": "CASE-V5-LEHUA-CRASH · LEHUA_LISTING_LIQUIDITY · 上级簇 LEHUA_CAPITAL_CYCLE",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 14
+        },
+        "CASE-V5-LEHUA-PLATFORM": {
+          "title": "王一博与乐华平台：收入集中、议价权和治理边界",
+          "eyebrow": "CASE-V5-LEHUA-PLATFORM · LEHUA_ARTIST_PLATFORM · 上级簇 LEHUA_CAPITAL_CYCLE",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-SILVER": {
+          "title": "亨特兄弟白银市场事件：现货、期货与规则变化",
+          "eyebrow": "CASE-V5-SILVER · HUNT_SILVER_MANIPULATION",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-TECH": {
+          "title": "中国科创企业与资本市场：研发、融资和产业集群",
+          "eyebrow": "CASE-V5-TECH · TECHNOLOGY_INNOVATION_FINANCING",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 14
+        },
+        "CASE-V5-XIAOMI": {
+          "title": "雷军与小米：上市融资、生态投资和汽车期权叙事",
+          "eyebrow": "CASE-V5-XIAOMI · XIAOMI_CAPITAL_STRATEGY",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 14
+        },
+        "CASE-V5-XUXIANG": {
+          "title": "徐翔交易机制、国家队叙事与监管终局",
+          "eyebrow": "CASE-V5-XUXIANG · XU_XIANG_MARKET_OPERATIONS",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-YUANYE": {
+          "title": "原野实业：早期上市资格、控制权与跨境监管",
+          "eyebrow": "CASE-V5-YUANYE · FINANCIAL_FRAUD",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-ZHAOWEI": {
+          "title": "赵薇与龙薇传媒收购：杠杆、披露和监管后果",
+          "eyebrow": "CASE-V5-ZHAOWEI · ZHAOWEI_LONGWEI_ACQUISITION",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 14
+        }
+      },
+      "v41": {
+        "CASE-BIRTH-SUBSIDY": {
+          "title": "生育补贴：转移支付叙事与政策效果边界",
+          "eyebrow": "CASE-BIRTH-SUBSIDY · CHINA_BIRTH_SUBSIDY",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-FED-TRUMP": {
+          "title": "美联储与特朗普：货币政策冲突、归因与证据边界",
+          "eyebrow": "CASE-FED-TRUMP · US_FED_TRUMP_MONETARY_CONFLICT",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-GAME-INDUSTRY": {
+          "title": "中国游戏产业：出海叙事、竞合判断与证据边界",
+          "eyebrow": "CASE-GAME-INDUSTRY · CHINA_GAME_INDUSTRY",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-GRAIN": {
+          "title": "中国粮食金融保卫战",
+          "eyebrow": "CASE-GRAIN · CHINA_GRAIN_FINANCE",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 11
+        },
+        "CASE-HEALTH": {
+          "title": "保健品行业资本博弈",
+          "eyebrow": "CASE-HEALTH · HEALTH_PRODUCTS_CAPITAL",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 11
+        },
+        "CASE-HOUSING": {
+          "title": "中国房价系统：价格调整、金融传导与证据边界",
+          "eyebrow": "CASE-HOUSING · CHINA_HOUSING_PRICE_SYSTEM",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-JAPAN": {
+          "title": "日本经济泡沫破裂与长期停滞",
+          "eyebrow": "CASE-JAPAN · JAPAN_BUBBLE_COLLAPSE",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 11
+        },
+        "CASE-KOREA": {
+          "title": "韩国工薪经济与结构压力",
+          "eyebrow": "CASE-KOREA · KOREA_WORKER_ECONOMY",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-VANKE": {
+          "title": "万科控制权争夺",
+          "eyebrow": "CASE-VANKE · VANKE_CONTROL_BATTLE",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 24,
+          "laneStepCounts": [
+            9,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 12
+        },
+        "CASE-WAHAHA": {
+          "title": "娃哈哈继承纠纷",
+          "eyebrow": "CASE-WAHAHA · WAHAHA_INHERITANCE_DISPUTE",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        }
+      },
+      "v5": {
+        "CASE-V5-XUXIANG": {
+          "title": "徐翔交易机制、国家队叙事与监管终局",
+          "eyebrow": "CASE-V5-XUXIANG · XU_XIANG_MARKET_OPERATIONS",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-SILVER": {
+          "title": "亨特兄弟白银市场事件：现货、期货与规则变化",
+          "eyebrow": "CASE-V5-SILVER · HUNT_SILVER_MANIPULATION",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-FRAUD-ANTHOLOGY": {
+          "title": "上市公司财务造假合辑：造假机制与发现边界",
+          "eyebrow": "CASE-V5-FRAUD-ANTHOLOGY · FINANCIAL_FRAUD",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-YUANYE": {
+          "title": "原野实业：早期上市资格、控制权与跨境监管",
+          "eyebrow": "CASE-V5-YUANYE · FINANCIAL_FRAUD",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-XIAOMI": {
+          "title": "雷军与小米：上市融资、生态投资和汽车期权叙事",
+          "eyebrow": "CASE-V5-XIAOMI · XIAOMI_CAPITAL_STRATEGY",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 14
+        },
+        "CASE-V5-ZHAOWEI": {
+          "title": "赵薇与龙薇传媒收购：杠杆、披露和监管后果",
+          "eyebrow": "CASE-V5-ZHAOWEI · ZHAOWEI_LONGWEI_ACQUISITION",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 14
+        },
+        "CASE-V5-LEHUA-CRASH": {
+          "title": "乐华娱乐股价异动：解禁、流动性与收入集中",
+          "eyebrow": "CASE-V5-LEHUA-CRASH · LEHUA_LISTING_LIQUIDITY · 上级簇 LEHUA_CAPITAL_CYCLE",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 14
+        },
+        "CASE-V5-LEHUA-PLATFORM": {
+          "title": "王一博与乐华平台：收入集中、议价权和治理边界",
+          "eyebrow": "CASE-V5-LEHUA-PLATFORM · LEHUA_ARTIST_PLATFORM · 上级簇 LEHUA_CAPITAL_CYCLE",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-AUTO": {
+          "title": "豪华车与新能源竞争：销量、成本和产业链叙事",
+          "eyebrow": "CASE-V5-AUTO · AUTO_INDUSTRY_COMPETITION",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-TECH": {
+          "title": "中国科创企业与资本市场：研发、融资和产业集群",
+          "eyebrow": "CASE-V5-TECH · TECHNOLOGY_INNOVATION_FINANCING",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 14
+        }
+      }
+    },
+    "errors": []
+  },
+  {
+    "viewport": {
+      "name": "mobile",
+      "width": 390,
+      "height": 844
+    },
+    "versions": {
+      "merged": {
+        "CASE-BIRTH-SUBSIDY": {
+          "title": "生育补贴：转移支付叙事与政策效果边界",
+          "eyebrow": "CASE-BIRTH-SUBSIDY · CHINA_BIRTH_SUBSIDY",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-FED-TRUMP": {
+          "title": "美联储与特朗普：货币政策冲突、归因与证据边界",
+          "eyebrow": "CASE-FED-TRUMP · US_FED_TRUMP_MONETARY_CONFLICT",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-GAME-INDUSTRY": {
+          "title": "中国游戏产业：出海叙事、竞合判断与证据边界",
+          "eyebrow": "CASE-GAME-INDUSTRY · CHINA_GAME_INDUSTRY",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-GRAIN": {
+          "title": "中国粮食金融保卫战",
+          "eyebrow": "CASE-GRAIN · CHINA_GRAIN_FINANCE",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 11
+        },
+        "CASE-HEALTH": {
+          "title": "保健品行业资本博弈",
+          "eyebrow": "CASE-HEALTH · HEALTH_PRODUCTS_CAPITAL",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 11
+        },
+        "CASE-HOUSING": {
+          "title": "中国房价系统：价格调整、金融传导与证据边界",
+          "eyebrow": "CASE-HOUSING · CHINA_HOUSING_PRICE_SYSTEM",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-JAPAN": {
+          "title": "日本经济泡沫破裂与长期停滞",
+          "eyebrow": "CASE-JAPAN · JAPAN_BUBBLE_COLLAPSE",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 11
+        },
+        "CASE-KOREA": {
+          "title": "韩国工薪经济与结构压力",
+          "eyebrow": "CASE-KOREA · KOREA_WORKER_ECONOMY",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-VANKE": {
+          "title": "万科控制权争夺",
+          "eyebrow": "CASE-VANKE · VANKE_CONTROL_BATTLE",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 24,
+          "laneStepCounts": [
+            9,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 12
+        },
+        "CASE-WAHAHA": {
+          "title": "娃哈哈继承纠纷",
+          "eyebrow": "CASE-WAHAHA · WAHAHA_INHERITANCE_DISPUTE",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-V5-AUTO": {
+          "title": "豪华车与新能源竞争：销量、成本和产业链叙事",
+          "eyebrow": "CASE-V5-AUTO · AUTO_INDUSTRY_COMPETITION",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-FRAUD-ANTHOLOGY": {
+          "title": "上市公司财务造假合辑：造假机制与发现边界",
+          "eyebrow": "CASE-V5-FRAUD-ANTHOLOGY · FINANCIAL_FRAUD",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-LEHUA-CRASH": {
+          "title": "乐华娱乐股价异动：解禁、流动性与收入集中",
+          "eyebrow": "CASE-V5-LEHUA-CRASH · LEHUA_LISTING_LIQUIDITY · 上级簇 LEHUA_CAPITAL_CYCLE",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 14
+        },
+        "CASE-V5-LEHUA-PLATFORM": {
+          "title": "王一博与乐华平台：收入集中、议价权和治理边界",
+          "eyebrow": "CASE-V5-LEHUA-PLATFORM · LEHUA_ARTIST_PLATFORM · 上级簇 LEHUA_CAPITAL_CYCLE",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-SILVER": {
+          "title": "亨特兄弟白银市场事件：现货、期货与规则变化",
+          "eyebrow": "CASE-V5-SILVER · HUNT_SILVER_MANIPULATION",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-TECH": {
+          "title": "中国科创企业与资本市场：研发、融资和产业集群",
+          "eyebrow": "CASE-V5-TECH · TECHNOLOGY_INNOVATION_FINANCING",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 14
+        },
+        "CASE-V5-XIAOMI": {
+          "title": "雷军与小米：上市融资、生态投资和汽车期权叙事",
+          "eyebrow": "CASE-V5-XIAOMI · XIAOMI_CAPITAL_STRATEGY",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 14
+        },
+        "CASE-V5-XUXIANG": {
+          "title": "徐翔交易机制、国家队叙事与监管终局",
+          "eyebrow": "CASE-V5-XUXIANG · XU_XIANG_MARKET_OPERATIONS",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-YUANYE": {
+          "title": "原野实业：早期上市资格、控制权与跨境监管",
+          "eyebrow": "CASE-V5-YUANYE · FINANCIAL_FRAUD",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-ZHAOWEI": {
+          "title": "赵薇与龙薇传媒收购：杠杆、披露和监管后果",
+          "eyebrow": "CASE-V5-ZHAOWEI · ZHAOWEI_LONGWEI_ACQUISITION",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 14
+        }
+      },
+      "v41": {
+        "CASE-BIRTH-SUBSIDY": {
+          "title": "生育补贴：转移支付叙事与政策效果边界",
+          "eyebrow": "CASE-BIRTH-SUBSIDY · CHINA_BIRTH_SUBSIDY",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-FED-TRUMP": {
+          "title": "美联储与特朗普：货币政策冲突、归因与证据边界",
+          "eyebrow": "CASE-FED-TRUMP · US_FED_TRUMP_MONETARY_CONFLICT",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-GAME-INDUSTRY": {
+          "title": "中国游戏产业：出海叙事、竞合判断与证据边界",
+          "eyebrow": "CASE-GAME-INDUSTRY · CHINA_GAME_INDUSTRY",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-GRAIN": {
+          "title": "中国粮食金融保卫战",
+          "eyebrow": "CASE-GRAIN · CHINA_GRAIN_FINANCE",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 11
+        },
+        "CASE-HEALTH": {
+          "title": "保健品行业资本博弈",
+          "eyebrow": "CASE-HEALTH · HEALTH_PRODUCTS_CAPITAL",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 11
+        },
+        "CASE-HOUSING": {
+          "title": "中国房价系统：价格调整、金融传导与证据边界",
+          "eyebrow": "CASE-HOUSING · CHINA_HOUSING_PRICE_SYSTEM",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-JAPAN": {
+          "title": "日本经济泡沫破裂与长期停滞",
+          "eyebrow": "CASE-JAPAN · JAPAN_BUBBLE_COLLAPSE",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 11
+        },
+        "CASE-KOREA": {
+          "title": "韩国工薪经济与结构压力",
+          "eyebrow": "CASE-KOREA · KOREA_WORKER_ECONOMY",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        },
+        "CASE-VANKE": {
+          "title": "万科控制权争夺",
+          "eyebrow": "CASE-VANKE · VANKE_CONTROL_BATTLE",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 24,
+          "laneStepCounts": [
+            9,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 12
+        },
+        "CASE-WAHAHA": {
+          "title": "娃哈哈继承纠纷",
+          "eyebrow": "CASE-WAHAHA · WAHAHA_INHERITANCE_DISPUTE",
+          "badges": "\n      深化样本已审\n      V4.1 深化图\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 10
+        }
+      },
+      "v5": {
+        "CASE-V5-XUXIANG": {
+          "title": "徐翔交易机制、国家队叙事与监管终局",
+          "eyebrow": "CASE-V5-XUXIANG · XU_XIANG_MARKET_OPERATIONS",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-SILVER": {
+          "title": "亨特兄弟白银市场事件：现货、期货与规则变化",
+          "eyebrow": "CASE-V5-SILVER · HUNT_SILVER_MANIPULATION",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-FRAUD-ANTHOLOGY": {
+          "title": "上市公司财务造假合辑：造假机制与发现边界",
+          "eyebrow": "CASE-V5-FRAUD-ANTHOLOGY · FINANCIAL_FRAUD",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-YUANYE": {
+          "title": "原野实业：早期上市资格、控制权与跨境监管",
+          "eyebrow": "CASE-V5-YUANYE · FINANCIAL_FRAUD",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-XIAOMI": {
+          "title": "雷军与小米：上市融资、生态投资和汽车期权叙事",
+          "eyebrow": "CASE-V5-XIAOMI · XIAOMI_CAPITAL_STRATEGY",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 14
+        },
+        "CASE-V5-ZHAOWEI": {
+          "title": "赵薇与龙薇传媒收购：杠杆、披露和监管后果",
+          "eyebrow": "CASE-V5-ZHAOWEI · ZHAOWEI_LONGWEI_ACQUISITION",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 14
+        },
+        "CASE-V5-LEHUA-CRASH": {
+          "title": "乐华娱乐股价异动：解禁、流动性与收入集中",
+          "eyebrow": "CASE-V5-LEHUA-CRASH · LEHUA_LISTING_LIQUIDITY · 上级簇 LEHUA_CAPITAL_CYCLE",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 14
+        },
+        "CASE-V5-LEHUA-PLATFORM": {
+          "title": "王一博与乐华平台：收入集中、议价权和治理边界",
+          "eyebrow": "CASE-V5-LEHUA-PLATFORM · LEHUA_ARTIST_PLATFORM · 上级簇 LEHUA_CAPITAL_CYCLE",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-AUTO": {
+          "title": "豪华车与新能源竞争：销量、成本和产业链叙事",
+          "eyebrow": "CASE-V5-AUTO · AUTO_INDUSTRY_COMPETITION",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 15
+        },
+        "CASE-V5-TECH": {
+          "title": "中国科创企业与资本市场：研发、融资和产业集群",
+          "eyebrow": "CASE-V5-TECH · TECHNOLOGY_INNOVATION_FINANCING",
+          "badges": "\n      待人工审核\n      V5 内容迁移\n      9 个问题\n      5 条对话路径\n      存在证据边界\n    ",
+          "nodeCount": 23,
+          "laneStepCounts": [
+            8,
+            7,
+            8
+          ],
+          "qaCount": 9,
+          "hasVersion": true,
+          "hasAbstain": true,
+          "horizontalOverflow": false,
+          "sourceCards": 14
+        }
+      }
+    },
+    "errors": []
+  }
+]
