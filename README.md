@@ -208,6 +208,6 @@ V4.1 首轮十案例主题：徐翔、万科争夺战、世纪白银操纵案、
 
 ## 许可与数据来源
 
-本项目为求职面试作品集用途。数据来源与合规披露见 `docs/` 及项目内说明文件（`DATASET_CARD.md`、`source_audit`、`sponsorship_disclosure` 等）。
+本项目数据来源与合规披露见 `docs/` 及项目内说明文件（`DATASET_CARD.md`、`source_audit`、`sponsorship_disclosure` 等）。
 
 > 本 README 由 [`宏观2_项目完全剖析.md`](./宏观2_项目完全剖析.md) 整理提炼；所有案例数、样本数、字段枚举、常量、哈希均以项目内文件实测为准。
